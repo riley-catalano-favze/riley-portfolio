@@ -69,8 +69,9 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{background:var(--white);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;cursor:none;}
-.cur{position:fixed;width:10px;height:10px;background:var(--blue);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
-.cur-ring{position:fixed;width:38px;height:38px;border:1.5px solid var(--blue);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.45;}
+.cur{position:fixed;width:18px;height:18px;background:var(--blue);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--blue);transition:transform .1s;}
+.cur-ring{position:fixed;width:44px;height:44px;border:2px solid var(--blue);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.35;animation:spin 3s linear infinite;}
+@keyframes spin{from{transform:translate(-50%,-50%) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(360deg);}}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:var(--white);border-bottom:1px solid var(--border);}
 .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.1em;color:var(--ink);text-decoration:none;}
 .nav-logo span{color:var(--blue);}
@@ -539,7 +540,9 @@ footer span{font-family:'DM Mono',monospace;font-size:.62rem;text-transform:uppe
 
 <script>
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
-let mx=0,my=0,rx=0,ry=0;
+let mx=window.innerWidth/2,my=window.innerHeight/2,rx=mx,ry=my;
+cur.style.left=mx+'px';cur.style.top=my+'px';
+ring.style.left=rx+'px';ring.style.top=ry+'px';
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
 (function a(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
 function showTab(id,btn){
