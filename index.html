@@ -30,22 +30,49 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Riley Catalano",
-  "jobTitle": "AI-Driven Digital Marketing Strategist",
-  "description": "Founder of Favze Digital Marketing specializing in AI Optimization, SEO, AEO, GEO, HubSpot, content marketing, YouTube thumbnail design, product copywriting, and local search visibility across Northern Indiana and Michiana.",
+  "jobTitle": "Digital Marketing and Business Development Specialist",
+  "description": "Founder of Favze Digital Marketing specializing in AI Optimization, SEO, AEO, GEO, HubSpot, content marketing, YouTube thumbnail design, product copywriting, KPI development, and local search visibility across Northern Indiana and Michiana.",
   "url": "https://rileycatalano.com/",
   "sameAs": [
     "https://www.linkedin.com/in/rileycatalano/"
   ],
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Favze Digital Marketing",
-    "url": "https://favze.com"
-  },
+  "worksFor": [
+    {
+      "@type": "Organization",
+      "name": "HR Collaboration Group",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Elkhart",
+        "addressRegion": "IN",
+        "addressCountry": "US"
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "Favze Digital Marketing",
+      "url": "https://favze.com"
+    },
+    {
+      "@type": "Organization",
+      "name": "ABI Attachments, Inc.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mishawaka",
+        "addressRegion": "IN",
+        "addressCountry": "US"
+      }
+    }
+  ],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Middlebury",
     "addressRegion": "IN",
     "addressCountry": "US"
+  },
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Northridge High School",
+    "description": "Core 40 Diploma, May 2026"
   },
   "knowsAbout": [
     "AI Optimization",
@@ -88,22 +115,31 @@
     "On-Page SEO",
     "International SEO",
     "Repurposing Content",
-    "LinkedIn Newsletter"
+    "LinkedIn Newsletter",
+    "KPI Development",
+    "Sales Prospecting",
+    "Business Development",
+    "Category Creation",
+    "Market Research",
+    "Lead Generation",
+    "GitHub",
+    "WordPress",
+    "Public Relations"
   ],
   "hasOccupation": {
     "@type": "Occupation",
-    "name": "Digital Marketing Strategist",
+    "name": "Digital Marketing and Business Development Specialist",
     "occupationLocation": {
-      "@type": "City",
+      "@type": "Place",
       "name": "Northern Indiana"
     },
-    "skills": "SEO, AEO, GEO, AI Optimization, HubSpot, Content Marketing, Social Media Marketing, Email Marketing, SMS Marketing, Google Ads, YouTube Thumbnail Design, Product Description Writing, Adobe Photoshop, Canva, Figma, BrightEdge, Google Analytics"
+    "skills": "SEO, AEO, GEO, AI Optimization, HubSpot, Content Marketing, Social Media Marketing, Email Marketing, SMS Marketing, Google Ads, YouTube Thumbnail Design, Product Description Writing, Adobe Photoshop, Canva, Figma, BrightEdge, Google Analytics, KPI Development, Sales Prospecting, Business Development, Category Creation"
   },
-  "performerIn": [
+  "author": [
     {
       "@type": "CreativeWork",
       "name": "Favze Insights",
-      "description": "LinkedIn newsletter and blog covering SEO, AEO, GEO, local marketing, and AI search strategy, authored by Riley Catalano.",
+      "description": "LinkedIn newsletter and blog covering SEO, AEO, GEO, local marketing, and AI search strategy, authored by Riley Catalano with 17 published articles.",
       "url": "https://favze.com/favze-insights"
     }
   ],
@@ -422,7 +458,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .pico{font-size:1.5rem;margin-bottom:.9rem;display:block;}
 .ptitle{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.04em;color:var(--ink);margin-bottom:.45rem;}
 .pdesc{font-size:.86rem;line-height:1.65;color:var(--muted);}
-.cert-circles{display:flex;flex-wrap:wrap;gap:1.2rem;margin-bottom:2.5rem;justify-content:flex-start;}
+.cert-circles{display:grid;grid-template-columns:repeat(7,90px);gap:1.2rem;margin-bottom:2.5rem;justify-content:flex-start;}
 .cc{display:flex;flex-direction:column;align-items:center;gap:.6rem;cursor:pointer;width:90px;}
 .cc-ring{width:72px;height:72px;border-radius:50%;border:2px solid var(--border);background:var(--card-bg);transition:all .25s;position:relative;}
 .cc-ring::after{content:'';position:absolute;inset:0;border-radius:50%;background:var(--blue);opacity:0;transition:opacity .25s;}
@@ -474,6 +510,10 @@ footer{background:var(--ink);padding:1.8rem 3rem;display:flex;justify-content:sp
 footer span{font-family:'DM Mono',monospace;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);}
 .reveal{opacity:1;transform:none;transition:opacity .65s ease,transform .65s ease;}
 .reveal.vis{opacity:1;transform:none;}
+@media(hover:none){
+  #cur,#ring{display:none;}
+  body{cursor:auto;}
+}
 @media(max-width:900px){
   nav{padding:1rem 1.5rem;}
   .sw{padding:3.5rem 1.5rem;}
@@ -481,15 +521,15 @@ footer span{font-family:'DM Mono',monospace;font-size:.62rem;text-transform:uppe
   .agrid{grid-template-columns:1fr;gap:2rem;}
   .eitem{grid-template-columns:1fr;gap:.5rem;}
   .etools{gap:.35rem;}
-  .rgrid{grid-template-columns:repeat(2,1fr);}
+  .rgrid{grid-template-columns:repeat(4,1fr);}
   .pgrid{grid-template-columns:1fr 1fr;}
   .skgrid{grid-template-columns:1fr 1fr;}
   .fi-grid{grid-template-columns:1fr 1fr;}
+  .cert-circles{grid-template-columns:repeat(4,90px);justify-items:center;}
+  .hstats{gap:1.5rem;flex-wrap:wrap;max-width:500px;}
   #cta{padding:4rem 1.5rem;}
   footer{flex-direction:column;gap:.7rem;text-align:center;padding:1.5rem;}
   .divider{margin:0 1.5rem;}
-  .hstats{gap:2rem;flex-wrap:wrap;}
-  .hero-stats{gap:1.5rem;}
 }
 @media(max-width:600px){
   nav{padding:.9rem 1.2rem;}
@@ -501,7 +541,7 @@ footer span{font-family:'DM Mono',monospace;font-size:.62rem;text-transform:uppe
   .hsub{font-size:.95rem;margin-top:1.5rem;}
   .htags{gap:.4rem;margin-top:1.4rem;}
   .htag{font-size:.6rem;padding:.28rem .7rem;}
-  .hstats{gap:1.2rem;flex-wrap:wrap;margin-top:2rem;}
+  .hstats{gap:1rem;flex-wrap:wrap;margin-top:2rem;}
   .snum{font-size:2rem;}
   .slbl2{font-size:.55rem;}
   .stitle{font-size:clamp(2rem,9vw,3rem);margin-bottom:2rem;}
@@ -523,6 +563,7 @@ footer span{font-family:'DM Mono',monospace;font-size:.62rem;text-transform:uppe
   .ctab{font-size:.58rem;padding:.55rem .8rem;letter-spacing:.07em;}
   .clist{grid-template-columns:1fr;}
   .ci{font-size:.82rem;}
+  .cert-circles{grid-template-columns:repeat(3,90px);justify-items:center;}
   .skgrid{grid-template-columns:1fr;}
   .sk{font-size:.6rem;}
   .cert-cta{font-size:.62rem;padding:.65rem 1.2rem;text-align:center;}
@@ -609,10 +650,10 @@ footer span{font-family:'DM Mono',monospace;font-size:.62rem;text-transform:uppe
         <div class="albl">Education</div>
         <div class="aval">
           <strong>Northridge High School</strong><br>
-          <span class="dim">High School Diploma, graduating May 2026</span>
+          <span class="dim">Core 40 Diploma</span>
           <div class="edu-row">
             <strong>Western Governors University</strong><br>
-            <span class="dim">Enrolling after graduation, 2026</span><br>
+            <span class="dim">Enrolling Soon</span><br>
             <span class="dim">Bachelor's Degree</span><br>
             <span class="dim">Master's Degree (immediately following)</span>
             <div><span class="ebadge">Goal: Both Degrees in 1.5 Years</span></div>
