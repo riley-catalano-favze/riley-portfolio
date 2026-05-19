@@ -169,7 +169,7 @@
   "isPartOf": { "@id": "https://rileycatalano.com/#website" },
   "about": { "@id": "https://rileycatalano.com/#riley-catalano" },
   "primaryImageOfPage": { "@type": "ImageObject", "url": "https://rileycatalano.com/assets/riley-catalano.jpg" },
-  "dateModified": "2026-05-17",
+  "dateModified": "2026-05-18",
   "inLanguage": "en-US",
   "breadcrumb": {
     "@type": "BreadcrumbList",
@@ -281,8 +281,6 @@ body{background:var(--white);color:var(--ink);font-family:'DM Sans',sans-serif;f
 #progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--blue) 0%,var(--blue2) 50%,var(--blue) 100%);background-size:200% 100%;animation:shimmer 2s linear infinite;transition:width .08s linear;box-shadow:0 0 8px rgba(10,61,163,.5),0 0 2px rgba(10,61,163,.3);}
 @keyframes shimmer{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
 
-
-
 /* ACTIVE NAV GLOW */
 .nav-links a{position:relative;transition:color .2s;}
 .nav-links a.nav-active{color:var(--blue) !important;}
@@ -392,7 +390,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .faq-item.open .faq-a{max-height:500px;padding-bottom:1.4rem;}
 
 /* ── BOOKS SECTION ── */
-.books-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.books-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem;}
 .book-card{background:var(--card-bg);border-radius:4px;padding:0;overflow:hidden;position:relative;transition:transform .22s,background .22s;display:flex;flex-direction:column;}
 .book-card:hover{transform:translateY(-5px);background:#e3e9f8;}
 .book-accent-bar{height:4px;background:var(--blue);width:100%;}
@@ -508,7 +506,6 @@ footer span{font-family:'DM Mono',monospace;font-size:.62rem;text-transform:uppe
   .book-body{padding:1.3rem 1.4rem 1.5rem;}
   .book-title{font-size:1.35rem;}
   .book-desc{font-size:.85rem;}
-
   .hstats > div{min-width:calc(50% - .5rem);}
 }
 /* VERY SMALL MOBILE */
@@ -1135,6 +1132,20 @@ footer span{font-family:'DM Mono',monospace;font-size:.62rem;text-transform:uppe
       </div>
     </div>
 
+    <div class="book-card reveal">
+      <div class="book-accent-bar"></div>
+      <div class="book-number">04</div>
+      <div class="book-body">
+        <div class="book-meta">
+          <span class="book-tag">Messaging</span>
+          <span class="book-tag">Storytelling</span>
+        </div>
+        <div class="book-title">Building a StoryBrand 2.0</div>
+        <div class="book-author">Donald Miller</div>
+        <p class="book-desc">Miller's SB7 framework flipped how I think about brand messaging: the customer is the hero, not the company. The business is the guide — and a guide's job is clarity, not self-promotion. Confused customers don't buy. This book pushes every website, ad, and campaign to answer three things fast: what you offer, how it helps, and what to do next. It sharpened how I write copy that actually moves people toward a decision.</p>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -1265,9 +1276,7 @@ revs.forEach(r=>{
   },{threshold:.08}).observe(r);
 });
 
-/* ── SCROLL SPOTLIGHT ──
-   Tracks scroll position and moves a large soft radial gradient
-   so the "light" follows you down the page, like Braden's portfolio */
+/* SCROLL SPOTLIGHT */
 const spotInner=document.getElementById('spotlight-inner');
 const isMobile=window.matchMedia('(hover:none)').matches;
 if(isMobile){
@@ -1277,9 +1286,7 @@ function updateSpotlight(){
   if(isMobile) return;
   const scrollY=window.scrollY;
   const winH=window.innerHeight;
-  /* center the glow at the middle of the viewport vertically */
   const y=scrollY+winH*0.45;
-  /* keep x centered horizontally */
   const x=window.innerWidth*0.5;
   spotInner.style.left=x+'px';
   spotInner.style.top=y+'px';
@@ -1288,7 +1295,7 @@ window.addEventListener('scroll',updateSpotlight,{passive:true});
 window.addEventListener('resize',updateSpotlight,{passive:true});
 updateSpotlight();
 
-/* ── SCROLL PROGRESS BAR ── */
+/* SCROLL PROGRESS BAR */
 const fill=document.getElementById('progress-fill');
 function updateProgress(){
   const scrollTop=window.scrollY;
@@ -1299,7 +1306,7 @@ function updateProgress(){
 window.addEventListener('scroll',updateProgress,{passive:true});
 updateProgress();
 
-/* ── ACTIVE NAV GLOW ── */
+/* ACTIVE NAV GLOW */
 const navLinks=document.querySelectorAll('.nav-links a:not(.nav-cta)');
 const mobileLinks=document.querySelectorAll('.mobile-menu a:not(.mobile-cta)');
 const allSectionIds=['hero','about','experience','favze-insights','portfolio','certifications','skills','books','faq','cta'];
