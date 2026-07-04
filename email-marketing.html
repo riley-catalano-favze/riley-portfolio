@@ -65,6 +65,9 @@
       "Email Segmentation",
       "CAN-SPAM Compliance",
       "GDPR Compliance",
+      "Suppression List Management",
+      "SPF DKIM DMARC Email Authentication",
+      "DNS TXT Record Configuration",
       "Database Hygiene",
       "Email Deliverability",
       "Campaign Performance Analytics",
@@ -110,6 +113,51 @@
         "@type": "Answer",
         "text": "Riley builds all email programs with CAN-SPAM Act and GDPR compliance built in from the start including proper unsubscribe mechanisms, sender identification, honest subject lines, data privacy handling, and subscriber consent management."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Riley Catalano handle email authentication and DNS setup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Riley understands how SPF, DKIM, and DMARC are configured as TXT records on a sending domain, and how correct DNS authentication keeps legitimate email programs out of spam folders."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it legally required to track email unsubscribes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Under the CAN-SPAM Act, businesses must track and honor every unsubscribe permanently, typically through a suppression list, so opted-out contacts are never re-mailed by any connected list."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I subscribe to Riley Catalano's newsletters?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At favze.com/newsletters. Favze Insider is a digest of digital marketing news and stats, and Favze Intel is a deeper dive into one digital marketing topic per issue."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Riley Catalano",
+      "item": "https://rileycatalano.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Email Marketing",
+      "item": "https://rileycatalano.com/email-marketing"
     }
   ]
 }
@@ -128,7 +176,7 @@ body{background:var(--white);color:var(--ink);font-family:'DM Sans',sans-serif;f
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:var(--white);border-bottom:1px solid var(--border);}
 .nav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;letter-spacing:.1em;color:var(--ink);text-decoration:none;}
 .nav-logo span{color:var(--blue);}
-.nav-links{display:flex;gap:2.2rem;list-style:none;}
+.nav-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:nowrap;white-space:nowrap;}
 .nav-links a{font-family:'DM Sans',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);text-decoration:none;transition:color .2s;}
 .nav-links a:hover{color:var(--ink);}
 .nav-cta{background:var(--blue)!important;color:#fff!important;padding:.45rem 1.1rem;border-radius:2px;}
@@ -172,7 +220,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .breadcrumb a{color:var(--blue);text-decoration:none;}
 .breadcrumb span{color:var(--muted);}
 /* Role card */
-.role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-bottom:3rem;}
+.role-grid{display:flex;flex-direction:column;gap:1.4rem;margin-bottom:3rem;}
 .role-card{background:var(--card-bg);border-radius:4px;padding:2rem;border-left:3px solid var(--blue);transition:transform .2s;}
 .role-card:hover{transform:translateY(-3px);}
 .role-card-label{font-family:'DM Sans',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.14em;color:var(--blue);margin-bottom:.5rem;}
@@ -189,6 +237,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .resp-grid-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:stretch;}
 .funnel-track-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:.04em;line-height:.92;color:var(--blue);text-transform:uppercase;margin:2.4rem 0 1rem;padding-bottom:.6rem;border-bottom:2px solid var(--blue);}
 .resp-grid-wrap:first-of-type .funnel-track-label{margin-top:0;}
+.icon-fun{display:inline-block;vertical-align:middle;margin-left:.7rem;margin-right:clamp(.5rem,3vw,3rem);width:clamp(6rem,13vw,12rem);height:clamp(6rem,13vw,12rem);transform-origin:50% 50%;flex-shrink:0;}
+.section-title-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.icon-funnel{animation:funnelspin 5s ease-in-out infinite;}
+@keyframes funnelspin{0%{transform:rotate(0deg) scale(1);}25%{transform:rotate(-8deg) scale(1.1);}50%{transform:rotate(0deg) scale(1);}75%{transform:rotate(8deg) scale(1.1);}100%{transform:rotate(0deg) scale(1);}}
+.icon-segments{animation:segwiggle 2.6s ease-in-out infinite;}
+@keyframes segwiggle{0%,100%{transform:rotate(0deg) scale(1);}25%{transform:rotate(20deg) scale(1.1);}50%{transform:rotate(0deg) scale(1);}75%{transform:rotate(-20deg) scale(1.1);}}
 /* Platform cards */
 .platform-grid{display:flex;flex-direction:column;gap:1rem;}
 .platform-card{background:var(--card-bg);border-radius:4px;padding:1.8rem 2.2rem;text-align:left;transition:transform .18s,background .18s;display:grid;grid-template-columns:200px 1fr;gap:2rem;align-items:center;border-left:3px solid var(--blue);}
@@ -248,20 +302,22 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 .albl{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);margin-bottom:.5rem;}
 .aval{font-size:.95rem;color:var(--ink);line-height:1.6;}
 .aval .dim{font-size:.85rem;color:var(--muted);}
+@media(max-width:1200px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+}
 @media(max-width:900px){
   nav{padding:1.1rem 1.5rem;}
   .sw{padding:4rem 1.5rem;}
   #hero{padding:8rem 1.5rem 4rem;}
   .about-grid{grid-template-columns:1fr;gap:2rem;}
-  .role-grid{grid-template-columns:1fr;gap:1rem;}
+  .role-grid{gap:1rem;}
   .resp-grid-wrap{grid-template-columns:1fr;}
   .platform-card{grid-template-columns:1fr;gap:.6rem;text-align:left;}
   .skgrid{grid-template-columns:1fr 1fr;}
   footer{flex-direction:column;gap:.7rem;text-align:center;}
 }
 @media(max-width:600px){
-  .nav-links{display:none;}
-  .hamburger{display:flex;}
   .skgrid{grid-template-columns:1fr;}
   .hstats{gap:1.5rem;}
 }
@@ -345,7 +401,7 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 <!-- ROLE -->
 <div class="sw" id="role">
   <div class="reveal">
-    <p class="slabel">Experience</p>
+    <p class="slabel">Email Marketing Experience</p>
     <h2 class="stitle">Where I Have Built Email Systems</h2>
     <p style="font-size:1rem;line-height:1.85;color:#3a3a3a;max-width:700px;margin-bottom:2.5rem;">I specialize in email marketing for <strong>lead generation businesses</strong> companies whose revenue depends on moving prospects through a pipeline, converting them into customers, and bringing them back to buy again. Every system I build is designed around that goal.</p>
   </div>
@@ -360,7 +416,7 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
       <div class="role-card-label">Oct 2025 to Present</div>
       <div class="role-card-title">Founder and CEO / Email Strategist</div>
       <div class="role-card-company">Favze Digital Marketing / Middlebury, IN</div>
-      <div class="role-card-desc">Build portfolio-stage email marketing systems across HubSpot, Klaviyo, and Mailchimp so I can match the right platform to a future client's needs rather than forcing every business into one tool. HubSpot for inbound and full-funnel sequences, Klaviyo for ecommerce-style behavior-triggered flows, and Mailchimp for small business and local market campaigns using segmentation, personalization, and full-funnel strategy moving contacts from awareness into consideration, through conversion, and back into re-engagement cycles. Produce three newsletters: Favze Insights (LinkedIn newsletter on digital marketing strategy), Favze Intel (deep dives on digital marketing topics), and Favze Insider (digital marketing updates and industry news). Each runs on its own content cadence, audience strategy, and distribution system driven by A/B testing, E-E-A-T content principles, and keyword optimization.</div>
+      <div class="role-card-desc">Build portfolio-stage email marketing systems across HubSpot, Klaviyo, and Mailchimp so I can match the right platform to a future client's needs rather than forcing every business into one tool. HubSpot for inbound and full-funnel sequences, Klaviyo for ecommerce-style behavior-triggered flows, and Mailchimp for small business and local market campaigns using segmentation, personalization, and full-funnel strategy moving contacts from awareness into consideration, through conversion, and back into re-engagement cycles. Produce two email newsletters, Favze Insider and Favze Intel, distributed through HubSpot, plus Favze Insights, a LinkedIn content series on digital marketing strategy. Each runs on its own content cadence, audience strategy, and distribution system driven by A/B testing, E-E-A-T content principles, and keyword optimization.</div>
     </div>
     <div class="role-card">
       <div class="role-card-label">Jun 2026 to Present</div>
@@ -380,7 +436,7 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 <!-- Responsibilities -->
 <div class="sw">
   <div class="reveal">
-    <p class="slabel">The Difference</p>
+    <p class="slabel">Email Automation Capabilities</p>
     <h2 class="stitle">What I Actually Do</h2>
     <p style="font-size:1rem;line-height:1.85;color:#3a3a3a;max-width:100%;margin-bottom:1.2rem;">Most people who call themselves email marketers know how to log into a platform and schedule a send. That is not what I do. I build the infrastructure behind the email program: the automation architecture, the conditional logic inside the templates, the segmentation that determines who gets what message and when, and the testing framework that makes the next campaign outperform the last one.</p>
     <p style="font-size:1rem;line-height:1.85;color:#3a3a3a;max-width:100%;margin-bottom:1.2rem;">I work across five platforms at the production level, deliberately, because no two businesses need the same email stack. In NetSuite, I write FreeMarker templates with if/else conditional logic that dynamically render different content based on customer data at send time. In HubSpot, I build customer journey workflows and deploy full-funnel sequences that move leads from first contact through conversion and back into re-engagement. In Zoho Campaigns, I design trigger-based automation connected to real business events like form submissions, consultations, and invoicing. At Favze, I built out Klaviyo and Mailchimp alongside HubSpot specifically so I would already know which platform fits which kind of business before a client ever walks in the door: Klaviyo for ecommerce-style flows like welcome series, abandoned cart recovery, and post-purchase sequences, and Mailchimp for small business and local market campaigns that do not need ecommerce-scale complexity.</p>
@@ -466,7 +522,7 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 <!-- FREEMARKER SECTION -->
 <div class="sw" id="freemarker">
   <div class="reveal">
-    <p class="slabel">Technical Depth</p>
+    <p class="slabel">NetSuite Email Templates</p>
     <h2 class="stitle">FreeMarker and Conditional Logic</h2>
   </div>
   <div class="about-grid reveal">
@@ -518,8 +574,15 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 <!-- FUNNEL STRATEGY -->
 <div class="sw" id="funnel">
   <div class="reveal">
-    <p class="slabel">Strategic Thinking</p>
-    <h2 class="stitle">Full-Funnel Email Strategy</h2>
+    <p class="slabel">Lead Generation Email Funnel</p>
+    <div class="section-title-row">
+      <h2 class="stitle">Full-Funnel Email Strategy</h2>
+      <svg class="icon-fun icon-funnel" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 14 L92 14 L60 52 L60 78 L40 88 L40 52 Z" fill="#0a3da3" stroke="#0a0a0a" stroke-width="4" stroke-linejoin="round"/>
+        <rect x="8" y="10" width="84" height="10" rx="4" fill="#0a0a0a"/>
+        <circle cx="50" cy="94" r="4" fill="#0a0a0a"/>
+      </svg>
+    </div>
   </div>
   <p style="font-size:1rem;line-height:1.85;color:#3a3a3a;max-width:760px;margin-bottom:1.5rem;">Email is not just a send tool it is a sales infrastructure. I understand the entire buyer journey and how to use email to move contacts through each stage, convert them, and bring them back to buy again. But the funnel is not identical for every lead generation business. A service business and a product business need the same strategic stages, they just need different emails inside those stages, especially once logistics enters the picture. A consulting client needs a kickoff email. A product customer needs the correct carrier, the correct tracking format, and the correct delivery instructions for how that shipment actually arrives.</p>
 
@@ -556,8 +619,22 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
     <div class="resp-item">
       <div class="resp-num" style="color:var(--blue);">05</div>
       <div>
-        <div class="resp-title">Retention and Re-engagement</div>
-        <div class="resp-desc">Check-ins, satisfaction touchpoints, renewal or retainer reminders, and referral requests keep the relationship active. For dormant leads who never converted or lapsed clients, win-back sequences reopen the conversation. ABI's review campaign, which moved 52 reviews to 71 and a 3.6 to a 3.9 rating in two weeks, is a direct example of this kind of win-back thinking.</div>
+        <div class="resp-title">Engagement and Repeat Business</div>
+        <div class="resp-desc">Staying engaged after delivery is its own sequence, not an afterthought tacked onto onboarding. Check-ins, added-value content, and renewal or add-on service offers are built and sent as their own set, designed specifically to bring a client back for another engagement, a retainer, or a referral.</div>
+      </div>
+    </div>
+    <div class="resp-item">
+      <div class="resp-num" style="color:var(--blue);">06</div>
+      <div>
+        <div class="resp-title">Customer Support</div>
+        <div class="resp-desc">Support does not stop when the service is delivered. Emails that route a help request, confirm it was received, and set a clear expectation for when the client will hear back keep trust intact after the sale, the same way a warranty claim would for a product.</div>
+      </div>
+    </div>
+    <div class="resp-item">
+      <div class="resp-num" style="color:var(--blue);">07</div>
+      <div>
+        <div class="resp-title">Re-engagement and Win-Back</div>
+        <div class="resp-desc">Dormant leads who never converted and lapsed clients are not lost, they are an underutilized asset. Win-back sequences reopen the conversation. ABI's review campaign, which moved 52 reviews to 71 and a 3.6 to a 3.9 rating in two weeks, is a direct example of this kind of thinking.</div>
       </div>
     </div>
   </div>
@@ -595,21 +672,26 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
     <div class="resp-item">
       <div class="resp-num" style="color:var(--blue);">05</div>
       <div>
-        <div class="resp-title">Post-Purchase, Retention, and Re-engagement</div>
-        <div class="resp-desc">Product registration, warranty information, review requests, and accessory or replacement part cross-sell keep the customer engaged after delivery. Dormant customer win-back and replenishment reminders bring lapsed buyers back for their next purchase.</div>
+        <div class="resp-title">Engagement and Repeat Purchase</div>
+        <div class="resp-desc">Getting a customer to buy again is its own sequence, sent as a deliberate set: usage tips, accessory or replacement part suggestions, and replenishment timing based on the product's typical lifespan, all aimed at the next purchase, not just the current one.</div>
+      </div>
+    </div>
+    <div class="resp-item">
+      <div class="resp-num" style="color:var(--blue);">06</div>
+      <div>
+        <div class="resp-title">Customer Support and Warranty</div>
+        <div class="resp-desc">Support emails that confirm a warranty claim or service request was received and help is coming keep the customer from feeling ignored during the wait. After the warranty period, support emails shift toward troubleshooting guides, replacement part ordering, and paid service options.</div>
+      </div>
+    </div>
+    <div class="resp-item">
+      <div class="resp-num" style="color:var(--blue);">07</div>
+      <div>
+        <div class="resp-title">Re-engagement and Win-Back</div>
+        <div class="resp-desc">Dormant customers are not lost, they are an underutilized asset. Win-back sequences remind them of the value they are missing and move them back into an active buying relationship, whether that means a new product line or simply reordering what they already know works.</div>
       </div>
     </div>
   </div>
 
-  <div class="resp-grid-wrap reveal" style="margin-top:1rem;">
-    <div class="resp-item" style="grid-column:1/-1;">
-      <div class="resp-num" style="color:var(--blue);">+</div>
-      <div>
-        <div class="resp-title">Segmentation Across Every Stage, Either Track</div>
-        <div class="resp-desc">Every stage of the funnel above works better when the right message goes to the right person, whether the business sells a service or a product. That segmentation logic is a discipline on its own, not an afterthought, so it gets its own section below.</div>
-      </div>
-    </div>
-  </div>
 </div>
 
 <hr class="divider">
@@ -617,8 +699,18 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 <!-- SEGMENTATION -->
 <div class="sw" id="segmentation">
   <div class="reveal">
-    <p class="slabel">Personalization Strategy</p>
-    <h2 class="stitle">Segmentation Strategy</h2>
+    <p class="slabel">Email List Segmentation</p>
+    <div class="section-title-row">
+      <h2 class="stitle">Segmentation Strategy</h2>
+      <svg class="icon-fun icon-segments" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="34" r="11" fill="#0a3da3"/>
+        <path d="M8 80 Q8 52 24 52 Q40 52 40 80 Z" fill="#0a3da3"/>
+        <circle cx="76" cy="34" r="11" fill="#0a3da3"/>
+        <path d="M60 80 Q60 52 76 52 Q92 52 92 80 Z" fill="#0a3da3"/>
+        <circle cx="50" cy="25" r="14" fill="#0a0a0a"/>
+        <path d="M27 84 Q27 47 50 47 Q73 47 73 84 Z" fill="#0a0a0a"/>
+      </svg>
+    </div>
   </div>
   <p style="font-size:1rem;line-height:1.85;color:#3a3a3a;max-width:760px;margin-bottom:2.5rem;">The funnel above only works if the right message reaches the right person at the right stage. Segmentation is the mechanism that makes that possible. Every list I build is broken down by real signals, not guesswork, so a cold lead and an active customer never receive the same email, and a service client and a product buyer never receive the same follow-up.</p>
   <div class="resp-grid-wrap reveal">
@@ -672,8 +764,8 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 <!-- COMPLIANCE -->
 <div class="sw" id="compliance">
   <div class="reveal">
-    <p class="slabel">Compliance Philosophy</p>
-    <h2 class="stitle">Consent Is Specific. I Treat It That Way.</h2>
+    <p class="slabel">Email Compliance and CAN-SPAM</p>
+    <h2 class="stitle">How I Handle Consent and Compliance with Email Marketing and Automation</h2>
   </div>
   <div class="about-grid reveal">
     <div class="about-text">
@@ -681,6 +773,7 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
       <p><strong>Consent is specific, not general.</strong> If someone signs up for a monthly newsletter, they consented to exactly one thing: a newsletter, once a month. That is all they receive. Not a welcome sequence. Not a promotional blast a week later. Not re-enrollment into a drip campaign they never agreed to. What was promised at opt-in is what gets delivered nothing more.</p>
       <p>This philosophy shapes how I build every list, every trigger, every workflow. Opt-in copy is precise about what the subscriber will receive, how often, and from whom. Segments are never cross-pollinated without explicit new consent. Send frequency is governed by what was promised, not by what the business wants to send.</p>
       <p><strong>The result:</strong> lower unsubscribe rates, higher trust, stronger long-term list health, and zero legal exposure. Compliance and performance are not in tension a clean, consent-respecting list almost always outperforms a bloated, over-messaged one.</p>
+      <p>Compliance also lives at the DNS level, not just the content level. I understand how SPF, DKIM, and DMARC are configured as TXT records on a sending domain, and why getting those records right is what keeps a legitimate program out of spam folders in the first place. Authentication is the technical half of compliance that most email marketers never touch.</p>
     </div>
     <div>
       <div class="aside-card">
@@ -698,6 +791,10 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
         <div class="albl">Regulations I Build Around</div>
         <div class="aval dim">CAN-SPAM Act / GDPR / CASL / Zoho Campaigns Terms / HubSpot Terms / NetSuite Email Policy / Klaviyo Terms / Mailchimp Terms / Platform-Specific Sender Requirements</div>
       </div>
+      <div class="aside-card" style="background:var(--blue);">
+        <div class="albl" style="color:rgba(255,255,255,.6);">Fun Fact</div>
+        <div class="aval" style="color:#fff;">Under CAN-SPAM, every unsubscribe has to be tracked and honored, permanently. That means keeping a suppression list, or some other record, of everyone who has opted out, so they are never re-mailed by any list connected to that business again. It is a legal requirement, not a nice-to-have.</div>
+      </div>
     </div>
   </div>
 </div>
@@ -707,7 +804,7 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 <!-- PLATFORMS -->
 <div class="sw" id="platforms">
   <div class="reveal">
-    <p class="slabel">Platforms</p>
+    <p class="slabel">NetSuite, HubSpot, Zoho, Klaviyo, Mailchimp</p>
     <h2 class="stitle">Email Systems I Work In</h2>
   </div>
   <div class="platform-grid reveal">
@@ -735,7 +832,7 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
         <div class="platform-type">Inbound Email Marketing</div>
       </div>
       <div>
-        <div class="platform-desc">Used at Favze Digital Marketing for inbound email campaigns, customer journey workflows, lead nurture sequences, and newsletter distribution. Powers Favze Insights, Favze Intel, and Favze Insider three newsletters each with a distinct audience, content format, and distribution strategy. A/B testing and analytics run continuously across all sends.</div>
+        <div class="platform-desc">Used at Favze Digital Marketing for inbound email campaigns, customer journey workflows, lead nurture sequences, and newsletter distribution. Powers two email newsletters: <strong>Favze Insider</strong>, a digest of digital marketing news and stats, and <strong>Favze Intel</strong>, a deeper dive into a single digital marketing topic each issue. Subscribe to either at <a href="https://favze.com/newsletters" target="_blank" rel="noopener noreferrer" style="color:var(--blue);text-decoration:underline;">favze.com/newsletters</a>. A/B testing and analytics run continuously across all sends.</div>
         <div class="platform-tags">
           <span class="ptag">Customer Journeys</span>
           <span class="ptag">Segmentation</span>
@@ -806,12 +903,12 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 <!-- SKILLS -->
 <div class="sw" id="skills">
   <div class="reveal">
-    <p class="slabel">Skills</p>
+    <p class="slabel">Email Marketing Skills</p>
     <h2 class="stitle">Email Marketing Skill Set</h2>
   </div>
   <div class="skgrid reveal">
     <div>
-      <div class="sgt">Automation and Technical</div>
+      <div class="sgt">Platform Automation</div>
       <div class="sktags">
         <span class="sk">Zoho Campaigns</span>
         <span class="sk">Klaviyo Flow Automation</span>
@@ -824,66 +921,80 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
         <span class="sk">Invoice Trigger Automation</span>
         <span class="sk">Abandoned Cart Recovery</span>
         <span class="sk">Customer Service Reassurance Emails</span>
-        <span class="sk">LTL Freight Notifications</span>
-        <span class="sk">Hot Shot Delivery Windows</span>
-        <span class="sk">Flatbed Delivery Instructions</span>
-        <span class="sk">Mobile Email Optimization</span>
-        <span class="sk">Tablet Email Optimization</span>
-        <span class="sk">Cross-Client Rendering</span>
-        <span class="sk">NetSuite Email Automation</span>
-        <span class="sk">FreeMarker Templating</span>
-        <span class="sk">If/Else Conditional Logic</span>
-        <span class="sk">Dynamic Variable Injection</span>
         <span class="sk">Trigger-Based Workflows</span>
         <span class="sk">Drip Campaigns</span>
         <span class="sk">Customer Journey Mapping</span>
         <span class="sk">Pipeline Automation</span>
+      </div>
+    </div>
+    <div>
+      <div class="sgt">Template Engineering</div>
+      <div class="sktags">
+        <span class="sk">NetSuite Email Automation</span>
+        <span class="sk">FreeMarker Templating</span>
+        <span class="sk">If/Else Conditional Logic</span>
+        <span class="sk">Dynamic Variable Injection</span>
+        <span class="sk">LTL Freight Notifications</span>
+        <span class="sk">Hot Shot Delivery Windows</span>
+        <span class="sk">Flatbed Delivery Instructions</span>
         <span class="sk">MSO Conditional Comments</span>
         <span class="sk">Responsive HTML Templates</span>
         <span class="sk">Table-Based Email Layout</span>
         <span class="sk">Inline CSS</span>
-        <span class="sk">Email Deliverability</span>
-        <span class="sk">Platform Integration</span>
+        <span class="sk">Mobile Email Optimization</span>
+        <span class="sk">Tablet Email Optimization</span>
+        <span class="sk">Cross-Client Rendering</span>
         <span class="sk">Troubleshooting Workflows</span>
       </div>
     </div>
     <div>
-      <div class="sgt">Strategy and Execution</div>
+      <div class="sgt">Deliverability and Technical Setup</div>
       <div class="sktags">
-        <span class="sk">Customer Service Email Programs</span>
-        <span class="sk">Logistics Email Automation</span>
-        <span class="sk">Sales Team Email Strategy</span>
-        <span class="sk">Ecommerce Email Strategy</span>
-        <span class="sk">Cross-Functional Email Design</span>
-        <span class="sk">Lead Generation Email Strategy</span>
-        <span class="sk">Lead Capture Sequences</span>
-        <span class="sk">Pipeline Email Strategy</span>
+        <span class="sk">Email Deliverability</span>
+        <span class="sk">DNS and TXT Record Configuration</span>
+        <span class="sk">SPF / DKIM / DMARC</span>
+        <span class="sk">Platform Integration</span>
+        <span class="sk">List Hygiene</span>
+        <span class="sk">Database Cleaning</span>
+        <span class="sk">Suppression List Management</span>
+        <span class="sk">Subscriber Management</span>
+      </div>
+    </div>
+    <div>
+      <div class="sgt">Funnel and Lifecycle Strategy</div>
+      <div class="sktags">
         <span class="sk">Full-Funnel Email Strategy</span>
         <span class="sk">Top of Funnel Nurture</span>
         <span class="sk">Conversion Email Strategy</span>
         <span class="sk">Post-Purchase Retention</span>
         <span class="sk">Re-engagement and Win-Back</span>
-        <span class="sk">Buyer Journey Mapping</span>
-        <span class="sk">Email Marketing Strategy</span>
-        <span class="sk">Segmentation</span>
-        <span class="sk">Saved Search Segmentation</span>
-        <span class="sk">Behavioral Segmentation</span>
-        <span class="sk">Personalization</span>
-        <span class="sk">A/B Testing</span>
-        <span class="sk">Subject Line Optimization</span>
-        <span class="sk">Send Time Optimization</span>
         <span class="sk">Re-engagement Campaigns</span>
+        <span class="sk">Buyer Journey Mapping</span>
         <span class="sk">Lead Nurture Sequences</span>
-        <span class="sk">Inbound Email Marketing</span>
-        <span class="sk">Carrier-Specific Templates</span>
-        <span class="sk">Sales Pipeline Support</span>
+        <span class="sk">Email Marketing Strategy</span>
         <span class="sk">Newsletter Strategy</span>
-        <span class="sk">Small Business Email Marketing</span>
         <span class="sk">E-E-A-T Content Principles</span>
       </div>
     </div>
     <div>
-      <div class="sgt">Analytics, Compliance and Data</div>
+      <div class="sgt">Business-Type Specialization</div>
+      <div class="sktags">
+        <span class="sk">Customer Service Email Programs</span>
+        <span class="sk">Logistics Email Automation</span>
+        <span class="sk">Sales Team Email Strategy</span>
+        <span class="sk">Ecommerce Email Strategy</span>
+        <span class="sk">Small Business Email Marketing</span>
+        <span class="sk">Cross-Functional Email Design</span>
+        <span class="sk">Lead Generation Email Strategy</span>
+        <span class="sk">Lead Capture Sequences</span>
+        <span class="sk">Pipeline Email Strategy</span>
+        <span class="sk">Carrier-Specific Templates</span>
+        <span class="sk">Sales Pipeline Support</span>
+        <span class="sk">Inbound Email Marketing</span>
+      </div>
+    </div>
+    <div>
+      <div class="sgt">Analytics and Performance</div>
       <div class="sktags">
         <span class="sk">Open Rate Analysis</span>
         <span class="sk">Click-Through Rate Tracking</span>
@@ -891,6 +1002,23 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
         <span class="sk">Unsubscribe Rate Management</span>
         <span class="sk">Performance Reporting</span>
         <span class="sk">Actionable Recommendations</span>
+        <span class="sk">A/B Testing</span>
+        <span class="sk">Subject Line Optimization</span>
+        <span class="sk">Send Time Optimization</span>
+      </div>
+    </div>
+    <div>
+      <div class="sgt">Segmentation and Personalization</div>
+      <div class="sktags">
+        <span class="sk">Segmentation</span>
+        <span class="sk">Saved Search Segmentation</span>
+        <span class="sk">Behavioral Segmentation</span>
+        <span class="sk">Personalization</span>
+      </div>
+    </div>
+    <div>
+      <div class="sgt">Compliance and Consent</div>
+      <div class="sktags">
         <span class="sk">CAN-SPAM Compliance</span>
         <span class="sk">GDPR Compliance</span>
         <span class="sk">CASL</span>
@@ -898,10 +1026,7 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
         <span class="sk">Consent Management</span>
         <span class="sk">Send Frequency Governance</span>
         <span class="sk">Opt-In Precision</span>
-        <span class="sk">List Hygiene</span>
-        <span class="sk">Database Cleaning</span>
         <span class="sk">Data Privacy</span>
-        <span class="sk">Subscriber Management</span>
         <span class="sk">Cross-Team Collaboration</span>
       </div>
     </div>
@@ -913,7 +1038,7 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 <!-- CERTIFICATIONS -->
 <div class="sw" id="certifications">
   <div class="reveal">
-    <p class="slabel">Certifications</p>
+    <p class="slabel">Email Marketing Certifications</p>
     <h2 class="stitle">Email Marketing Credentials</h2>
   </div>
   <div class="clist reveal">
@@ -942,7 +1067,7 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 <!-- FAQ -->
 <div class="sw" id="faq">
   <div class="reveal">
-    <p class="slabel">FAQ</p>
+    <p class="slabel">Email Marketing FAQ</p>
     <h2 class="stitle">Email Marketing Questions</h2>
   </div>
   <div class="faq-grid reveal">
@@ -969,6 +1094,18 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
     <div class="faq-item">
       <div class="faq-q">What makes your email templates different?</div>
       <div class="faq-a">Every template I build is mobile-first, uses table-based layouts with inline CSS for maximum cross-client compatibility, and includes MSO conditional comments for Outlook rendering. Templates are also built for scalability using FreeMarker, HubSpot personalization tokens, or Klaviyo and Mailchimp merge fields so the same template serves dozens of use cases without manual customization per send.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you handle email authentication and DNS setup?</div>
+      <div class="faq-a">Yes. Deliverability starts before a single email is written. I understand how SPF, DKIM, and DMARC are configured as TXT records on a sending domain, and why getting those records right is what keeps a legitimate program landing in the inbox instead of the spam folder.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Are you legally required to track email unsubscribes?</div>
+      <div class="faq-a">Yes. Under CAN-SPAM, every unsubscribe has to be tracked and honored permanently, which means maintaining a suppression list or equivalent record of everyone who has opted out so they are never re-mailed by any list connected to that business again. It is a legal requirement, not just a best practice, and it is built into every program I manage.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Where can I subscribe to your newsletters?</div>
+      <div class="faq-a">At favze.com/newsletters. Favze Insider is a digest of digital marketing news and stats. Favze Intel is a deeper dive into one digital marketing topic per issue. Favze Insights, a related content series on digital marketing strategy, is published on LinkedIn rather than email.</div>
     </div>
   </div>
 </div>
