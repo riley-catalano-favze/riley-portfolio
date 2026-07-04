@@ -178,8 +178,7 @@ body{background:var(--white);color:var(--ink);font-family:'DM Sans',sans-serif;f
 #ring{position:fixed;top:-100px;left:-100px;width:46px;height:46px;border:2px dashed #0a3da3;border-radius:50%;pointer-events:none;z-index:99998;opacity:.7;animation:curspin 2.5s linear infinite;}
 @keyframes curspin{0%{transform:translate(-50%,-50%) rotate(0deg);}100%{transform:translate(-50%,-50%) rotate(360deg);}}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:var(--white);border-bottom:1px solid var(--border);}
-.nav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;letter-spacing:.1em;color:var(--ink);text-decoration:none;}
-.nav-logo span{color:var(--blue);}
+.nav-logo{font-family:'DM Sans',sans-serif;font-weight:400;font-size:.95rem;letter-spacing:.04em;color:var(--ink);text-decoration:none;}
 .nav-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:nowrap;white-space:nowrap;}
 .nav-links a{font-family:'DM Sans',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);text-decoration:none;transition:color .2s;}
 .nav-links a:hover{color:var(--ink);}
@@ -232,6 +231,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .aval .dim{font-size:.85rem;color:var(--muted);}
 .edu-row{margin-top:.6rem;padding-top:.6rem;border-top:1px solid rgba(10,10,10,.08);}
 .ebadge{display:inline-block;background:var(--blue);color:#fff;font-family:'DM Sans',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;padding:.22rem .7rem;border-radius:2px;margin-top:.4rem;}
+.promo-badge{display:inline-flex;align-items:center;gap:.32rem;background:var(--tag-bg);color:var(--blue);font-family:'DM Sans',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;font-weight:500;padding:.28rem .7rem .28rem .6rem;border-radius:2px;}
 .eitem{display:grid;grid-template-columns:210px 1fr;gap:3rem;padding:2.5rem 0;border-bottom:1px solid var(--border);}
 .eitem:first-of-type{border-top:1px solid var(--border);}
 .eco{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.35rem;letter-spacing:.04em;line-height:1.1;color:var(--ink);}
@@ -378,30 +378,26 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 <div id="ring"></div>
 
 <nav>
-  <a href="#hero" class="nav-logo">RC<span>.</span></a>
+  <a href="https://rileycatalano.com/" class="nav-logo">Riley Catalano</a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#email-marketing-preview">Email</a></li>
-    <li><a href="#portfolio">Results</a></li>
-    <li><a href="#certifications">Certifications</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#cta" class="nav-cta">Hire Me</a></li>
+    <li><a href="https://rileycatalano.com/">Home</a></li>
+    <li><a href="https://rileycatalano.com/email-marketing">Email Marketing</a></li>
+    <li><a href="https://rileycatalano.com/social-media-marketing">Social Media</a></li>
+    <li><a href="https://rileycatalano.com/copywriting">Copywriting</a></li>
+    <li><a href="https://rileycatalano.com/search-visbility">Search Visibility</a></li>
+    <li><a href="https://www.linkedin.com/in/rileycatalano" target="_blank" rel="noopener noreferrer" class="nav-cta">Hire Me</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="#about" onclick="closeMenu()">About</a>
-  <a href="#experience" onclick="closeMenu()">Experience</a>
-  <a href="#email-marketing-preview" onclick="closeMenu()">Email</a>
-  <a href="#portfolio" onclick="closeMenu()">Results</a>
-  <a href="#certifications" onclick="closeMenu()">Certifications</a>
-  <a href="#skills" onclick="closeMenu()">Skills</a>
-  <a href="#faq" onclick="closeMenu()">FAQ</a>
-  <a href="#cta" onclick="closeMenu()" class="mobile-cta">Hire Me</a>
+  <a href="https://rileycatalano.com/" onclick="closeMenu()">Home</a>
+  <a href="https://rileycatalano.com/email-marketing" onclick="closeMenu()">Email Marketing</a>
+  <a href="https://rileycatalano.com/social-media-marketing" onclick="closeMenu()">Social Media</a>
+  <a href="https://rileycatalano.com/copywriting" onclick="closeMenu()">Copywriting</a>
+  <a href="https://rileycatalano.com/search-visbility" onclick="closeMenu()">Search Visibility</a>
+  <a href="https://www.linkedin.com/in/rileycatalano" target="_blank" rel="noopener noreferrer" onclick="closeMenu()" class="mobile-cta">Hire Me</a>
 </div>
 
 <section id="hero">
@@ -508,15 +504,15 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
       <ul>
         <li>Built and launched Favze Digital Marketing, an affordable full-service digital marketing agency helping local businesses across Northern Indiana and Michiana grow online through customized, data-driven strategies that increase visibility, generate leads, and drive measurable growth.</li>
         <li>Defined Favze's strategic positioning, brand development, messaging, and visual identity, ensuring consistency across every channel and touchpoint.</li>
-        <li>Develop and execute SEO, AEO, GEO, paid search (PPC), paid social, social media, email, and SMS marketing strategies.</li>
+        <li>Develop and execute <a href="https://rileycatalano.com/search-visbility" class="fi-link">SEO, AEO, GEO</a>, paid search (PPC), paid social, <a href="https://rileycatalano.com/social-media-marketing" class="fi-link">social media</a>, email, and SMS marketing strategies.</li>
         <li>Design conversion-optimized website on HubSpot built to rank in local search and generate inbound leads.</li>
         <li>Monitor how Favze is represented across ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews, strategically updating website copy and repurposing content to improve AI-generated responses without paid tools.</li>
         <li>Monitor and manage Google Business Profile and brand reputation across search and AI platforms.</li>
-        <li>Grow Favze Insights, a LinkedIn newsletter and website blog, achieving high engagement through strategic keyword research, A/B testing, and E-E-A-T writing principles to produce credible, high-quality content that ranks and resonates.</li>
+        <li>Grow Favze Insights, a LinkedIn newsletter and website blog, achieving high engagement through strategic keyword research, A/B testing, and <a href="https://rileycatalano.com/copywriting" class="fi-link">E-E-A-T writing principles</a> to produce credible, high-quality content that ranks and resonates.</li>
         <li>Repurpose content across the website, blog, email, social media, and LinkedIn newsletter to maximize reach, reinforce authority, and improve AI indexing.</li>
-        <li>Publish weekly SEO-optimized blog content with metadata, internal linking, and on-page optimization.</li>
+        <li>Publish weekly <a href="https://rileycatalano.com/copywriting" class="fi-link">SEO-optimized blog content</a> with metadata, internal linking, and on-page optimization.</li>
         <li>Deploy weekly <a href="https://rileycatalano.com/email-marketing" class="fi-link">HubSpot email campaigns</a> using segmentation, personalization, and customer journey mapping.</li>
-        <li>Manage brand presence across Instagram, Facebook, YouTube, X, and Threads.</li>
+        <li>Manage <a href="https://rileycatalano.com/social-media-marketing" class="fi-link">brand presence across Instagram, Facebook, YouTube, X, and Threads</a>.</li>
         <li>Design all creative assets in Affinity Designer, Canva, HubSpot, and Figma.</li>
         <li>Track KPIs using HubSpot, Google Analytics, and Ubersuggest.</li>
         <li>Oversee all operations including sales, marketing, business development, and client services.</li>
@@ -537,7 +533,13 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
       <div class="eloc">Mishawaka, IN / On-site</div>
     </div>
     <div class="ebody">
-      <div class="erole">Email Automation Specialist</div>
+      <div class="erole" style="display:flex;align-items:center;flex-wrap:wrap;gap:.6rem;">
+        Email Automation Specialist
+        <span class="promo-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:11px;height:11px;"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+          Promoted from Marketing Intern
+        </span>
+      </div>
       <ul>
         <li>Design and manage the full <a href="https://rileycatalano.com/email-marketing" class="fi-link">sales email automation system</a> inside NetSuite ERP/CRM, building automated triggers and communications that support and drive the sales team pipeline.</li>
         <li>Build FreeMarker email templates with advanced if/else conditional logic to dynamically render carrier-specific shipping notifications, rep-assigned follow-ups, and personalized sequences based on customer data at send time.</li>
@@ -569,16 +571,16 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
       <ul>
         <li>Supported and executed hands-on digital marketing initiatives at a leading attachments manufacturer, gaining deep practical experience in SEO, AEO, GEO, and AI-driven brand visibility.</li>
         <li>Conducted in-depth market research to identify potential dealers for the ABI Force product line across multiple U.S. states and internationally, expanding distribution and partnership opportunities.</li>
-        <li>Led comprehensive Google Business Profile audits, providing data-backed strategic recommendations to improve local search presence, profile completeness, and competitive positioning.</li>
+        <li>Led comprehensive <a href="https://rileycatalano.com/search-visbility" class="fi-link">Google Business Profile audits</a>, providing data-backed strategic recommendations to improve local search presence, profile completeness, and competitive positioning.</li>
         <li>Developed and optimized a brand new Google Business Profile description by strategically integrating the branded keyword "ABI," achieving first-page rankings for the search term within one hour.</li>
         <li>Analyzed AI-driven search visibility gaps, identifying optimization opportunities that strengthened product representation across AI search platforms and Google AI Overviews.</li>
         <li>Wrote and SEO-optimized alt text for 2,300 website images, ensuring ADA/WCAG accessibility compliance while improving image indexing, keyword relevance, and on-page authority.</li>
         <li>Led the writing and optimization of 300 meta descriptions, implementing targeted keywords, improving SERP click-through rates, and maintaining brand consistency across the website.</li>
-        <li>Researched competitor pages and wrote a 4,200-word Wikipedia article for ABI Attachments, fully optimized for SEO, AEO, and GEO to improve brand authority and AI indexing.</li>
+        <li>Researched competitor pages and wrote a <a href="https://rileycatalano.com/copywriting" class="fi-link">4,200-word Wikipedia article</a> for ABI Attachments, fully optimized for SEO, AEO, and GEO to improve brand authority and AI indexing.</li>
         <li>Created 600 FAQ entries optimized for AEO to improve visibility in Google AI Overviews, featured snippets, and Knowledge Panels.</li>
         <li>Created 36 SEO-optimized Google Business Profile products to build trust signals and improve AI search visibility.</li>
-        <li>Selected and edited 20 photos for a Facebook static ad campaign, applying Lightroom Classic post-processing for brand-consistent visual quality.</li>
-        <li>Created customer review funnel and wrote SEO-optimized blog content.</li>
+        <li>Selected and edited <a href="https://rileycatalano.com/social-media-marketing" class="fi-link">20 photos for a Facebook static ad campaign</a>, applying Lightroom Classic post-processing for brand-consistent visual quality.</li>
+        <li>Created customer review funnel and wrote <a href="https://rileycatalano.com/copywriting" class="fi-link">SEO-optimized blog content</a>.</li>
         <li>Utilized BrightEdge for SEO tracking and performance reporting.</li>
       </ul>
       <div style="margin-top:1.4rem;">
@@ -600,11 +602,11 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
       <div class="erole">Digital Marketing and Business Development Specialist</div>
       <ul>
         <li>Drive digital marketing strategy, <a href="https://rileycatalano.com/email-marketing" class="fi-link">email automation</a>, newsletter production, and business development for an Elkhart-based HR consulting firm serving businesses across Northern Indiana and beyond.</li>
-        <li>Produce HRC Insights, a monthly HR newsletter covering workforce strategy, turnover, compliance, hiring, and leadership development for business owners and HR leaders at the regional and national level.</li>
+        <li>Produce <a href="https://rileycatalano.com/copywriting" class="fi-link">HRC Insights, a monthly HR newsletter</a> covering workforce strategy, turnover, compliance, hiring, and leadership development for business owners and HR leaders at the regional and national level.</li>
         <li>Build and manage the full Zoho Campaigns automation system with trigger-based workflows connected to form submissions, consultation scheduling, consultation completion, and invoice sending.</li>
         <li>Use merge tags in Zoho Campaigns to dynamically personalize email content at send time, delivering personalized communications at scale without manual intervention.</li>
         <li>Optimize all email templates for mobile, tablet, and desktop rendering across major email clients.</li>
-        <li>Manage HRC's digital marketing presence, social media, website marketing, and brand positioning across nine HR service lines.</li>
+        <li>Manage HRC's digital marketing presence, <a href="https://rileycatalano.com/social-media-marketing" class="fi-link">social media</a>, website marketing, and brand positioning across nine HR service lines.</li>
       </ul>
       <div style="margin-top:1.4rem;">
         <div class="albl" style="margin-bottom:.6rem;">Skills</div>
@@ -628,6 +630,7 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
       <p>I am an <strong>email marketing automation specialist</strong> who designs, builds, and manages sales-focused automated email systems across <strong>NetSuite ERP/CRM email automation</strong>, <strong>HubSpot email marketing</strong>, and <strong>Zoho Campaigns workflow automation</strong>. I specialize in <strong>email marketing for lead generation businesses</strong>, building the customer journey infrastructure that moves prospects from first contact through conversion and back into re-engagement cycles.</p>
       <p>I have built <strong>email automation workflows</strong> for customer service, logistics, and sales teams. My technical work includes writing <strong>FreeMarker email templates</strong> with advanced if/else conditional logic inside NetSuite, designing trigger-based Zoho Campaigns workflows connected to real business events, and deploying full-funnel HubSpot drip campaigns and sequences. I also produce three newsletters: Favze Insights on LinkedIn, Favze Intel for deep-dive digital marketing content, and Favze Insider for industry updates and news.</p>
       <p><strong>CAN-SPAM and GDPR email compliance</strong> is built into every program I create. If someone signs up for a monthly newsletter, they receive a monthly newsletter and nothing else. Consent is specific and I treat it that way across every platform and every send.</p>
+      <p>Every email I build works alongside my broader <a href="https://rileycatalano.com/copywriting" class="fi-link">copywriting</a> and <a href="https://rileycatalano.com/search-visbility" class="fi-link">search visibility</a> strategy, so subject lines, preview text, and calls to action stay consistent with the brand voice and keyword strategy used across the website and social channels.</p>
       <div style="margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.5rem;">
         <span class="htag htag-b">NetSuite</span>
         <span class="htag">HubSpot</span>
@@ -665,6 +668,163 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 
 <hr class="divider">
 
+<!-- SEARCH VISIBILITY -->
+<div class="sw" id="search-visibility-preview">
+  <div class="reveal">
+    <h2 class="stitle">Search Visibility Strategist</h2>
+  </div>
+  <div class="agrid reveal">
+    <div class="atext">
+      <p>I am a <strong>search visibility strategist</strong> specializing in <strong>SEO, Answer Engine Optimization (AEO), and Generative Engine Optimization (GEO)</strong>, helping brands get found in Google search results, AI Overviews, and generative platforms like ChatGPT, Perplexity, Gemini, and Claude. My approach treats traditional search and AI-driven search as one connected system rather than two separate strategies.</p>
+      <p>My hands-on work includes writing and optimizing SEO-optimized alt text, meta descriptions, and FAQ content structured for featured snippets and Knowledge Panels, conducting Google Business Profile audits, and running keyword research using Semrush, BrightEdge, and Google Search Console. I monitor how brands are represented across AI Overviews and generative platforms, then update on-page content, schema markup, and internal linking to close visibility gaps.</p>
+      <p>This work is not separate from <a href="https://rileycatalano.com/copywriting" class="fi-link">copywriting</a> or <a href="https://rileycatalano.com/email-marketing" class="fi-link">email marketing</a>. Every keyword strategy and technical recommendation feeds directly into the blog articles, landing pages, and email campaigns I write, so search visibility and messaging stay aligned across every channel.</p>
+      <div style="margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.5rem;">
+        <span class="htag htag-b">SEO</span>
+        <span class="htag">AEO</span>
+        <span class="htag">GEO</span>
+        <span class="htag">Local SEO</span>
+        <span class="htag">Technical SEO</span>
+        <span class="htag">Schema Markup</span>
+        <span class="htag">Google Business Profile</span>
+        <span class="htag">AI Overviews</span>
+      </div>
+    </div>
+    <div>
+      <div class="aside-card" style="border-left:3px solid var(--blue);">
+        <div class="albl">Platforms and Tools</div>
+        <div class="aval dim">Semrush / BrightEdge / Ubersuggest / Google Search Console / Google Keyword Planner</div>
+      </div>
+      <div class="aside-card" style="border-left:3px solid var(--blue);">
+        <div class="albl">Specialization</div>
+        <div class="aval dim"><a href="https://rileycatalano.com/search-visbility" class="fi-link">Search Visibility Strategy</a> / Local SEO / AI Search Optimization</div>
+      </div>
+      <div class="aside-card" style="border-left:3px solid var(--blue);">
+        <div class="albl">AI Platforms Monitored</div>
+        <div class="aval dim">Google AI Overviews / ChatGPT / Perplexity / Gemini / Claude</div>
+      </div>
+      <div class="aside-card" style="border-left:3px solid var(--blue);">
+        <div class="albl">Results Delivered</div>
+        <div class="aval dim">2,300 Optimized Alt Texts / 600 AEO-Optimized FAQs / 300 Meta Descriptions</div>
+      </div>
+      <div style="margin-top:1.4rem;">
+        <a href="https://rileycatalano.com/search-visbility" class="cert-cta" style="width:100%;justify-content:center;">View Full Search Visibility Page ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- COPYWRITING -->
+<div class="sw" id="copywriting-preview">
+  <div class="reveal">
+    <h2 class="stitle">Copywriting for Branding and Articles</h2>
+  </div>
+  <div class="agrid reveal">
+    <div class="atext">
+      <p>I am a <strong>copywriter for branding and articles</strong>, writing SEO-optimized blog content, website copy, Wikipedia-level brand articles, and long-form editorial content that builds authority while staying easy for both humans and AI systems to read. My writing is grounded in E-E-A-T principles, meaning every piece is written to demonstrate real experience, expertise, authority, and trust.</p>
+      <p>My work includes a 4,200-word Wikipedia article for ABI Attachments researched from competitor pages and optimized for SEO, AEO, and GEO, weekly SEO-optimized blog posts for Favze Insights, and four weekly blog posts for HR Collaboration Group's HRC Insights newsletter covering workforce strategy, compliance, and leadership development. I also write brand narratives, product descriptions, and messaging frameworks that give a business a consistent voice across every page and platform.</p>
+      <p>Copywriting is the connective tissue between my other services. The words I write are shaped by <a href="https://rileycatalano.com/search-visbility" class="fi-link">search visibility strategy</a> so they rank, and repurposed into <a href="https://rileycatalano.com/email-marketing" class="fi-link">email campaigns</a> and <a href="https://rileycatalano.com/social-media-marketing" class="fi-link">social media content</a> so they reach people everywhere they are already looking.</p>
+      <div style="margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.5rem;">
+        <span class="htag htag-b">Brand Copywriting</span>
+        <span class="htag">SEO Copywriting</span>
+        <span class="htag">Article Writing</span>
+        <span class="htag">Blog Writing</span>
+        <span class="htag">E-E-A-T</span>
+        <span class="htag">Wikipedia Authoring</span>
+        <span class="htag">Content Strategy</span>
+        <span class="htag">Messaging Frameworks</span>
+      </div>
+    </div>
+    <div>
+      <div class="aside-card" style="border-left:3px solid var(--blue);">
+        <div class="albl">Content Types</div>
+        <div class="aval dim">Blog Articles / Website Copy / Wikipedia Articles / FAQs / Meta Descriptions / Brand Narratives</div>
+      </div>
+      <div class="aside-card" style="border-left:3px solid var(--blue);">
+        <div class="albl">Specialization</div>
+        <div class="aval dim"><a href="https://rileycatalano.com/copywriting" class="fi-link">Copywriting for Branding and Articles</a> / E-E-A-T Writing / Long-Form Editorial</div>
+      </div>
+      <div class="aside-card" style="border-left:3px solid var(--blue);">
+        <div class="albl">Publications Written For</div>
+        <div class="aval dim">Favze Insights / Favze Intel / Favze Insider / HRC Insights / ABI Attachments Blog</div>
+      </div>
+      <div style="margin-top:1.4rem;">
+        <a href="https://rileycatalano.com/copywriting" class="cert-cta" style="width:100%;justify-content:center;">View Full Copywriting Page ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SOCIAL MEDIA MARKETING -->
+<div class="sw" id="social-media-marketing-preview">
+  <div class="reveal">
+    <h2 class="stitle">Social Media Marketing and Management</h2>
+  </div>
+  <div class="agrid reveal">
+    <div class="atext">
+      <p>I manage <strong>social media marketing and management</strong> across nine platforms, building organic content strategies, growing engaged communities, and turning brand presence into inbound leads. My approach pairs consistent publishing with real analytics, tracking what actually drives engagement and adjusting the strategy instead of guessing.</p>
+      <p>Day to day, this includes managing brand presence platform by platform, editing and selecting photography in Lightroom Classic for paid and organic campaigns, designing creative assets in Canva, Figma, and Affinity Designer, and growing Favze Insights, a LinkedIn newsletter built on strategic keyword research, A/B testing, and E-E-A-T writing principles. I also repurpose long-form content into short-form social posts so every piece of writing works harder across every channel.</p>
+      <p>Social strategy does not run in isolation. Every post is built from the same <a href="https://rileycatalano.com/copywriting" class="fi-link">copywriting</a> voice and <a href="https://rileycatalano.com/search-visbility" class="fi-link">search visibility</a> keyword research used across the website, then supported by <a href="https://rileycatalano.com/email-marketing" class="fi-link">email marketing</a> to move engaged followers into leads.</p>
+      <div style="margin-top:1.8rem;display:flex;flex-wrap:wrap;gap:.5rem;">
+        <span class="htag htag-b">LinkedIn Marketing</span>
+        <span class="htag">Instagram Marketing</span>
+        <span class="htag">Facebook Marketing</span>
+        <span class="htag">YouTube Marketing</span>
+        <span class="htag">TikTok Marketing</span>
+        <span class="htag">Pinterest Marketing</span>
+        <span class="htag">Organic Content</span>
+        <span class="htag">Social Media Analytics</span>
+        <span class="htag">Community Management</span>
+        <span class="htag">Content Repurposing</span>
+      </div>
+    </div>
+    <div>
+      <div class="aside-card" style="border-left:3px solid var(--blue);">
+        <div class="albl">Platforms Managed</div>
+        <div class="aval dim">Facebook / X (Twitter) / LinkedIn / Threads / YouTube / Instagram / TikTok / Pinterest / Snapchat</div>
+      </div>
+      <div class="aside-card" style="border-left:3px solid var(--blue);">
+        <div class="albl">Specialization</div>
+        <div class="aval dim"><a href="https://rileycatalano.com/social-media-marketing" class="fi-link">Social Media Marketing and Management</a> / Organic Growth / Brand Reputation</div>
+      </div>
+      <div class="aside-card" style="border-left:3px solid var(--blue);">
+        <div class="albl">Creative Tools</div>
+        <div class="aval dim">Canva / Figma / Affinity Designer / Adobe Lightroom Classic</div>
+      </div>
+      <div class="aside-card" style="border-left:3px solid var(--blue);">
+        <div class="albl">Owned Channel</div>
+        <div class="aval dim">Favze Insights, LinkedIn Newsletter</div>
+      </div>
+      <div class="aside-card" style="border-left:3px solid var(--blue);">
+        <div class="albl">Related Services</div>
+        <div class="aval dim"><a href="https://rileycatalano.com/copywriting" class="fi-link">Copywriting for Branding and Articles</a> / <a href="https://rileycatalano.com/search-visbility" class="fi-link">Search Visibility Strategist</a> / <a href="https://rileycatalano.com/email-marketing" class="fi-link">Email Marketing and Automation</a></div>
+      </div>
+      <div style="margin-top:1.4rem;">
+        <a href="https://rileycatalano.com/social-media-marketing" class="cert-cta" style="width:100%;justify-content:center;">View Full Social Media Page ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="reveal" style="margin-top:3.5rem;">
+    <div class="clist">
+      <div class="ci"><strong>Facebook</strong>&nbsp;— Brand presence, community management, and static ad campaigns, including photo selection and Lightroom Classic editing for paid placements.</div>
+      <div class="ci"><strong>X (formerly Twitter)</strong>&nbsp;— Real-time brand updates, industry commentary, and short-form posts repurposed from longer content.</div>
+      <div class="ci"><strong>LinkedIn</strong>&nbsp;— The primary channel for B2B growth, including Favze Insights, a LinkedIn newsletter built on keyword research and E-E-A-T writing principles.</div>
+      <div class="ci"><strong>Threads</strong>&nbsp;— A rapid-response channel for timely brand commentary and community conversation alongside Instagram and X.</div>
+      <div class="ci"><strong>YouTube</strong>&nbsp;— Long-form and how-to video strategy, channel optimization, and YouTube SEO to support organic discovery.</div>
+      <div class="ci"><strong>Instagram</strong>&nbsp;— Visual storytelling, organic follower growth, and Reels strategy supported by Canva and Affinity Designer creative assets.</div>
+      <div class="ci"><strong>TikTok</strong>&nbsp;— Short-form video strategy built for viral reach, using the same repurposed content pulled from blogs and newsletters.</div>
+      <div class="ci"><strong>Pinterest</strong>&nbsp;— Visual search and discovery strategy, including Pinterest advertising, to drive long-tail traffic back to the website.</div>
+      <div class="ci"><strong>Snapchat</strong>&nbsp;— Supplementary reach for younger audience segments, used selectively to extend brand awareness campaigns.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
 <div class="sw" id="portfolio">
   <div class="reveal"><p class="slabel">Portfolio and Results</p><h2 class="stitle">What I Have Built</h2></div>
   <div class="rgrid reveal">
@@ -674,15 +834,15 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
     <div class="rcard"><div class="rnum">36</div><div class="rlbl">GBP Products<br>Published</div></div>
   </div>
   <div class="pgrid">
-    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/><path d="M12 2.5v1.6M12 19.9v1.6" opacity=".5"/></svg></span><div class="ptitle">AI Visibility and Brand Monitoring</div><p class="pdesc">Monitor and optimize what ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews say about my personal brand and Favze Digital Marketing, refining content and strategy to improve AI-generated responses.</p></div>
+    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/><path d="M12 2.5v1.6M12 19.9v1.6" opacity=".5"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/search-visbility" class="fi-link" style="color:inherit;">AI Visibility and Brand Monitoring</a></div><p class="pdesc">Monitor and optimize what ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews say about my personal brand and Favze Digital Marketing, refining content and strategy to improve AI-generated responses.</p></div>
     <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M2.5 8.5h19" /><circle cx="5.3" cy="6.5" r=".6" fill="currentColor" stroke="none"/><circle cx="7.3" cy="6.5" r=".6" fill="currentColor" stroke="none"/><path d="M9 15l-2-2 2-2M15 11l2 2-2 2"/></svg></span><div class="ptitle">Two GitHub-Built Websites</div><p class="pdesc">Designed and built two GitHub-hosted websites from the ground up, combining custom code, schema markup, and SEO architecture for maximum search and AI visibility.</p></div>
-    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="14" height="14" rx="2"/><path d="M16.5 9.5l5-2.5v10l-5-2.5"/><path d="M8 10l3 2-3 2z" fill="currentColor" stroke="none"/></svg></span><div class="ptitle">Groundbreakers UGC Campaign</div><p class="pdesc">Created and pitched Groundbreakers for ABI Attachments, a user-generated content program turning customer videos, reviews, and jobsite footage into free long-form content for their attachments and equipment.</p></div>
-    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.6 7-12A7 7 0 0 0 5 9.5c0 5.4 7 12 7 12z"/><circle cx="12" cy="9.5" r="2.4"/></svg></span><div class="ptitle">Google Business Profile Buildouts</div><p class="pdesc">Created 36 GBP product listings, optimized posts, and engineered review funnels for maximum local search visibility.</p></div>
+    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="14" height="14" rx="2"/><path d="M16.5 9.5l5-2.5v10l-5-2.5"/><path d="M8 10l3 2-3 2z" fill="currentColor" stroke="none"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/social-media-marketing" class="fi-link" style="color:inherit;">Groundbreakers UGC Campaign</a></div><p class="pdesc">Created and pitched Groundbreakers for ABI Attachments, a user-generated content program turning customer videos, reviews, and jobsite footage into free long-form content for their attachments and equipment.</p></div>
+    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.6 7-12A7 7 0 0 0 5 9.5c0 5.4 7 12 7 12z"/><circle cx="12" cy="9.5" r="2.4"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/search-visbility" class="fi-link" style="color:inherit;">Google Business Profile Buildouts</a></div><p class="pdesc">Created 36 GBP product listings, optimized posts, and engineered review funnels for maximum local search visibility.</p></div>
     <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/email-marketing" class="fi-link" style="color:inherit;">Multi-Platform Email and CRM Experience</a></div><p class="pdesc">Hands-on email marketing experience across five platforms including NetSuite, HubSpot, Zoho Campaigns, Klaviyo, and Mailchimp, with CRM experience in NetSuite, HubSpot, and Zoho.</p></div>
-    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="3.5" width="14" height="17" rx="1.5"/><path d="M8 8h6M8 11.5h6M8 15h3.5"/></svg></span><div class="ptitle">Three Owned Newsletters</div><p class="pdesc">Produce two monthly email newsletters, Favze Intel and Favze Insider, plus Favze Insights, a weekly LinkedIn newsletter and blog published on the Favze website.</p></div>
-    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4.5l4.5 4.5L8 20.5l-5 1 1-5L15 4.5z"/><path d="M13 6.5l4 4"/></svg></span><div class="ptitle">Creative Assets Across All Platforms</div><p class="pdesc">Designed brand creative assets, marketing graphics, and visual content in Canva, Figma, Affinity Designer, and Lightroom Classic.</p></div>
-    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.8"/><path d="M2.5 16.5l5.5-5 4 4 3-3 6.5 6.5"/></svg></span><div class="ptitle">Facebook Static Ad Photo Selection</div><p class="pdesc">Selected and edited 20 photos for a Facebook static ad campaign at ABI Attachments, applying Lightroom Classic post-processing for brand-consistent quality.</p></div>
-    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h9l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-16a1 1 0 0 1 1-1z"/><path d="M15 3.5v4h4"/><path d="M8 12.5l2 2 5-5"/></svg></span><div class="ptitle">Weekly Content for HRC Insights</div><p class="pdesc">Write four blog posts a week for HR Collaboration Group's HRC Insights LinkedIn newsletter, covering workforce strategy, compliance, and leadership development.</p></div>
+    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="3.5" width="14" height="17" rx="1.5"/><path d="M8 8h6M8 11.5h6M8 15h3.5"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/copywriting" class="fi-link" style="color:inherit;">Three Owned Newsletters</a></div><p class="pdesc">Produce two monthly email newsletters, Favze Intel and Favze Insider, plus Favze Insights, a weekly LinkedIn newsletter and blog published on the Favze website.</p></div>
+    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4.5l4.5 4.5L8 20.5l-5 1 1-5L15 4.5z"/><path d="M13 6.5l4 4"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/social-media-marketing" class="fi-link" style="color:inherit;">Creative Assets Across All Platforms</a></div><p class="pdesc">Designed brand creative assets, marketing graphics, and visual content in Canva, Figma, Affinity Designer, and Lightroom Classic.</p></div>
+    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.8"/><path d="M2.5 16.5l5.5-5 4 4 3-3 6.5 6.5"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/social-media-marketing" class="fi-link" style="color:inherit;">Facebook Static Ad Photo Selection</a></div><p class="pdesc">Selected and edited 20 photos for a Facebook static ad campaign at ABI Attachments, applying Lightroom Classic post-processing for brand-consistent quality.</p></div>
+    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h9l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-16a1 1 0 0 1 1-1z"/><path d="M15 3.5v4h4"/><path d="M8 12.5l2 2 5-5"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/copywriting" class="fi-link" style="color:inherit;">Weekly Content for HRC Insights</a></div><p class="pdesc">Write four blog posts a week for HR Collaboration Group's HRC Insights LinkedIn newsletter, covering workforce strategy, compliance, and leadership development.</p></div>
   </div>
 </div>
 
@@ -948,21 +1108,21 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
   <div class="skgrid">
 
     <div class="reveal">
-      <div class="sgt">AI and Search Optimization</div>
+      <div class="sgt"><a href="https://rileycatalano.com/search-visbility" style="color:inherit;text-decoration:none;">AI and Search Optimization</a></div>
       <div class="sktags">
         <span class="sk">AI Optimization (AIO)</span><span class="sk">Answer Engine Optimization</span><span class="sk">Generative Engine Optimization</span><span class="sk">Prompt Engineering</span><span class="sk">Artificial Intelligence</span><span class="sk">SEO</span><span class="sk">On-Page SEO</span><span class="sk">Local SEO</span><span class="sk">International SEO</span><span class="sk">Technical SEO</span><span class="sk">Google Search Console</span><span class="sk">SEMrush</span><span class="sk">BrightEdge</span><span class="sk">Ubersuggest</span><span class="sk">Keyword Research</span><span class="sk">Google Keyword Planner</span><span class="sk">Keyword Ad Groups</span><span class="sk">E-E-A-T</span><span class="sk">Google AI Overviews</span>
       </div>
     </div>
 
     <div class="reveal">
-      <div class="sgt">Content and Copywriting</div>
+      <div class="sgt"><a href="https://rileycatalano.com/copywriting" style="color:inherit;text-decoration:none;">Content and Copywriting</a></div>
       <div class="sktags">
         <span class="sk">Content Marketing</span><span class="sk">SEO Copywriting</span><span class="sk">Article Writing</span><span class="sk">FAQ Structuring</span><span class="sk">Meta Description Writing</span><span class="sk">Alt Text Optimization</span><span class="sk">Blog Writing</span><span class="sk">LinkedIn Newsletter</span><span class="sk">Wikipedia Authoring</span><span class="sk">Content Planning</span><span class="sk">Repurposing Content</span><span class="sk">Content Strategy</span><span class="sk">Email Marketing</span><span class="sk">SMS Marketing</span><span class="sk">Organic Content</span>
       </div>
     </div>
 
     <div class="reveal">
-      <div class="sgt">Social Media Marketing</div>
+      <div class="sgt"><a href="https://rileycatalano.com/social-media-marketing" style="color:inherit;text-decoration:none;">Social Media Marketing</a></div>
       <div class="sktags">
         <span class="sk">Social Media Marketing</span><span class="sk">Social Media Analytics</span><span class="sk">LinkedIn Marketing</span><span class="sk">Instagram Marketing</span><span class="sk">Facebook Marketing</span><span class="sk">YouTube Marketing</span><span class="sk">Threads Marketing</span><span class="sk">Organic Content Growth</span><span class="sk">Short Form Video Strategy</span><span class="sk">Video Strategies for Engagement</span><span class="sk">Meta Business Suite</span><span class="sk">B2B Social Media</span>
       </div>
@@ -1030,12 +1190,12 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 
     <div class="faq-item reveal">
       <div class="faq-q">What is your specialty?</div>
-      <div class="faq-a">Making businesses the obvious choice in their local market through Google Business Profile optimization, local SEO, and AI-driven content.</div>
+      <div class="faq-a">Making businesses the obvious choice in their local market through Google Business Profile optimization, <a href="https://rileycatalano.com/search-visbility" class="fi-link">local SEO</a>, and AI-driven content.</div>
     </div>
 
     <div class="faq-item reveal">
       <div class="faq-q">What results have you driven?</div>
-      <div class="faq-a">I have created thousands of optimized assets including alt text, FAQs, and meta descriptions that improve indexing, rankings, and click-through rates. I focus on work that compounds over time.</div>
+      <div class="faq-a">I have created thousands of <a href="https://rileycatalano.com/copywriting" class="fi-link">optimized assets</a> including alt text, FAQs, and meta descriptions that improve indexing, rankings, and click-through rates. I focus on work that compounds over time.</div>
     </div>
 
     <div class="faq-item reveal">
@@ -1065,7 +1225,7 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 
     <div class="faq-item reveal">
       <div class="faq-q">What is your favorite type of campaign to run?</div>
-      <div class="faq-a">I love campaigns that combine real customer stories with search and AI strategy. When people see authentic results and the content is optimized for discovery, it hits on trust, visibility, and conversion all at once.</div>
+      <div class="faq-a">I love campaigns that combine real customer stories with <a href="https://rileycatalano.com/social-media-marketing" class="fi-link">social media strategy</a> and <a href="https://rileycatalano.com/search-visbility" class="fi-link">search and AI strategy</a>. When people see authentic results and the content is optimized for discovery, it hits on trust, visibility, and conversion all at once.</div>
     </div>
 
     <div class="faq-item reveal">
@@ -1095,7 +1255,7 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 </div>
 
 <footer>
-  <span>© 2026 Riley Catalano</span>
+  <span>© 2026 <a href="https://rileycatalano.com/" style="color:inherit;text-decoration:underline;">Riley Catalano</a></span>
   <span>Northern Indiana and Michiana / Remote Worldwide</span>
 </footer>
 
