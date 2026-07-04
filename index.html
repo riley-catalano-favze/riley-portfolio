@@ -274,6 +274,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .ci{background:var(--card-bg);border-radius:3px;padding:.75rem 1rem;font-size:.84rem;color:var(--ink);line-height:1.45;display:flex;align-items:flex-start;gap:.55rem;}
 .ci::before{content:'✓';font-family:'DM Sans',sans-serif;font-size:.65rem;color:#fff;flex-shrink:0;background:var(--blue);width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:.05rem;}
 .skgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.2rem;}
+.skills-tabs{display:grid;grid-template-columns:240px 1fr;gap:2.5rem;align-items:start;}
+.skill-tab-list{display:flex;flex-direction:column;gap:.35rem;position:sticky;top:100px;}
+.skill-tab{text-align:left;background:var(--card-bg);border:none;border-left:3px solid transparent;padding:.8rem 1.1rem;font-family:'DM Sans',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);cursor:pointer;border-radius:2px;transition:background .18s,color .18s,border-color .18s;}
+.skill-tab:hover:not(.active){background:#e3e9f8;color:var(--ink);}
+.skill-tab.active{background:var(--blue);color:#fff;border-left-color:var(--ink);}
+.skill-tab-panels{background:var(--card-bg);border-radius:4px;padding:2rem;min-height:220px;}
+.skill-panel{display:none;}
+.skill-panel.on{display:block;}
+.skill-panel .sktags{display:flex;flex-wrap:wrap;gap:.5rem;}
+.skill-panel .sk{background:#fff;}
+.skill-panel .sk:hover{background:var(--blue);color:#fff;}
+@media(max-width:900px){
+  .skills-tabs{grid-template-columns:1fr;}
+  .skill-tab-list{position:static;flex-direction:row;flex-wrap:wrap;}
+  .skill-tab{flex:1 1 auto;text-align:center;}
+  .skill-tab-panels{padding:1.4rem;}
+}
 .sgt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.05rem;letter-spacing:.06em;color:var(--ink);margin-bottom:.9rem;padding-bottom:.45rem;border-bottom:2px solid var(--blue);display:inline-block;line-height:.92;}
 .sktags{display:flex;flex-wrap:wrap;gap:.38rem;}
 .sk{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;background:var(--tag-bg);color:var(--ink);padding:.28rem .75rem;border-radius:2px;transition:background .18s,color .18s;cursor:default;}
@@ -292,6 +309,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .ctitle em{color:var(--ink);font-style:normal;}
 .cbtn{display:inline-block;background:var(--ink);color:#fff;font-family:'DM Sans',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;padding:.95rem 2.4rem;border-radius:2px;text-decoration:none;transition:background .2s,transform .2s;}
 .cbtn:hover{background:#fff;color:var(--blue);transform:scale(1.03);}
+.cbtn-outline{display:inline-block;background:transparent;color:#fff;border:1.5px solid #fff;font-family:'DM Sans',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;padding:.85rem 2.2rem;border-radius:2px;text-decoration:none;transition:background .2s,color .2s,transform .2s;cursor:pointer;}
+.cbtn-outline:hover{background:#fff;color:var(--blue);transform:scale(1.03);}
+.cta-btn-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 .cert-cta{display:inline-flex;align-items:center;gap:.6rem;font-family:'DM Sans',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--blue);border:1.5px solid var(--blue);padding:.75rem 1.8rem;border-radius:2px;text-decoration:none;transition:background .2s,color .2s;}
 .cert-cta:hover{background:var(--blue);color:#fff;}
 .fi-intro p{font-size:1rem;line-height:1.85;color:#3a3a3a;max-width:720px;}
@@ -305,8 +325,29 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .fi-card-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.25rem;letter-spacing:.03em;color:var(--ink);line-height:1.15;}
 .fi-card-desc{font-size:.85rem;line-height:1.7;color:var(--muted);flex:1;}
 .fi-card-read{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);margin-top:.4rem;}
-footer{background:var(--ink);padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;}
-footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);}
+footer{background:var(--ink);padding:4rem 3rem 1.8rem;}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:2.5rem;max-width:1200px;margin:0 auto;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-brand{font-family:'DM Sans',sans-serif;font-weight:400;font-size:1rem;color:#fff;text-decoration:none;letter-spacing:.04em;}
+.footer-tag{font-size:.78rem;line-height:1.7;color:rgba(255,255,255,.45);margin-top:.9rem;max-width:320px;}
+.footer-tag a{color:rgba(255,255,255,.75);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);transition:color .15s,border-color .15s;}
+.footer-tag a:hover{color:#fff;border-color:#fff;}
+.footer-linkedin{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.3rem;font-family:'DM Sans',sans-serif;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:.55rem 1.1rem;border-radius:2px;transition:background .2s,border-color .2s;}
+.footer-linkedin:hover{background:var(--blue);border-color:var(--blue);}
+.footer-col-title{font-family:'DM Sans',sans-serif;font-size:.64rem;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.4);margin-bottom:1.1rem;}
+.footer-col a,.footer-col span{display:block;font-family:'DM Sans',sans-serif;font-size:.8rem;color:rgba(255,255,255,.65);text-decoration:none;margin-bottom:.65rem;line-height:1.4;transition:color .15s;}
+.footer-col a:hover{color:#fff;}
+.footer-bottom{max-width:1200px;margin:0 auto;padding-top:1.6rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;}
+.footer-bottom span,.footer-bottom a{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);text-decoration:none;}
+.footer-bottom a:hover{color:rgba(255,255,255,.6);}
+.footer-legal{display:flex;gap:1.4rem;}
+@media(max-width:900px){
+  footer{padding:3rem 1.5rem 1.5rem;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}
+}
+@media(max-width:600px){
+  .footer-grid{grid-template-columns:1fr;gap:1.8rem;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;}
+}
 .reveal{opacity:1;transform:none;transition:opacity .65s ease,transform .65s ease;}
 .reveal.vis{opacity:1;transform:none;}
 @media(max-width:900px){
@@ -380,7 +421,6 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 <nav>
   <a href="https://rileycatalano.com/" class="nav-logo">Riley Catalano</a>
   <ul class="nav-links">
-    <li><a href="https://rileycatalano.com/">Home</a></li>
     <li><a href="https://rileycatalano.com/email-marketing">Email Marketing</a></li>
     <li><a href="https://rileycatalano.com/social-media-marketing">Social Media</a></li>
     <li><a href="https://rileycatalano.com/copywriting">Copywriting</a></li>
@@ -392,7 +432,6 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
   </button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="https://rileycatalano.com/" onclick="closeMenu()">Home</a>
   <a href="https://rileycatalano.com/email-marketing" onclick="closeMenu()">Email Marketing</a>
   <a href="https://rileycatalano.com/social-media-marketing" onclick="closeMenu()">Social Media</a>
   <a href="https://rileycatalano.com/copywriting" onclick="closeMenu()">Copywriting</a>
@@ -504,15 +543,15 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
       <ul>
         <li>Built and launched Favze Digital Marketing, an affordable full-service digital marketing agency helping local businesses across Northern Indiana and Michiana grow online through customized, data-driven strategies that increase visibility, generate leads, and drive measurable growth.</li>
         <li>Defined Favze's strategic positioning, brand development, messaging, and visual identity, ensuring consistency across every channel and touchpoint.</li>
-        <li>Develop and execute <a href="https://rileycatalano.com/search-visibility" class="fi-link">SEO, AEO, GEO</a>, paid search (PPC), paid social, <a href="https://rileycatalano.com/social-media-marketing" class="fi-link">social media</a>, email, and SMS marketing strategies.</li>
+        <li>Develop and execute SEO, AEO, GEO, paid search (PPC), paid social, social media, email, and SMS marketing strategies.</li>
         <li>Design conversion-optimized website on HubSpot built to rank in local search and generate inbound leads.</li>
         <li>Monitor how Favze is represented across ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews, strategically updating website copy and repurposing content to improve AI-generated responses without paid tools.</li>
         <li>Monitor and manage Google Business Profile and brand reputation across search and AI platforms.</li>
-        <li>Grow Favze Insights, a LinkedIn newsletter and website blog, achieving high engagement through strategic keyword research, A/B testing, and <a href="https://rileycatalano.com/copywriting" class="fi-link">E-E-A-T writing principles</a> to produce credible, high-quality content that ranks and resonates.</li>
+        <li>Grow Favze Insights, a LinkedIn newsletter and website blog, achieving high engagement through strategic keyword research, A/B testing, and E-E-A-T writing principles to produce credible, high-quality content that ranks and resonates.</li>
         <li>Repurpose content across the website, blog, email, social media, and LinkedIn newsletter to maximize reach, reinforce authority, and improve AI indexing.</li>
-        <li>Publish weekly <a href="https://rileycatalano.com/copywriting" class="fi-link">SEO-optimized blog content</a> with metadata, internal linking, and on-page optimization.</li>
+        <li>Publish weekly SEO-optimized blog content with metadata, internal linking, and on-page optimization.</li>
         <li>Deploy weekly <a href="https://rileycatalano.com/email-marketing" class="fi-link">HubSpot email campaigns</a> using segmentation, personalization, and customer journey mapping.</li>
-        <li>Manage <a href="https://rileycatalano.com/social-media-marketing" class="fi-link">brand presence across Instagram, Facebook, YouTube, X, and Threads</a>.</li>
+        <li>Manage brand presence across Instagram, Facebook, YouTube, X, and Threads.</li>
         <li>Design all creative assets in Affinity Designer, Canva, HubSpot, and Figma.</li>
         <li>Track KPIs using HubSpot, Google Analytics, and Ubersuggest.</li>
         <li>Oversee all operations including sales, marketing, business development, and client services.</li>
@@ -571,16 +610,16 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
       <ul>
         <li>Supported and executed hands-on digital marketing initiatives at a leading attachments manufacturer, gaining deep practical experience in SEO, AEO, GEO, and AI-driven brand visibility.</li>
         <li>Conducted in-depth market research to identify potential dealers for the ABI Force product line across multiple U.S. states and internationally, expanding distribution and partnership opportunities.</li>
-        <li>Led comprehensive <a href="https://rileycatalano.com/search-visibility" class="fi-link">Google Business Profile audits</a>, providing data-backed strategic recommendations to improve local search presence, profile completeness, and competitive positioning.</li>
+        <li>Led comprehensive Google Business Profile audits, providing data-backed strategic recommendations to improve local search presence, profile completeness, and competitive positioning.</li>
         <li>Developed and optimized a brand new Google Business Profile description by strategically integrating the branded keyword "ABI," achieving first-page rankings for the search term within one hour.</li>
         <li>Analyzed AI-driven search visibility gaps, identifying optimization opportunities that strengthened product representation across AI search platforms and Google AI Overviews.</li>
         <li>Wrote and SEO-optimized alt text for 2,300 website images, ensuring ADA/WCAG accessibility compliance while improving image indexing, keyword relevance, and on-page authority.</li>
         <li>Led the writing and optimization of 300 meta descriptions, implementing targeted keywords, improving SERP click-through rates, and maintaining brand consistency across the website.</li>
-        <li>Researched competitor pages and wrote a <a href="https://rileycatalano.com/copywriting" class="fi-link">4,200-word Wikipedia article</a> for ABI Attachments, fully optimized for SEO, AEO, and GEO to improve brand authority and AI indexing.</li>
+        <li>Researched competitor pages and wrote a 4,200-word Wikipedia article for ABI Attachments, fully optimized for SEO, AEO, and GEO to improve brand authority and AI indexing.</li>
         <li>Created 600 FAQ entries optimized for AEO to improve visibility in Google AI Overviews, featured snippets, and Knowledge Panels.</li>
         <li>Created 36 SEO-optimized Google Business Profile products to build trust signals and improve AI search visibility.</li>
-        <li>Selected and edited <a href="https://rileycatalano.com/social-media-marketing" class="fi-link">20 photos for a Facebook static ad campaign</a>, applying Lightroom Classic post-processing for brand-consistent visual quality.</li>
-        <li>Created customer review funnel and wrote <a href="https://rileycatalano.com/copywriting" class="fi-link">SEO-optimized blog content</a>.</li>
+        <li>Selected and edited 20 photos for a Facebook static ad campaign, applying Lightroom Classic post-processing for brand-consistent visual quality.</li>
+        <li>Created customer review funnel and wrote SEO-optimized blog content.</li>
         <li>Utilized BrightEdge for SEO tracking and performance reporting.</li>
       </ul>
       <div style="margin-top:1.4rem;">
@@ -602,11 +641,11 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
       <div class="erole">Digital Marketing and Business Development Specialist</div>
       <ul>
         <li>Drive digital marketing strategy, <a href="https://rileycatalano.com/email-marketing" class="fi-link">email automation</a>, newsletter production, and business development for an Elkhart-based HR consulting firm serving businesses across Northern Indiana and beyond.</li>
-        <li>Produce <a href="https://rileycatalano.com/copywriting" class="fi-link">HRC Insights, a monthly HR newsletter</a> covering workforce strategy, turnover, compliance, hiring, and leadership development for business owners and HR leaders at the regional and national level.</li>
+        <li>Produce HRC Insights, a monthly HR newsletter covering workforce strategy, turnover, compliance, hiring, and leadership development for business owners and HR leaders at the regional and national level.</li>
         <li>Build and manage the full Zoho Campaigns automation system with trigger-based workflows connected to form submissions, consultation scheduling, consultation completion, and invoice sending.</li>
         <li>Use merge tags in Zoho Campaigns to dynamically personalize email content at send time, delivering personalized communications at scale without manual intervention.</li>
         <li>Optimize all email templates for mobile, tablet, and desktop rendering across major email clients.</li>
-        <li>Manage HRC's digital marketing presence, <a href="https://rileycatalano.com/social-media-marketing" class="fi-link">social media</a>, website marketing, and brand positioning across nine HR service lines.</li>
+        <li>Manage HRC's digital marketing presence, social media, website marketing, and brand positioning across nine HR service lines.</li>
       </ul>
       <div style="margin-top:1.4rem;">
         <div class="albl" style="margin-bottom:.6rem;">Skills</div>
@@ -795,30 +834,12 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
         <div class="aval dim">Canva / Figma / Affinity Designer / Adobe Lightroom Classic</div>
       </div>
       <div class="aside-card" style="border-left:3px solid var(--blue);">
-        <div class="albl">Owned Channel</div>
-        <div class="aval dim">Favze Insights, LinkedIn Newsletter</div>
-      </div>
-      <div class="aside-card" style="border-left:3px solid var(--blue);">
-        <div class="albl">Related Services</div>
-        <div class="aval dim"><a href="https://rileycatalano.com/copywriting" class="fi-link">Copywriting for Branding and Articles</a> / <a href="https://rileycatalano.com/search-visibility" class="fi-link">Search Visibility Strategist</a> / <a href="https://rileycatalano.com/email-marketing" class="fi-link">Email Marketing and Automation</a></div>
+        <div class="albl">Social Media Accounts Ran</div>
+        <div class="aval dim">Favze Digital Marketing / HR Collaboration Group</div>
       </div>
       <div style="margin-top:1.4rem;">
         <a href="https://rileycatalano.com/social-media-marketing" class="cert-cta" style="width:100%;justify-content:center;">View Full Social Media Page ↗</a>
       </div>
-    </div>
-  </div>
-
-  <div class="reveal" style="margin-top:3.5rem;">
-    <div class="clist">
-      <div class="ci"><strong>Facebook</strong>&nbsp;— Brand presence, community management, and static ad campaigns, including photo selection and Lightroom Classic editing for paid placements.</div>
-      <div class="ci"><strong>X (formerly Twitter)</strong>&nbsp;— Real-time brand updates, industry commentary, and short-form posts repurposed from longer content.</div>
-      <div class="ci"><strong>LinkedIn</strong>&nbsp;— The primary channel for B2B growth, including Favze Insights, a LinkedIn newsletter built on keyword research and E-E-A-T writing principles.</div>
-      <div class="ci"><strong>Threads</strong>&nbsp;— A rapid-response channel for timely brand commentary and community conversation alongside Instagram and X.</div>
-      <div class="ci"><strong>YouTube</strong>&nbsp;— Long-form and how-to video strategy, channel optimization, and YouTube SEO to support organic discovery.</div>
-      <div class="ci"><strong>Instagram</strong>&nbsp;— Visual storytelling, organic follower growth, and Reels strategy supported by Canva and Affinity Designer creative assets.</div>
-      <div class="ci"><strong>TikTok</strong>&nbsp;— Short-form video strategy built for viral reach, using the same repurposed content pulled from blogs and newsletters.</div>
-      <div class="ci"><strong>Pinterest</strong>&nbsp;— Visual search and discovery strategy, including Pinterest advertising, to drive long-tail traffic back to the website.</div>
-      <div class="ci"><strong>Snapchat</strong>&nbsp;— Supplementary reach for younger audience segments, used selectively to extend brand awareness campaigns.</div>
     </div>
   </div>
 </div>
@@ -834,15 +855,15 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
     <div class="rcard"><div class="rnum">36</div><div class="rlbl">GBP Products<br>Published</div></div>
   </div>
   <div class="pgrid">
-    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/><path d="M12 2.5v1.6M12 19.9v1.6" opacity=".5"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/search-visibility" class="fi-link" style="color:inherit;">AI Visibility and Brand Monitoring</a></div><p class="pdesc">Monitor and optimize what ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews say about my personal brand and Favze Digital Marketing, refining content and strategy to improve AI-generated responses.</p></div>
+    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/><path d="M12 2.5v1.6M12 19.9v1.6" opacity=".5"/></svg></span><div class="ptitle">AI Visibility and Brand Monitoring</div><p class="pdesc">Monitor and optimize what ChatGPT, Perplexity, Gemini, Claude, and Google AI Overviews say about my personal brand and Favze Digital Marketing, refining content and strategy to improve AI-generated responses.</p></div>
     <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M2.5 8.5h19" /><circle cx="5.3" cy="6.5" r=".6" fill="currentColor" stroke="none"/><circle cx="7.3" cy="6.5" r=".6" fill="currentColor" stroke="none"/><path d="M9 15l-2-2 2-2M15 11l2 2-2 2"/></svg></span><div class="ptitle">Two GitHub-Built Websites</div><p class="pdesc">Designed and built two GitHub-hosted websites from the ground up, combining custom code, schema markup, and SEO architecture for maximum search and AI visibility.</p></div>
-    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="14" height="14" rx="2"/><path d="M16.5 9.5l5-2.5v10l-5-2.5"/><path d="M8 10l3 2-3 2z" fill="currentColor" stroke="none"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/social-media-marketing" class="fi-link" style="color:inherit;">Groundbreakers UGC Campaign</a></div><p class="pdesc">Created and pitched Groundbreakers for ABI Attachments, a user-generated content program turning customer videos, reviews, and jobsite footage into free long-form content for their attachments and equipment.</p></div>
-    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.6 7-12A7 7 0 0 0 5 9.5c0 5.4 7 12 7 12z"/><circle cx="12" cy="9.5" r="2.4"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/search-visibility" class="fi-link" style="color:inherit;">Google Business Profile Buildouts</a></div><p class="pdesc">Created 36 GBP product listings, optimized posts, and engineered review funnels for maximum local search visibility.</p></div>
+    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="14" height="14" rx="2"/><path d="M16.5 9.5l5-2.5v10l-5-2.5"/><path d="M8 10l3 2-3 2z" fill="currentColor" stroke="none"/></svg></span><div class="ptitle">Groundbreakers UGC Campaign</div><p class="pdesc">Created and pitched Groundbreakers for ABI Attachments, a user-generated content program turning customer videos, reviews, and jobsite footage into free long-form content for their attachments and equipment.</p></div>
+    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5s7-6.6 7-12A7 7 0 0 0 5 9.5c0 5.4 7 12 7 12z"/><circle cx="12" cy="9.5" r="2.4"/></svg></span><div class="ptitle">Google Business Profile Buildouts</div><p class="pdesc">Created 36 GBP product listings, optimized posts, and engineered review funnels for maximum local search visibility.</p></div>
     <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/email-marketing" class="fi-link" style="color:inherit;">Multi-Platform Email and CRM Experience</a></div><p class="pdesc">Hands-on email marketing experience across five platforms including NetSuite, HubSpot, Zoho Campaigns, Klaviyo, and Mailchimp, with CRM experience in NetSuite, HubSpot, and Zoho.</p></div>
-    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="3.5" width="14" height="17" rx="1.5"/><path d="M8 8h6M8 11.5h6M8 15h3.5"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/copywriting" class="fi-link" style="color:inherit;">Three Owned Newsletters</a></div><p class="pdesc">Produce two monthly email newsletters, Favze Intel and Favze Insider, plus Favze Insights, a weekly LinkedIn newsletter and blog published on the Favze website.</p></div>
-    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4.5l4.5 4.5L8 20.5l-5 1 1-5L15 4.5z"/><path d="M13 6.5l4 4"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/social-media-marketing" class="fi-link" style="color:inherit;">Creative Assets Across All Platforms</a></div><p class="pdesc">Designed brand creative assets, marketing graphics, and visual content in Canva, Figma, Affinity Designer, and Lightroom Classic.</p></div>
-    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.8"/><path d="M2.5 16.5l5.5-5 4 4 3-3 6.5 6.5"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/social-media-marketing" class="fi-link" style="color:inherit;">Facebook Static Ad Photo Selection</a></div><p class="pdesc">Selected and edited 20 photos for a Facebook static ad campaign at ABI Attachments, applying Lightroom Classic post-processing for brand-consistent quality.</p></div>
-    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h9l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-16a1 1 0 0 1 1-1z"/><path d="M15 3.5v4h4"/><path d="M8 12.5l2 2 5-5"/></svg></span><div class="ptitle"><a href="https://rileycatalano.com/copywriting" class="fi-link" style="color:inherit;">Weekly Content for HRC Insights</a></div><p class="pdesc">Write four blog posts a week for HR Collaboration Group's HRC Insights LinkedIn newsletter, covering workforce strategy, compliance, and leadership development.</p></div>
+    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="3.5" width="14" height="17" rx="1.5"/><path d="M8 8h6M8 11.5h6M8 15h3.5"/></svg></span><div class="ptitle">Three Owned Newsletters</div><p class="pdesc">Produce two monthly email newsletters, Favze Intel and Favze Insider, plus Favze Insights, a weekly LinkedIn newsletter and blog published on the Favze website.</p></div>
+    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 4.5l4.5 4.5L8 20.5l-5 1 1-5L15 4.5z"/><path d="M13 6.5l4 4"/></svg></span><div class="ptitle">Creative Assets Across All Platforms</div><p class="pdesc">Designed brand creative assets, marketing graphics, and visual content in Canva, Figma, Affinity Designer, and Lightroom Classic.</p></div>
+    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><circle cx="8.5" cy="10" r="1.8"/><path d="M2.5 16.5l5.5-5 4 4 3-3 6.5 6.5"/></svg></span><div class="ptitle">Facebook Static Ad Photo Selection</div><p class="pdesc">Selected and edited 20 photos for a Facebook static ad campaign at ABI Attachments, applying Lightroom Classic post-processing for brand-consistent quality.</p></div>
+    <div class="pcard reveal"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h9l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-16a1 1 0 0 1 1-1z"/><path d="M15 3.5v4h4"/><path d="M8 12.5l2 2 5-5"/></svg></span><div class="ptitle">Weekly Content for HRC Insights</div><p class="pdesc">Write four blog posts a week for HR Collaboration Group's HRC Insights LinkedIn newsletter, covering workforce strategy, compliance, and leadership development.</p></div>
   </div>
 </div>
 
@@ -1105,71 +1126,83 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 
 <div class="sw" id="skills">
   <div class="reveal"><p class="slabel">Skills</p><h2 class="stitle">What I Bring</h2></div>
-  <div class="skgrid">
-
-    <div class="reveal">
-      <div class="sgt"><a href="https://rileycatalano.com/search-visibility" style="color:inherit;text-decoration:none;">AI and Search Optimization</a></div>
-      <div class="sktags">
-        <span class="sk">AI Optimization (AIO)</span><span class="sk">Answer Engine Optimization</span><span class="sk">Generative Engine Optimization</span><span class="sk">Prompt Engineering</span><span class="sk">Artificial Intelligence</span><span class="sk">SEO</span><span class="sk">On-Page SEO</span><span class="sk">Local SEO</span><span class="sk">International SEO</span><span class="sk">Technical SEO</span><span class="sk">Google Search Console</span><span class="sk">SEMrush</span><span class="sk">BrightEdge</span><span class="sk">Ubersuggest</span><span class="sk">Keyword Research</span><span class="sk">Google Keyword Planner</span><span class="sk">Keyword Ad Groups</span><span class="sk">E-E-A-T</span><span class="sk">Google AI Overviews</span>
-      </div>
+  <div class="skills-tabs">
+    <div class="skill-tab-list reveal">
+      <button class="skill-tab active" onclick="showSkillTab('crm',this)">CRM</button>
+      <button class="skill-tab" onclick="showSkillTab('search',this)">Search Visibility</button>
+      <button class="skill-tab" onclick="showSkillTab('copy',this)">Copywriting</button>
+      <button class="skill-tab" onclick="showSkillTab('brand',this)">Branding</button>
+      <button class="skill-tab" onclick="showSkillTab('social',this)">Social Media Marketing</button>
+      <button class="skill-tab" onclick="showSkillTab('paid',this)">Paid Advertising</button>
+      <button class="skill-tab" onclick="showSkillTab('emailmkt',this)">Email Marketing</button>
+      <button class="skill-tab" onclick="showSkillTab('webdesign',this)">Website Design</button>
+      <button class="skill-tab" onclick="showSkillTab('design',this)">Design and Creative</button>
+      <button class="skill-tab" onclick="showSkillTab('analytics',this)">Analytics</button>
+      <button class="skill-tab" onclick="showSkillTab('strategy',this)">Digital Marketing Strategy</button>
+      <button class="skill-tab" onclick="showSkillTab('business',this)">Business</button>
+      <button class="skill-tab" onclick="showSkillTab('soft',this)">Soft Skills</button>
+      <button class="skill-tab" onclick="showSkillTab('tech',this)">Technology / Platforms</button>
     </div>
 
-    <div class="reveal">
-      <div class="sgt"><a href="https://rileycatalano.com/copywriting" style="color:inherit;text-decoration:none;">Content and Copywriting</a></div>
-      <div class="sktags">
-        <span class="sk">Content Marketing</span><span class="sk">SEO Copywriting</span><span class="sk">Article Writing</span><span class="sk">FAQ Structuring</span><span class="sk">Meta Description Writing</span><span class="sk">Alt Text Optimization</span><span class="sk">Blog Writing</span><span class="sk">LinkedIn Newsletter</span><span class="sk">Wikipedia Authoring</span><span class="sk">Content Planning</span><span class="sk">Repurposing Content</span><span class="sk">Content Strategy</span><span class="sk">Email Marketing</span><span class="sk">SMS Marketing</span><span class="sk">Organic Content</span>
-      </div>
-    </div>
+    <div class="skill-tab-panels reveal">
 
-    <div class="reveal">
-      <div class="sgt"><a href="https://rileycatalano.com/social-media-marketing" style="color:inherit;text-decoration:none;">Social Media Marketing</a></div>
-      <div class="sktags">
-        <span class="sk">Social Media Marketing</span><span class="sk">Social Media Analytics</span><span class="sk">LinkedIn Marketing</span><span class="sk">Instagram Marketing</span><span class="sk">Facebook Marketing</span><span class="sk">YouTube Marketing</span><span class="sk">Threads Marketing</span><span class="sk">Organic Content Growth</span><span class="sk">Short Form Video Strategy</span><span class="sk">Video Strategies for Engagement</span><span class="sk">Meta Business Suite</span><span class="sk">B2B Social Media</span>
-      </div>
-    </div>
+      <div id="skp-crm" class="skill-panel on"><div class="sktags">
+        <span class="sk">Customer Relationship Management</span><span class="sk">Customer Journey Mapping</span><span class="sk">Lead Journey Mapping</span><span class="sk">Buyer Journey</span><span class="sk">Sales Process</span><span class="sk">Sales Funnel for Lead Generation</span><span class="sk">Marketing Funnel Strategy</span><span class="sk">Lead Generation</span><span class="sk">Advanced Lead Generation</span><span class="sk">Lead Nurturing</span><span class="sk">Sales Prospecting</span><span class="sk">Multichannel Sales Outreach</span><span class="sk">Social Selling</span><span class="sk">B2B Networking for Sales</span><span class="sk">Consultative Selling</span><span class="sk">Pipeline Reporting</span><span class="sk">Client Interaction Skills</span><span class="sk">Managing Customer Expectations</span><span class="sk">Social Selling Pipeline Measurement</span><span class="sk">Customer Retention</span><span class="sk">Marketing Automation</span><span class="sk">Trigger-Based Workflows</span><span class="sk">Sales Pipeline Automation</span><span class="sk">CRM Pipeline Design</span><span class="sk">Consultation Scheduling Automation</span><span class="sk">Invoice Automation</span><span class="sk">Review Management</span><span class="sk">Google Business Profile Management</span><span class="sk">Customer Engagement</span><span class="sk">Customer Service</span>
+      </div></div>
 
-    <div class="reveal">
-      <div class="sgt">Advertising and Lead Gen</div>
-      <div class="sktags">
-        <span class="sk">Paid Ads</span><span class="sk">Search Ads</span><span class="sk">Pay Per Click (PPC)</span><span class="sk">Google Ads</span><span class="sk">Facebook Ads</span><span class="sk">Instagram Ads</span><span class="sk">LinkedIn Ads</span><span class="sk">YouTube Ads</span><span class="sk">Social Media Advertising</span><span class="sk">Lead Generation</span><span class="sk">Advanced Lead Generation</span><span class="sk">Review Management</span><span class="sk">Google Business Profile Management</span><span class="sk">Buyer Journey</span><span class="sk">Customer Journey</span>
-      </div>
-    </div>
+      <div id="skp-search" class="skill-panel"><div class="sktags">
+        <span class="sk">SEO</span><span class="sk">On-Page SEO</span><span class="sk">Off-Page SEO</span><span class="sk">Local SEO</span><span class="sk">Multi-County Local SEO</span><span class="sk">International SEO</span><span class="sk">Technical SEO</span><span class="sk">Technical SEO Audits</span><span class="sk">Answer Engine Optimization</span><span class="sk">Generative Engine Optimization</span><span class="sk">AI Optimization (AIO)</span><span class="sk">AI Search Visibility Monitoring</span><span class="sk">AI Search Operating Systems</span><span class="sk">Google AI Overviews</span><span class="sk">E-E-A-T</span><span class="sk">Keyword Research</span><span class="sk">Keyword Ad Groups</span><span class="sk">Schema Markup</span><span class="sk">Structured Data (JSON-LD)</span><span class="sk">Featured Snippet Optimization</span><span class="sk">Knowledge Panel Optimization</span><span class="sk">Sitemap Architecture</span><span class="sk">Internal Linking Strategy</span><span class="sk">Backlink Strategy</span><span class="sk">Content Gap Analysis</span><span class="sk">Social Listening</span><span class="sk">YouTube SEO</span><span class="sk">Competitor Research</span><span class="sk">In-House SEO Strategy</span>
+      </div></div>
 
-    <div class="reveal">
-      <div class="sgt">Design and Creative</div>
-      <div class="sktags">
-        <span class="sk">Canva</span><span class="sk">Canva for Work</span><span class="sk">Figma</span><span class="sk">Affinity Designer</span><span class="sk">Adobe Lightroom Classic</span><span class="sk">Adobe Illustrator</span><span class="sk">Graphic Design</span><span class="sk">Print Design</span><span class="sk">Instructional Design</span><span class="sk">UX / UI Design</span><span class="sk">Photo Selection and Editing</span><span class="sk">Digital Asset Management</span><span class="sk">Developer Handoff</span><span class="sk">Web Design</span>
-      </div>
-    </div>
+      <div id="skp-copy" class="skill-panel"><div class="sktags">
+        <span class="sk">SEO Copywriting</span><span class="sk">Content Marketing</span><span class="sk">Content Strategy</span><span class="sk">Content Planning</span><span class="sk">Content Pillar Writing</span><span class="sk">Content Ideation</span><span class="sk">Repurposing Content</span><span class="sk">Article Writing</span><span class="sk">Blog Writing</span><span class="sk">Long-Form Editorial Writing</span><span class="sk">Wikipedia Authoring</span><span class="sk">FAQ Structuring</span><span class="sk">Meta Description Writing</span><span class="sk">Alt Text Optimization</span><span class="sk">Landing Page Copywriting</span><span class="sk">Product Description Writing</span><span class="sk">Email Copywriting</span><span class="sk">Chat Widget Copywriting</span><span class="sk">Case Study Writing</span><span class="sk">Headline Writing</span><span class="sk">Brand Voice Development</span><span class="sk">Brand Narrative Writing</span><span class="sk">Messaging Frameworks</span><span class="sk">Storytelling for Advertising</span><span class="sk">Video Content Repurposing</span><span class="sk">Persuasive Writing</span><span class="sk">Content Campaign Development</span><span class="sk">Relatable Video Content Strategy</span>
+      </div></div>
 
-    <div class="reveal">
-      <div class="sgt">HubSpot and Marketing Ops</div>
-      <div class="sktags">
-        <span class="sk">HubSpot Website Design</span><span class="sk">HubSpot Email Creation</span><span class="sk">HubSpot CRM</span><span class="sk">HubSpot Automation</span><span class="sk">HubSpot Inbound Marketing</span><span class="sk">Calendly Integration</span><span class="sk">Customer Relationship Management</span><span class="sk">Marketing Automation</span><span class="sk">AI Agents and No-Code Automation</span>
-      </div>
-    </div>
+      <div id="skp-brand" class="skill-panel"><div class="sktags">
+        <span class="sk">Brand Development</span><span class="sk">Brand Management</span><span class="sk">Brand Guidelines</span><span class="sk">Brand Identity Design</span><span class="sk">Visual Identity Systems</span><span class="sk">Positioning</span><span class="sk">Strategic Category Creation</span><span class="sk">Competitive Differentiation</span><span class="sk">Personal Branding</span><span class="sk">Global Brand Strategy</span><span class="sk">Inclusive Branding</span><span class="sk">Employer Branding</span><span class="sk">Building Online Communities</span>
+      </div></div>
 
-    <div class="reveal">
-      <div class="sgt">Analytics and Strategy</div>
-      <div class="sktags">
-        <span class="sk">Google Analytics</span><span class="sk">Marketing Analytics</span><span class="sk">Social Media Analytics</span><span class="sk">Market Research</span><span class="sk">Conjoint Analysis</span><span class="sk">Business Analytics</span><span class="sk">Strategic Data Analysis</span><span class="sk">Analytical Mindset</span><span class="sk">Turning Data into Strategy</span><span class="sk">ROMI</span><span class="sk">Market Awareness Stages</span>
-      </div>
-    </div>
+      <div id="skp-social" class="skill-panel"><div class="sktags">
+        <span class="sk">Social Media Marketing</span><span class="sk">Social Media Analytics</span><span class="sk">Social Media Monitoring</span><span class="sk">LinkedIn Marketing</span><span class="sk">LinkedIn Content Strategy</span><span class="sk">Instagram Marketing</span><span class="sk">Instagram Growth Strategy</span><span class="sk">Facebook Marketing</span><span class="sk">YouTube Marketing</span><span class="sk">YouTube Channel Growth</span><span class="sk">Threads Marketing</span><span class="sk">X (Twitter) Marketing</span><span class="sk">Pinterest Marketing</span><span class="sk">TikTok Marketing</span><span class="sk">Snapchat Marketing</span><span class="sk">Podcast Strategy</span><span class="sk">Organic Content</span><span class="sk">Organic Content Growth</span><span class="sk">Viral Content Strategy</span><span class="sk">Short Form Video Strategy</span><span class="sk">Video Strategies for Engagement</span><span class="sk">Brand Reputation Management</span><span class="sk">B2B Social Media</span><span class="sk">Content Calendar Management</span><span class="sk">Caption Writing</span><span class="sk">Community Management</span><span class="sk">UGC Program Development</span><span class="sk">Podcast Monetization</span><span class="sk">Social Graphics Production</span>
+      </div></div>
 
-    <div class="reveal">
-      <div class="sgt">Brand and Business</div>
-      <div class="sktags">
-        <span class="sk">Brand Development</span><span class="sk">Brand Management</span><span class="sk">Positioning</span><span class="sk">Digital Marketing</span><span class="sk">Marketing Strategy</span><span class="sk">B2B Marketing</span><span class="sk">Business Growth</span><span class="sk">Business Ownership</span><span class="sk">Customer Engagement</span><span class="sk">Customer Service</span><span class="sk">Building Online Communities</span><span class="sk">Selling Online</span>
-      </div>
-    </div>
+      <div id="skp-paid" class="skill-panel"><div class="sktags">
+        <span class="sk">Paid Ads</span><span class="sk">Search Ads</span><span class="sk">Pay Per Click (PPC)</span><span class="sk">Social Media Advertising</span><span class="sk">Performance Marketing</span><span class="sk">Ecommerce Advertising</span><span class="sk">Shopping Ads Strategy</span><span class="sk">Pinterest Advertising</span><span class="sk">Digital Ad Campaign Strategy</span><span class="sk">Display Advertising</span><span class="sk">Native Advertising</span><span class="sk">Ad Budget Management</span><span class="sk">Performance Marketing Optimization</span><span class="sk">Revenue Growth via Paid Media</span><span class="sk">Campaign Landing Pages</span><span class="sk">Ad Creative Production</span><span class="sk">A/B Ad Testing</span><span class="sk">Static Ad Campaigns</span>
+      </div></div>
 
-    <div class="reveal">
-      <div class="sgt">Productivity and Soft Skills</div>
-      <div class="sktags">
-        <span class="sk">Microsoft Office</span><span class="sk">Microsoft Excel</span><span class="sk">Microsoft Word</span><span class="sk">Microsoft PowerPoint</span><span class="sk">Communication</span><span class="sk">Leadership</span><span class="sk">Transformational Leadership</span><span class="sk">Problem Solving</span><span class="sk">Organization</span><span class="sk">Work Ethic</span><span class="sk">Dedicated</span>
-      </div>
-    </div>
+      <div id="skp-emailmkt" class="skill-panel"><div class="sktags">
+        <span class="sk">Email Marketing</span><span class="sk">SMS Marketing</span><span class="sk">Email Automation</span><span class="sk">Sales Pipeline Email Automation</span><span class="sk">Trigger-Based Email Workflows</span><span class="sk">If/Else Conditional Logic</span><span class="sk">Drip Campaigns</span><span class="sk">A/B Testing</span><span class="sk">Subject Line Optimization</span><span class="sk">List Segmentation</span><span class="sk">Database Segmentation</span><span class="sk">Personalization at Scale</span><span class="sk">Merge Tags</span><span class="sk">HTML Email Templates</span><span class="sk">Responsive Email Design</span><span class="sk">Outlook / MSO Compatibility</span><span class="sk">Email Deliverability</span><span class="sk">List Hygiene</span><span class="sk">Cold List Warm-Up</span><span class="sk">Email Journey Design</span><span class="sk">Consent Management</span><span class="sk">Unsubscribe Management</span><span class="sk">Newsletter Production</span><span class="sk">Newsletter Marketing Foundations</span><span class="sk">CAN-SPAM Compliance</span><span class="sk">GDPR Compliance</span>
+      </div></div>
 
+      <div id="skp-webdesign" class="skill-panel"><div class="sktags">
+        <span class="sk">Web Design</span><span class="sk">UX / UI Design</span><span class="sk">Developer Handoff</span><span class="sk">Responsive Web Design</span><span class="sk">Mobile-First Design</span><span class="sk">Cross-Browser Compatibility</span><span class="sk">Semantic HTML</span><span class="sk">Multi-Page Site Architecture</span><span class="sk">Site Navigation Design</span><span class="sk">Location Page Systems</span><span class="sk">Blog and Articles System Design</span><span class="sk">FAQ Page Design</span><span class="sk">Legal and Compliance Pages</span><span class="sk">Cookie Consent Implementation</span><span class="sk">Interactive UI Animations</span><span class="sk">Custom Interaction Design</span><span class="sk">ADA / WCAG Accessibility Compliance</span><span class="sk">Web Development Fundamentals</span><span class="sk">Interaction Design Deliverables</span>
+      </div></div>
+
+      <div id="skp-design" class="skill-panel"><div class="sktags">
+        <span class="sk">Graphic Design</span><span class="sk">Print Design</span><span class="sk">Print Production</span><span class="sk">Instructional Design</span><span class="sk">Photo Selection and Editing</span><span class="sk">Digital Asset Management</span><span class="sk">Carousel and Poster Design</span><span class="sk">Icon and Illustration Design</span><span class="sk">Infographic Design</span><span class="sk">Wireframing</span><span class="sk">Package Design</span><span class="sk">Layout Design</span><span class="sk">Typography</span><span class="sk">Color Theory</span><span class="sk">Visual Composition</span><span class="sk">Video Thumbnail Design</span><span class="sk">Brand Asset Conversion</span>
+      </div></div>
+
+      <div id="skp-analytics" class="skill-panel"><div class="sktags">
+        <span class="sk">Marketing Analytics</span><span class="sk">Market Research</span><span class="sk">Conjoint Analysis</span><span class="sk">Business Analytics</span><span class="sk">Strategic Data Analysis</span><span class="sk">Analytical Mindset</span><span class="sk">Turning Data into Strategy</span><span class="sk">Data-Driven Decision Making</span><span class="sk">ROMI</span><span class="sk">Market Awareness Stages</span><span class="sk">AI Visibility Monitoring</span><span class="sk">Competitive Intelligence</span><span class="sk">KPI Dashboarding</span><span class="sk">PivotTable Analysis</span><span class="sk">Balanced Scorecard KPIs</span><span class="sk">Data Storytelling</span><span class="sk">Strategic Growth Thinking</span><span class="sk">Data-Driven Learning Design</span><span class="sk">AI-Powered KPI Design</span><span class="sk">Campaign Performance Reporting</span>
+      </div></div>
+
+      <div id="skp-strategy" class="skill-panel"><div class="sktags">
+        <span class="sk">Digital Marketing</span><span class="sk">Marketing Strategy</span><span class="sk">Full-Funnel Marketing Strategy</span><span class="sk">B2B Marketing</span><span class="sk">Multi-Brand Strategy Management</span><span class="sk">Go-To-Market Planning</span><span class="sk">Content Pillar Strategy</span><span class="sk">Cross-Channel Content Repurposing</span><span class="sk">Public Relations Strategy</span><span class="sk">Consumer Behavior Analysis</span><span class="sk">Marketing Calendar Planning</span><span class="sk">Pricing Strategy</span><span class="sk">Willingness-to-Pay Analysis</span><span class="sk">Ecommerce Marketing Strategy</span><span class="sk">AI-Driven Lead Generation</span><span class="sk">AI Compliance and Regulations</span><span class="sk">AI-Powered Marketing Operations</span><span class="sk">Custom GPT Development</span><span class="sk">Agentic AI Design Patterns</span><span class="sk">AI Agent Configuration</span><span class="sk">Rapid Ideation with AI</span><span class="sk">Generative AI for Marketing</span><span class="sk">B2B Marketing Plan Development</span><span class="sk">Prompt Engineering</span><span class="sk">Artificial Intelligence</span>
+      </div></div>
+
+      <div id="skp-business" class="skill-panel"><div class="sktags">
+        <span class="sk">Business Growth</span><span class="sk">Business Ownership</span><span class="sk">Business Development</span><span class="sk">Client Services</span><span class="sk">Operations Management</span><span class="sk">Sales Enablement</span><span class="sk">Events Management</span><span class="sk">Human Resources Fundamentals</span><span class="sk">Client Onboarding</span><span class="sk">Cross-Functional Collaboration</span><span class="sk">Resource Management</span><span class="sk">Project Management</span><span class="sk">Packaging Strategy</span><span class="sk">Product Bundling Strategy</span><span class="sk">Engagement-Driven Growth</span><span class="sk">Selling Online</span>
+      </div></div>
+
+      <div id="skp-soft" class="skill-panel"><div class="sktags">
+        <span class="sk">Communication</span><span class="sk">Leadership</span><span class="sk">Transformational Leadership</span><span class="sk">Trust-Based Leadership</span><span class="sk">Team Leadership</span><span class="sk">Leadership Effectiveness Metrics</span><span class="sk">Change Management</span><span class="sk">Employee Engagement</span><span class="sk">Problem Solving</span><span class="sk">Organization</span><span class="sk">Time Management</span><span class="sk">Multitasking</span><span class="sk">Public Speaking</span><span class="sk">Professional Networking</span><span class="sk">Self-Directed Learning</span><span class="sk">Work Ethic</span><span class="sk">Dedicated</span>
+      </div></div>
+
+      <div id="skp-tech" class="skill-panel"><div class="sktags">
+        <span class="sk">HubSpot CRM</span><span class="sk">HubSpot Website Design</span><span class="sk">HubSpot Email Creation</span><span class="sk">HubSpot Automation</span><span class="sk">HubSpot Inbound Marketing</span><span class="sk">NetSuite ERP/CRM</span><span class="sk">Zoho Campaigns</span><span class="sk">Zoho CRM</span><span class="sk">Klaviyo</span><span class="sk">Mailchimp</span><span class="sk">FreeMarker</span><span class="sk">Calendly Integration</span><span class="sk">Tally Forms</span><span class="sk">AI Agents and No-Code Automation</span><span class="sk">Canva</span><span class="sk">Canva for Work</span><span class="sk">Figma</span><span class="sk">Affinity Designer</span><span class="sk">Adobe Lightroom Classic</span><span class="sk">Adobe Illustrator</span><span class="sk">Adobe Photoshop</span><span class="sk">Adobe InDesign</span><span class="sk">wkhtmltoimage</span><span class="sk">Microsoft Office</span><span class="sk">Microsoft Excel</span><span class="sk">Microsoft Word</span><span class="sk">Microsoft PowerPoint</span><span class="sk">Google Analytics</span><span class="sk">Google Search Console</span><span class="sk">Google Keyword Planner</span><span class="sk">SEMrush</span><span class="sk">BrightEdge</span><span class="sk">Ubersuggest</span><span class="sk">Meta Business Suite</span><span class="sk">Google Ads</span><span class="sk">Facebook Ads</span><span class="sk">Instagram Ads</span><span class="sk">LinkedIn Ads</span><span class="sk">YouTube Ads</span><span class="sk">GitHub</span><span class="sk">GitHub Pages</span><span class="sk">Wikipedia</span>
+      </div></div>
+
+    </div>
   </div>
 </div>
 
@@ -1190,12 +1223,12 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 
     <div class="faq-item reveal">
       <div class="faq-q">What is your specialty?</div>
-      <div class="faq-a">Making businesses the obvious choice in their local market through Google Business Profile optimization, <a href="https://rileycatalano.com/search-visibility" class="fi-link">local SEO</a>, and AI-driven content.</div>
+      <div class="faq-a">Making businesses the obvious choice in their local market through Google Business Profile optimization, local SEO, and AI-driven content.</div>
     </div>
 
     <div class="faq-item reveal">
       <div class="faq-q">What results have you driven?</div>
-      <div class="faq-a">I have created thousands of <a href="https://rileycatalano.com/copywriting" class="fi-link">optimized assets</a> including alt text, FAQs, and meta descriptions that improve indexing, rankings, and click-through rates. I focus on work that compounds over time.</div>
+      <div class="faq-a">I have created thousands of optimized assets including alt text, FAQs, and meta descriptions that improve indexing, rankings, and click-through rates. I focus on work that compounds over time.</div>
     </div>
 
     <div class="faq-item reveal">
@@ -1225,7 +1258,7 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 
     <div class="faq-item reveal">
       <div class="faq-q">What is your favorite type of campaign to run?</div>
-      <div class="faq-a">I love campaigns that combine real customer stories with <a href="https://rileycatalano.com/social-media-marketing" class="fi-link">social media strategy</a> and <a href="https://rileycatalano.com/search-visibility" class="fi-link">search and AI strategy</a>. When people see authentic results and the content is optimized for discovery, it hits on trust, visibility, and conversion all at once.</div>
+      <div class="faq-a">I love campaigns that combine real customer stories with search and AI strategy. When people see authentic results and the content is optimized for discovery, it hits on trust, visibility, and conversion all at once.</div>
     </div>
 
     <div class="faq-item reveal">
@@ -1255,10 +1288,57 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 </div>
 
 <footer>
-  <span>© 2026 <a href="https://rileycatalano.com/" style="color:inherit;text-decoration:underline;">Riley Catalano</a></span>
-  <span>Northern Indiana and Michiana / Remote Worldwide</span>
+  <div class="footer-grid">
+    <div>
+      <a href="https://rileycatalano.com/" class="footer-brand">Riley Catalano</a>
+      <p class="footer-tag">AI-driven digital marketing strategist specializing in <a href="https://rileycatalano.com/search-visibility">SEO, AEO, GEO</a>, <a href="https://rileycatalano.com/email-marketing">email marketing</a>, <a href="https://rileycatalano.com/email-marketing">automation</a>, <a href="https://rileycatalano.com/copywriting">copywriting</a>, and <a href="https://rileycatalano.com/social-media-marketing">social media strategy</a> for local and regional businesses across Northern Indiana and Michiana, as well as national and international brands. Let's make your brand the favorite.</p>
+      <a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer" class="footer-linkedin">Connect on LinkedIn ↗</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Growth Capabilities</div>
+      <a href="https://rileycatalano.com/email-marketing">Email Marketing</a>
+      <a href="https://rileycatalano.com/email-marketing">Email Automation</a>
+      <a href="https://rileycatalano.com/social-media-marketing">Social Media Marketing</a>
+      <a href="https://rileycatalano.com/social-media-marketing">Social Media Management</a>
+      <a href="https://rileycatalano.com/copywriting">Copywriting</a>
+      <a href="https://rileycatalano.com/copywriting">Article Writing</a>
+      <a href="https://rileycatalano.com/search-visibility">Search Visibility</a>
+      <a href="https://rileycatalano.com/search-visibility">AI Search Optimization</a>
+      <span>CRM &amp; Marketing Automation</span>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Locations I Can Work For</div>
+      <span>Michiana</span>
+      <span>Northern Indiana</span>
+      <span>Elkhart</span>
+      <span>Mishawaka</span>
+      <span>Goshen</span>
+      <span>Bristol</span>
+      <span>Middlebury</span>
+      <span>Shipshewana</span>
+      <span>Nappanee</span>
+      <span>Remote Worldwide</span>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Quick Links</div>
+      <a href="https://rileycatalano.com/#about">About</a>
+      <a href="https://rileycatalano.com/#experience">Experience</a>
+      <a href="https://rileycatalano.com/#skills">Skills</a>
+      <a href="https://rileycatalano.com/#certifications">Certifications</a>
+      <a href="https://rileycatalano.com/#faq">FAQ</a>
+      <a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Riley Catalano</span>
+    <div class="footer-legal">
+      <a href="https://rileycatalano.com/privacy-policy">Privacy Policy</a>
+      <a href="https://rileycatalano.com/terms-of-use">Terms of Use</a>
+    </div>
+  </div>
 </footer>
 
+<script async src="https://tally.so/widgets/embed.js"></script>
 <script>
 function toggleMenu(){
   const h=document.getElementById('hamburger');
@@ -1282,6 +1362,12 @@ function showTab(id,el){
   document.querySelectorAll('.cpanel').forEach(p=>p.classList.remove('on'));
   document.querySelectorAll('.cc').forEach(c=>c.classList.remove('active'));
   document.getElementById('cp-'+id).classList.add('on');
+  el.classList.add('active');
+}
+function showSkillTab(id,el){
+  document.querySelectorAll('.skill-panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.skill-tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('skp-'+id).classList.add('on');
   el.classList.add('active');
 }
 document.querySelectorAll('.faq-q').forEach(q=>{
