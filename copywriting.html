@@ -4,23 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Copywriting Portfolio | Riley Catalano</title>
-
 <meta name="description" content="Published copywriting from Riley Catalano across ABI Attachments, HR Collaboration Group, and Favze Digital Marketing, spanning blog content, customer story features, and LinkedIn newsletter writing.">
 <meta name="keywords" content="Riley Catalano, copywriting portfolio, Favze Insights, ABI Attachments blog, HR Collaboration Group blog, SEO copywriting, content marketing">
 <meta name="author" content="Riley Catalano">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://rileycatalano.com/copywriting">
-
 <meta property="og:type" content="website">
 <meta property="og:title" content="Copywriting Portfolio | Riley Catalano">
 <meta property="og:description" content="Published copywriting across ABI Attachments, HR Collaboration Group, and Favze Digital Marketing.">
 <meta property="og:url" content="https://rileycatalano.com/copywriting">
 <meta property="og:site_name" content="Riley Catalano Portfolio">
-
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Copywriting Portfolio | Riley Catalano">
 <meta name="twitter:description" content="Published copywriting across ABI Attachments, HR Collaboration Group, and Favze Digital Marketing.">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -34,7 +30,6 @@
   }
 }
 </script>
-
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 :root{--blue:#0a3da3;--blue2:#2b5fd4;--ink:#0a0a0a;--white:#ffffff;--off:#f5f7fc;--muted:#5e6472;--border:rgba(10,10,10,0.1);--tag-bg:#dde5f5;--card-bg:#eef1fa;}
@@ -46,8 +41,7 @@ body{background:var(--white);color:var(--ink);font-family:'DM Sans',sans-serif;f
 @keyframes curspin{0%{transform:translate(-50%,-50%) rotate(0deg);}100%{transform:translate(-50%,-50%) rotate(360deg);}}
 @media(hover:none){#cur,#ring{display:none;}body{cursor:auto;}}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:var(--white);border-bottom:1px solid var(--border);}
-.nav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;letter-spacing:.1em;color:var(--ink);text-decoration:none;}
-.nav-logo span{color:var(--blue);}
+.nav-logo{font-family:'DM Sans',sans-serif;font-weight:400;font-size:.95rem;letter-spacing:.04em;color:var(--ink);text-decoration:none;}
 .nav-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:nowrap;white-space:nowrap;}
 .nav-links a{font-family:'DM Sans',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);text-decoration:none;transition:color .2s;}
 .nav-links a:hover{color:var(--ink);}
@@ -71,6 +65,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .stitle{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.4rem,5vw,4rem);letter-spacing:.02em;line-height:.92;margin-bottom:2.8rem;}
 .divider{border:none;border-top:1px solid var(--border);margin:0 3rem;}
 #hero{min-height:72vh;display:flex;flex-direction:column;justify-content:center;padding:9rem 3rem 4rem;position:relative;overflow:hidden;}
+.hbreadcrumb{font-family:'DM Sans',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;opacity:0;animation:fu .8s 0s forwards;}
+.hbreadcrumb a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent;transition:color .15s,border-color .15s;}
+.hbreadcrumb a:hover{color:var(--ink);border-color:var(--ink);}
+.hbreadcrumb span{color:var(--blue);}
 .heye{font-family:'DM Sans',sans-serif;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:1.4rem;opacity:0;animation:fu .8s .15s forwards;}
 .hname{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(3.4rem,9vw,8.5rem);line-height:.9;color:var(--ink);opacity:0;animation:fu .9s .3s forwards;}
 .hname span{color:var(--blue);display:block;}
@@ -82,6 +80,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .snum{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.6rem;color:var(--ink);line-height:1;}
 .slbl2{font-family:'DM Sans',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-top:.18rem;line-height:1.4;}
 .hwm{position:absolute;bottom:-1.5rem;right:-1rem;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:19vw;color:rgba(10,61,163,.05);pointer-events:none;line-height:1;white-space:nowrap;user-select:none;}
+.page-summary{margin-top:2.6rem;background:var(--card-bg);border-left:3px solid var(--blue);border-radius:4px;padding:1.7rem 2rem;max-width:640px;}
+.ps-label{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);margin-bottom:1rem;}
+.ps-list{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
+.ps-list li{font-size:.86rem;line-height:1.6;color:#3a3a3a;padding-left:1.15rem;position:relative;}
+.ps-list li::before{content:'→';position:absolute;left:0;color:var(--blue);font-size:.78rem;top:.05rem;}
 @keyframes fu{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
 .eitem{display:grid;grid-template-columns:210px 1fr;gap:3rem;padding:2.5rem 0;border-bottom:1px solid var(--border);}
 .eitem:first-of-type{border-top:1px solid var(--border);}
@@ -124,6 +127,14 @@ a.etool:hover{background:var(--blue);color:#fff;}
 .explore a{font-family:'DM Sans',sans-serif;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:#fff;border:1px solid rgba(255,255,255,.35);padding:.7rem 1.5rem;border-radius:2px;text-decoration:none;transition:all .2s;}
 .explore a:hover{background:#fff;color:var(--blue);}
 .fi-intro p{font-size:1rem;line-height:1.85;color:#3a3a3a;max-width:720px;}
+.sv-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:start;}
+.sv-grid p{font-size:1rem;line-height:1.85;color:#3a3a3a;}
+.sv-pills{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.8rem;}
+.explore-eyebrow{display:flex;align-items:center;justify-content:center;gap:.9rem;margin-bottom:.7rem;}
+.eyebrow-line{display:block;width:1.8rem;height:1px;background:var(--blue);}
+.eyebrow-text{font-family:'DM Sans',sans-serif;font-size:.66rem;text-transform:uppercase;letter-spacing:.22em;color:var(--muted);}
+.eyebrow-icon{font-size:1rem;display:inline-block;animation:iconWiggle 2.2s ease-in-out infinite;}
+@keyframes iconWiggle{0%,50%,100%{transform:rotate(0deg);}10%{transform:rotate(-14deg);}20%{transform:rotate(12deg);}30%{transform:rotate(-8deg);}40%{transform:rotate(0deg);}}
 .fi-link{color:var(--blue);text-decoration:none;border-bottom:1px solid var(--blue);}
 .fi-subscribe{display:inline-flex;align-items:center;gap:.5rem;font-family:'DM Sans',sans-serif;font-size:.68rem;text-transform:uppercase;letter-spacing:.14em;background:var(--blue);color:#fff;padding:.75rem 1.6rem;border-radius:2px;text-decoration:none;transition:background .2s,transform .2s;}
 .fi-subscribe:hover{background:var(--ink);transform:scale(1.02);}
@@ -145,8 +156,21 @@ a.etool:hover{background:var(--blue);color:#fff;}
 .ctitle em{color:var(--ink);font-style:normal;}
 .cbtn{display:inline-block;background:var(--ink);color:#fff;font-family:'DM Sans',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;padding:.95rem 2.4rem;border-radius:2px;text-decoration:none;transition:background .2s,transform .2s;}
 .cbtn:hover{background:#fff;color:var(--blue);transform:scale(1.03);}
-footer{background:var(--ink);padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;}
-footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);}
+footer{background:var(--ink);padding:4rem 3rem 1.8rem;}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:2.5rem;max-width:1200px;margin:0 auto;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-brand{font-family:'DM Sans',sans-serif;font-weight:400;font-size:1rem;color:#fff;text-decoration:none;letter-spacing:.04em;}
+.footer-tag{font-size:.78rem;line-height:1.7;color:rgba(255,255,255,.45);margin-top:.9rem;max-width:320px;}
+.footer-tag a{color:rgba(255,255,255,.75);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);transition:color .15s,border-color .15s;}
+.footer-tag a:hover{color:#fff;border-color:#fff;}
+.footer-linkedin{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.3rem;font-family:'DM Sans',sans-serif;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:.55rem 1.1rem;border-radius:2px;transition:background .2s,border-color .2s;}
+.footer-linkedin:hover{background:var(--blue);border-color:var(--blue);}
+.footer-col-title{font-family:'DM Sans',sans-serif;font-size:.64rem;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.4);margin-bottom:1.1rem;}
+.footer-col a,.footer-col span{display:block;font-family:'DM Sans',sans-serif;font-size:.8rem;color:rgba(255,255,255,.65);text-decoration:none;margin-bottom:.65rem;line-height:1.4;transition:color .15s;}
+.footer-col a:hover{color:#fff;}
+.footer-bottom{max-width:1200px;margin:0 auto;padding-top:1.6rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;}
+.footer-bottom span,.footer-bottom a{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);text-decoration:none;}
+.footer-bottom a:hover{color:rgba(255,255,255,.6);}
+.footer-legal{display:flex;gap:1.4rem;}
 .reveal{opacity:1;transform:none;transition:opacity .65s ease,transform .65s ease;}
 .reveal.vis{opacity:1;transform:none;}
 @media(max-width:900px){
@@ -154,10 +178,12 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
   .sw{padding:3.5rem 1.5rem;}
   #hero{padding:7rem 1.5rem 3rem;}
   .eitem{grid-template-columns:1fr;gap:.5rem;}
+  .sv-grid{grid-template-columns:1fr;gap:2rem;}
   .fi-grid{grid-template-columns:1fr 1fr;}
   .nl-grid{grid-template-columns:1fr;}
   #cta{padding:4rem 1.5rem;}
-  footer{flex-direction:column;gap:.7rem;text-align:center;padding:1.5rem;}
+  footer{padding:3rem 1.5rem 1.5rem;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}
   .divider{margin:0 1.5rem;}
   .ticker{padding:0 1.5rem;}
 }
@@ -184,8 +210,9 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
   #cta{padding:3.5rem 1.2rem;}
   .ctitle{font-size:clamp(2.2rem,11vw,3.6rem);}
   .cbtn{font-size:.65rem;padding:.85rem 1.8rem;}
-  footer{padding:1.2rem;gap:.5rem;}
-  footer span{font-size:.55rem;}
+  footer{padding:3rem 1.2rem 1.5rem;}
+  .footer-grid{grid-template-columns:1fr;gap:1.8rem;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;}
   .divider{margin:0 1.2rem;}
   .ticker{padding:0 1.2rem;}
 }
@@ -194,32 +221,31 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 <body>
 <div id="cur"></div>
 <div id="ring"></div>
-
 <nav>
-  <a href="https://rileycatalano.com/" class="nav-logo">RC<span>.</span></a>
+  <a href="https://rileycatalano.com/" class="nav-logo">Riley Catalano</a>
   <ul class="nav-links">
-    <li><a href="https://rileycatalano.com/">Home</a></li>
     <li><a href="https://rileycatalano.com/email-marketing">Email Marketing</a></li>
-    <li><a href="https://rileycatalano.com/social-media">Social Media</a></li>
+    <li><a href="https://rileycatalano.com/social-media-marketing">Social Media</a></li>
     <li><a href="https://rileycatalano.com/copywriting" class="current">Copywriting</a></li>
-    <li><a href="https://rileycatalano.com/#cta" class="nav-cta">Hire Me</a></li>
+    <li><a href="https://rileycatalano.com/search-visibility">Search Visibility</a></li>
+    <li><a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer" class="nav-cta">Hire Me</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="https://rileycatalano.com/" onclick="closeMenu()">Home</a>
   <a href="https://rileycatalano.com/email-marketing" onclick="closeMenu()">Email Marketing</a>
-  <a href="https://rileycatalano.com/social-media" onclick="closeMenu()">Social Media</a>
+  <a href="https://rileycatalano.com/social-media-marketing" onclick="closeMenu()">Social Media</a>
   <a href="https://rileycatalano.com/copywriting" onclick="closeMenu()">Copywriting</a>
-  <a href="https://rileycatalano.com/#cta" onclick="closeMenu()" class="mobile-cta">Hire Me</a>
+  <a href="https://rileycatalano.com/search-visibility" onclick="closeMenu()">Search Visibility</a>
+  <a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer" onclick="closeMenu()" class="mobile-cta">Hire Me</a>
 </div>
-
 <section id="hero">
+  <p class="hbreadcrumb"><a href="https://rileycatalano.com/">RILEYCATALANO.COM</a> <span>/ COPYWRITING</span></p>
   <p class="heye">Published Copywriting and Content Strategy</p>
-  <h1 class="hname">Copywriting<span>Portfolio</span></h1>
-  <p class="hsub">A working index of published copywriting across three organizations: blog content, customer story features, and thought-leadership writing built for organic search, AI answer engines, and actual readers.</p>
+  <h1 class="hname">Copywriting</h1>
+  <p class="hsub">A working index of published copywriting across three organizations: blog content, customer story features, and thought-leadership writing built for <a href="https://rileycatalano.com/search-visibility" class="fi-link">organic search and AI answer engines</a>, and actual readers.</p>
   <div class="htags">
     <span class="htag htag-b">SEO Copywriting</span>
     <span class="htag">Customer Stories</span>
@@ -228,10 +254,10 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
     <span class="htag">LinkedIn Newsletter</span>
   </div>
   <div class="hstats">
-    <div><div class="snum">33</div><div class="slbl2">Published<br>Bylines</div></div>
+    <div><div class="snum">39</div><div class="slbl2">Published<br>Bylines</div></div>
     <div><div class="snum">3</div><div class="slbl2">Organizations<br>Written For</div></div>
     <div><div class="snum">19</div><div class="slbl2">ABI Attachments<br>Articles</div></div>
-    <div><div class="snum">11</div><div class="slbl2">Favze Insights<br>Newsletter Posts</div></div>
+    <div><div class="snum">17</div><div class="slbl2">Favze Insights<br>Newsletter Posts</div></div>
   </div>
   <div class="jump">
     <a href="#abi">ABI Attachments</a>
@@ -241,12 +267,9 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
   </div>
   <div class="hwm">WORDS</div>
 </section>
-
 <hr class="divider">
-
 <div class="sw" id="abi">
-  <div class="reveal"><p class="slabel">Client Work</p><h2 class="stitle">ABI Attachments</h2></div>
-
+  <div class="reveal"><p class="slabel">In-House Writing</p><h2 class="stitle">ABI Attachments</h2></div>
   <div class="eitem reveal">
     <div>
       <div class="eco">ABI Attachments, Inc.</div>
@@ -258,18 +281,14 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
       <p class="edesc">Long-form blog content and customer story features written for ABI's Learn hub, covering arena footing, land clearing, manure spreaders, and rodeo industry partnerships. Built for organic search, AEO, and GEO visibility.</p>
     </div>
   </div>
-
   <div class="ticker">
     <div class="ticker-track" id="abi-track"></div>
   </div>
-
   <p class="internal-note">Riley also builds ABI Attachments' <a href="https://rileycatalano.com/email-marketing" class="fi-link">email automation system</a> in NetSuite, connecting the same brand voice from these articles into carrier shipping notifications and sales sequences.</p>
-
   <div class="etools">
     <span class="etool">Arena Footing</span><span class="etool">Land Clearing</span><span class="etool">Manure Spreaders</span><span class="etool">Customer Stories</span><a class="etool" href="https://favze.com/services/search-engine-optimization" target="_blank" rel="noopener">SEO Copywriting</a>
   </div>
 </div>
-
 <script>
 const abiArticles = [
   ["Priefert x ABI Attachments: How Two Rodeo Industry Leaders Keep the Ground Right at the Priefert Ranch Open","https://abiattachments.com/learn/articles/priefert-x-abi-attachments-how-two-rodeo-industry-leaders-keep-the-ground-right-at-the-priefert-ranch-open/","How Priefert and ABI Attachments partner to keep arena footing competition-ready at the Priefert Ranch Open."],
@@ -301,12 +320,9 @@ function buildTicker(id, items, speedClass){
 }
 buildTicker('abi-track', abiArticles);
 </script>
-
 <hr class="divider">
-
 <div class="sw" id="hrc">
-  <div class="reveal"><p class="slabel">Client Work</p><h2 class="stitle">HR Collaboration Group</h2></div>
-
+  <div class="reveal"><p class="slabel">In-House Writing</p><h2 class="stitle">HR Collaboration Group</h2></div>
   <div class="eitem reveal">
     <div>
       <div class="eco">HR Collaboration Group</div>
@@ -318,18 +334,14 @@ buildTicker('abi-track', abiArticles);
       <p class="edesc">Blog content positioning HR Collaboration Group as a strategic HR partner for growing businesses, covering hiring, retention, and workplace accountability.</p>
     </div>
   </div>
-
   <div class="ticker">
     <div class="ticker-track" id="hrc-track"></div>
   </div>
-
   <p class="internal-note">Riley also runs HRC's <a href="https://rileycatalano.com/email-marketing" class="fi-link">HRC Insights newsletter automation</a> in Zoho Campaigns, so this blog content and the email program pull from the same content calendar.</p>
-
   <div class="etools">
     <span class="etool">Hiring Strategy</span><span class="etool">Retention</span><span class="etool">HR Compliance</span><a class="etool" href="https://favze.com/services/ai-optimization" target="_blank" rel="noopener">AI in HR</a>
   </div>
 </div>
-
 <script>
 const hrcArticles = [
   ["How CEOs Build Employee Accountability","https://hrcollaborationgroup.com/how-ceos-build-employee-accountability/","How CEOs set clear expectations and follow-through systems that make accountability stick across a team."],
@@ -338,12 +350,10 @@ const hrcArticles = [
 ];
 buildTicker('hrc-track', hrcArticles, 'fast');
 </script>
-
 <hr class="divider">
-
 <div class="sw" id="favze">
   <div class="reveal">
-    <p class="slabel">Client Work</p>
+    <p class="slabel">Founder Work</p>
     <h2 class="stitle">Favze Insights</h2>
   </div>
   <div class="fi-intro reveal">
@@ -352,10 +362,8 @@ buildTicker('hrc-track', hrcArticles, 'fast');
   <div class="ticker">
     <div class="ticker-track slow" id="favze-track"></div>
   </div>
-
-  <p class="internal-note" style="max-width:720px;">These posts feed Favze's <a href="https://favze.com/services/search-engine-optimization" target="_blank" rel="noopener" class="fi-link">SEO</a>, <a href="https://favze.com/services/answer-engine-optimization" target="_blank" rel="noopener" class="fi-link">AEO</a>, and <a href="https://favze.com/services/generative-engine-optimization" target="_blank" rel="noopener" class="fi-link">GEO</a> service pages through internal linking, and cross-post to the <a href="https://www.linkedin.com/newsletters/favze-insights-7399519169551126528/" target="_blank" rel="noopener" class="fi-link">Favze Insights LinkedIn newsletter</a>.</p>
+  <p class="internal-note" style="max-width:720px;">These posts feed Favze's <a href="https://favze.com/services/search-engine-optimization" target="_blank" rel="noopener" class="fi-link">SEO</a>, <a href="https://favze.com/services/answer-engine-optimization" target="_blank" rel="noopener" class="fi-link">AEO</a>, and <a href="https://favze.com/services/generative-engine-optimization" target="_blank" rel="noopener" class="fi-link">GEO</a> service pages through internal linking, and connect back to Riley's own <a href="https://rileycatalano.com/search-visibility" class="fi-link">search visibility work</a>, then cross-post to the <a href="https://www.linkedin.com/newsletters/favze-insights-7399519169551126528/" target="_blank" rel="noopener" class="fi-link">Favze Insights LinkedIn newsletter</a>.</p>
 </div>
-
 <script>
 const favzeArticles = [
   ["Blog and Article Hierarchy: Pillars, Clusters, and Internal Linking","How to structure a content library so pillar pages and cluster articles reinforce each other in search and AI answer engines.","https://www.linkedin.com/pulse/blog-article-hierarchy-pillars-clusters-internal-linking-catalano-gpcxc"],
@@ -368,7 +376,13 @@ const favzeArticles = [
   ["How to Write Awesome Image Alt Text","Why alt text is one of the most overlooked ranking and accessibility levers on a website.","https://www.linkedin.com/pulse/how-write-awesome-image-alt-text-riley-catalano-qo4jc"],
   ["Master Email Marketing: Build Authority and Trust","How consistent, valuable email builds the kind of trust that turns subscribers into customers.","https://www.linkedin.com/pulse/master-email-marketing-build-authority-trust-riley-catalano-yovfc"],
   ["Your Cute Captions Aren't Searchable","Why clever social captions often cost businesses the search visibility that plain, keyword-aware copy would earn.","https://www.linkedin.com/pulse/your-cute-captions-arent-searchable-riley-catalano-2vd5c"],
-  ["The Complete Google Business Profile Checklist","Every field and feature worth completing on a Google Business Profile to maximize local search visibility.","https://www.linkedin.com/pulse/complete-google-business-profile-checklist-riley-catalano-rbsgc"]
+  ["The Complete Google Business Profile Checklist","Every field and feature worth completing on a Google Business Profile to maximize local search visibility.","https://www.linkedin.com/pulse/complete-google-business-profile-checklist-riley-catalano-rbsgc"],
+  ["Why Local Expertise Wins in Northern Indiana and Michiana","Why hyper-local market knowledge beats generic marketing playbooks for businesses competing in Northern Indiana and Michiana.","https://www.linkedin.com/pulse/why-local-expertise-wins-northern-indiana-michiana-riley-catalano-xlkmc"],
+  ["How HubSpot Helps Small Businesses in Elkhart","How HubSpot's tools give small businesses in Elkhart the same marketing infrastructure larger competitors rely on.","https://www.linkedin.com/pulse/how-hubspot-helps-small-businesses-elkhart-riley-catalano-bww9c"],
+  ["Chatbots vs Contact Forms: Which Converts Better?","Comparing chatbots and traditional contact forms head-to-head on lead capture and conversion performance.","https://www.linkedin.com/pulse/chatbots-vs-contact-forms-which-converts-better-riley-catalano-4iaec"],
+  ["LinkedIn Marketing for Small Businesses: How to Build Credibility and Generate Leads","A practical approach to using LinkedIn to build credibility and generate real leads for a small business.","https://www.linkedin.com/pulse/linkedin-marketing-small-businesses-how-build-leads-riley-catalano-ofi4c"],
+  ["The Power of SEO: How to Get Your Business Found on Google Without Paying for Ads","Why organic SEO can get a business found on Google without the ongoing cost of paid ads.","https://www.linkedin.com/pulse/power-seo-how-get-your-business-found-google-without-paying-catalano-w5jwc"],
+  ["5 Digital Marketing Mistakes That Are Costing Your Business Money","Five common digital marketing mistakes that quietly drain budget and hurt results for small businesses.","https://www.linkedin.com/pulse/5-digital-marketing-mistakes-costing-your-business-money-catalano-tklxe"]
 ];
 function buildFiTicker(id, items){
   const track = document.getElementById(id);
@@ -378,9 +392,7 @@ function buildFiTicker(id, items){
 }
 buildFiTicker('favze-track', favzeArticles);
 </script>
-
 <hr class="divider">
-
 <div class="sw" id="newsletter">
   <div class="reveal"><p class="slabel">Now Launching</p><h2 class="stitle">Favze Is Starting a Newsletter</h2></div>
   <div class="fi-intro reveal">
@@ -402,25 +414,84 @@ buildFiTicker('favze-track', favzeArticles);
     <a class="fi-subscribe" href="https://favze.com/newsletter" target="_blank" rel="noopener">Subscribe at favze.com/newsletter ↗</a>
   </div>
 </div>
-
 <hr class="divider">
-
+<div class="sw" id="search-visibility-crossover">
+  <div class="reveal" style="text-align:center;">
+    <p class="explore-eyebrow"><span class="eyebrow-icon">🔍</span><span class="eyebrow-line"></span><span class="eyebrow-text">Continue Exploring</span><span class="eyebrow-line"></span><span class="eyebrow-icon" style="animation-delay:.4s;">🧭</span></p>
+    <h2 class="stitle">Search Visibility Work</h2>
+  </div>
+  <div class="reveal fi-intro" style="text-align:center;max-width:680px;margin:0 auto;">
+    <p>Copywriting and search visibility are the same conversation. Every article, product description, and FAQ on this page is written to rank, not just read, structured for keyword targeting, schema markup, and AI answer engines before a single word gets published.</p>
+    <div class="sv-pills">
+      <span class="htag">Technical SEO Audits</span>
+      <span class="htag">Schema Markup (JSON-LD)</span>
+      <span class="htag">AEO Content Structuring</span>
+      <span class="htag">GEO for AI Search</span>
+      <span class="htag">Keyword Research</span>
+      <span class="htag">Internal Linking Strategy</span>
+      <span class="htag">Multi-County SEO Content</span>
+    </div>
+    <div style="margin-top:2.2rem;">
+      <a class="fi-subscribe" href="https://rileycatalano.com/search-visibility">View Search Visibility Work ↗</a>
+    </div>
+  </div>
+</div>
+<hr class="divider">
 <div id="cta">
   <p class="ceye">Need words that work?</p>
   <h2 class="ctitle">Let's Write Your<br>Brand's <em>Next Story</em></h2>
   <a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer" class="cbtn">Connect on LinkedIn</a>
-  <div class="explore">
-    <a href="https://rileycatalano.com/">Full Portfolio</a>
-    <a href="https://rileycatalano.com/email-marketing">Email Marketing Work</a>
-    <a href="https://rileycatalano.com/social-media">Social Media Work</a>
-  </div>
 </div>
-
 <footer>
-  <span>© 2026 Riley Catalano</span>
-  <span>Northern Indiana and Michiana / Remote Worldwide</span>
+  <div class="footer-grid">
+    <div>
+      <a href="https://rileycatalano.com/" class="footer-brand">Riley Catalano</a>
+      <p class="footer-tag">AI-driven digital marketing strategist specializing in <a href="https://rileycatalano.com/search-visibility">SEO, AEO, GEO</a>, <a href="https://rileycatalano.com/email-marketing">email marketing</a>, <a href="https://rileycatalano.com/email-marketing">automation</a>, <a href="https://rileycatalano.com/copywriting">copywriting</a>, and <a href="https://rileycatalano.com/social-media-marketing">social media strategy</a> for local and regional businesses across Northern Indiana and Michiana, as well as national and international brands. Let's make your brand the favorite.</p>
+      <a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer" class="footer-linkedin">Connect on LinkedIn ↗</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Growth Capabilities</div>
+      <a href="https://rileycatalano.com/email-marketing">Email Marketing</a>
+      <a href="https://rileycatalano.com/email-marketing">Email Automation</a>
+      <a href="https://rileycatalano.com/social-media-marketing">Social Media Marketing</a>
+      <a href="https://rileycatalano.com/social-media-marketing">Social Media Management</a>
+      <a href="https://rileycatalano.com/copywriting">Copywriting</a>
+      <a href="https://rileycatalano.com/copywriting">Article Writing</a>
+      <a href="https://rileycatalano.com/search-visibility">Search Visibility</a>
+      <a href="https://rileycatalano.com/search-visibility">AI Search Optimization</a>
+      <span>CRM &amp; Marketing Automation</span>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Locations I Can Work For</div>
+      <span>Michiana</span>
+      <span>Northern Indiana</span>
+      <span>Elkhart</span>
+      <span>Mishawaka</span>
+      <span>Goshen</span>
+      <span>Bristol</span>
+      <span>Middlebury</span>
+      <span>Shipshewana</span>
+      <span>Nappanee</span>
+      <span>Remote Worldwide</span>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Quick Links</div>
+      <a href="https://rileycatalano.com/#about">About</a>
+      <a href="https://rileycatalano.com/#experience">Experience</a>
+      <a href="https://rileycatalano.com/#skills">Skills</a>
+      <a href="https://rileycatalano.com/#certifications">Certifications</a>
+      <a href="https://rileycatalano.com/#faq">FAQ</a>
+      <a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Riley Catalano</span>
+    <div class="footer-legal">
+      <a href="https://rileycatalano.com/privacy-policy">Privacy Policy</a>
+      <a href="https://rileycatalano.com/terms-of-use">Terms of Use</a>
+    </div>
+  </div>
 </footer>
-
 <script>
 function toggleMenu(){
   const h=document.getElementById('hamburger');
