@@ -174,11 +174,21 @@ body{background:var(--white);color:var(--ink);font-family:'DM Sans',sans-serif;f
 #ring{position:fixed;top:-100px;left:-100px;width:46px;height:46px;border:2px dashed #0a3da3;border-radius:50%;pointer-events:none;z-index:99998;opacity:.7;animation:curspin 2.5s linear infinite;}
 @keyframes curspin{0%{transform:translate(-50%,-50%) rotate(0deg);}100%{transform:translate(-50%,-50%) rotate(360deg);}}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:var(--white);border-bottom:1px solid var(--border);}
-.nav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.4rem;letter-spacing:.1em;color:var(--ink);text-decoration:none;}
-.nav-logo span{color:var(--blue);}
+.nav-logo{font-family:'DM Sans',sans-serif;font-weight:400;font-size:1rem;letter-spacing:.04em;color:var(--ink);text-decoration:none;}
 .nav-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:nowrap;white-space:nowrap;}
 .nav-links a{font-family:'DM Sans',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);text-decoration:none;transition:color .2s;}
 .nav-links a:hover{color:var(--ink);}
+.nav-links a.current{color:var(--ink);border-bottom:1px solid var(--blue);padding-bottom:.15rem;}
+.nav-item-dd{position:relative;}
+.nav-dd-toggle{background:none;border:none;font-family:'DM Sans',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:.35rem;padding:0;transition:color .2s;}
+.nav-dd-toggle:hover{color:var(--ink);}
+.nav-dd-toggle svg{width:9px;height:9px;transition:transform .2s;}
+.nav-item-dd.open .nav-dd-toggle svg{transform:rotate(180deg);}
+.nav-dd-menu{position:absolute;top:calc(100% + 1.1rem);left:50%;transform:translateX(-50%);background:var(--white);border:1px solid var(--border);border-radius:4px;box-shadow:0 12px 28px rgba(10,10,10,.1);padding:.5rem;display:none;flex-direction:column;min-width:190px;z-index:110;}
+.nav-item-dd.open .nav-dd-menu{display:flex;}
+.nav-dd-menu a{font-family:'DM Sans',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-decoration:none;padding:.6rem .8rem;border-radius:3px;white-space:nowrap;transition:background .15s,color .15s;}
+.nav-dd-menu a:hover{background:var(--card-bg);color:var(--ink);}
+.nav-dd-menu a.current{color:var(--blue);background:var(--tag-bg);}
 .nav-cta{background:var(--blue)!important;color:#fff!important;padding:.45rem 1.1rem;border-radius:2px;}
 .nav-cta:hover{background:var(--ink)!important;}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
@@ -215,6 +225,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 @keyframes wiggle{0%,100%{transform:rotate(-8deg) translateY(0);}20%{transform:rotate(8deg) translateY(-4px);}40%{transform:rotate(-7deg) translateY(0);}60%{transform:rotate(7deg) translateY(-4px);}80%{transform:rotate(-4deg) translateY(0);}}
 @media(max-width:600px){.mail-icon{width:6rem;}}
 @keyframes fu{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
+/* Jump links (in-page section nav, moved out of the top nav to match the site's cross-page nav pattern) */
+.jump{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2.4rem;opacity:0;animation:fu .9s .9s forwards;}
+.jump a{font-family:'DM Sans',sans-serif;font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-decoration:none;padding:.5rem 1rem;border:1px solid var(--border);border-radius:100px;transition:all .2s;}
+.jump a:hover{color:#fff;background:var(--blue);border-color:var(--blue);}
 /* Breadcrumb */
 .breadcrumb{font-family:'DM Sans',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:1.4rem;display:flex;align-items:center;gap:.6rem;opacity:0;animation:fu .8s .05s forwards;}
 .breadcrumb a{color:var(--blue);text-decoration:none;}
@@ -288,9 +302,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .cbtn:hover{background:#fff;color:var(--blue);transform:scale(1.03);}
 /* Reveal */
 .reveal{opacity:1;transform:none;transition:opacity .65s ease,transform .65s ease;}
-/* Footer */
-footer{background:var(--ink);padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;}
-footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);}
+/* Footer (rich cross-page footer, matching the copywriting page) */
+footer{background:var(--ink);padding:4rem 3rem 1.8rem;}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:2.5rem;max-width:1200px;margin:0 auto;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-brand{font-family:'DM Sans',sans-serif;font-weight:400;font-size:1rem;color:#fff;text-decoration:none;letter-spacing:.04em;}
+.footer-tag{font-size:.78rem;line-height:1.7;color:rgba(255,255,255,.45);margin-top:.9rem;max-width:320px;}
+.footer-tag a{color:rgba(255,255,255,.75);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);transition:color .15s,border-color .15s;}
+.footer-tag a:hover{color:#fff;border-color:#fff;}
+.footer-linkedin{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.3rem;font-family:'DM Sans',sans-serif;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:.55rem 1.1rem;border-radius:2px;transition:background .2s,border-color .2s;}
+.footer-linkedin:hover{background:var(--blue);border-color:var(--blue);}
+.footer-col-title{font-family:'DM Sans',sans-serif;font-size:.64rem;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.4);margin-bottom:1.1rem;}
+.footer-col a,.footer-col span{display:block;font-family:'DM Sans',sans-serif;font-size:.8rem;color:rgba(255,255,255,.65);text-decoration:none;margin-bottom:.65rem;line-height:1.4;transition:color .15s;}
+.footer-col a:hover{color:#fff;}
+.footer-bottom{max-width:1200px;margin:0 auto;padding-top:1.6rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;}
+.footer-bottom span,.footer-bottom a{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);text-decoration:none;}
+.footer-bottom a:hover{color:rgba(255,255,255,.6);}
+.footer-legal{display:flex;gap:1.4rem;}
 /* Back link */
 .back-link{display:inline-flex;align-items:center;gap:.5rem;font-family:'DM Sans',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);text-decoration:none;border:1.5px solid var(--blue);padding:.5rem 1rem;border-radius:2px;transition:background .2s,color .2s;margin-top:2rem;}
 .back-link:hover{background:var(--blue);color:#fff;}
@@ -315,11 +342,15 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
   .resp-grid-wrap{grid-template-columns:1fr;}
   .platform-card{grid-template-columns:1fr;gap:.6rem;text-align:left;}
   .skgrid{grid-template-columns:1fr 1fr;}
-  footer{flex-direction:column;gap:.7rem;text-align:center;}
+  footer{padding:3rem 1.5rem 1.5rem;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}
 }
 @media(max-width:600px){
   .skgrid{grid-template-columns:1fr;}
   .hstats{gap:1.5rem;}
+  footer{padding:3rem 1.2rem 1.5rem;}
+  .footer-grid{grid-template-columns:1fr;gap:1.8rem;}
+  .footer-bottom{flex-direction:column;align-items:flex-start;}
 }
 </style>
 </head>
@@ -328,17 +359,12 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 <div id="ring"></div>
 
 <nav>
-  <a href="/" class="nav-logo">RC<span>.</span></a>
+  <a href="https://rileycatalano.com/" class="nav-logo">Riley Catalano</a>
   <ul class="nav-links">
-    <li><a href="/">Home</a></li>
-    <li><a href="#role">Experience</a></li>
-    <li><a href="#funnel">Funnel Strategy</a></li>
-    <li><a href="#segmentation">Segmentation</a></li>
-    <li><a href="#compliance">Compliance</a></li>
-    <li><a href="#platforms">Platforms</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#certifications">Certifications</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://rileycatalano.com/email-marketing" class="current">Email Marketing</a></li>
+    <li><a href="https://rileycatalano.com/social-media-marketing">Social Media Marketing</a></li>
+    <li><a href="https://rileycatalano.com/copywriting">Copywriting</a></li>
+    <li><a href="https://rileycatalano.com/search-visibility">Search Visibility</a></li>
     <li><a href="#cta" class="nav-cta" data-tally-open="D4yBJb" data-tally-hide-title="1">Hire Me</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -346,21 +372,16 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
   </button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
-  <a href="/" onclick="closeMenu()">Home</a>
-  <a href="#role" onclick="closeMenu()">Experience</a>
-  <a href="#funnel" onclick="closeMenu()">Funnel Strategy</a>
-  <a href="#segmentation" onclick="closeMenu()">Segmentation</a>
-  <a href="#compliance" onclick="closeMenu()">Compliance</a>
-  <a href="#platforms" onclick="closeMenu()">Platforms</a>
-  <a href="#skills" onclick="closeMenu()">Skills</a>
-  <a href="#certifications" onclick="closeMenu()">Certifications</a>
-  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="https://rileycatalano.com/email-marketing" onclick="closeMenu()">Email Marketing</a>
+  <a href="https://rileycatalano.com/social-media-marketing" onclick="closeMenu()">Social Media Marketing</a>
+  <a href="https://rileycatalano.com/copywriting" onclick="closeMenu()">Copywriting</a>
+  <a href="https://rileycatalano.com/search-visibility" onclick="closeMenu()">Search Visibility</a>
   <a href="#cta" onclick="closeMenu()" class="mobile-cta" data-tally-open="D4yBJb" data-tally-hide-title="1">Hire Me</a>
 </div>
 
 <!-- HERO -->
 <section id="hero">
-  <p class="breadcrumb"><a href="/">rileycatalano.com</a> <span>/</span> Email Marketing</p>
+  <p class="breadcrumb"><a href="https://rileycatalano.com/">rileycatalano.com</a> <span>/</span> Email Marketing</p>
   <p class="heye">Email marketer who specialized in lead generation and sales pipeline growth</p>
   <div class="hero-title-row">
     <h1 class="hname">Email<span>Marketing</span></h1>
@@ -392,6 +413,16 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
     <div><div class="snum">3</div><div class="slbl2">Active Email<br>Roles</div></div>
     <div><div class="snum">4</div><div class="slbl2">Automation<br>Triggers at HRC</div></div>
     <div><div class="snum">100%</div><div class="slbl2">Compliance<br>Built In</div></div>
+  </div>
+  <div class="jump">
+    <a href="#role">Experience</a>
+    <a href="#funnel">Funnel Strategy</a>
+    <a href="#segmentation">Segmentation</a>
+    <a href="#compliance">Compliance</a>
+    <a href="#platforms">Platforms</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#faq">FAQ</a>
   </div>
   <div class="hwm">EMAIL</div>
 </section>
@@ -426,7 +457,7 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
     </div>
   </div>
   <div style="text-align:center;margin-top:2rem;">
-    <a href="/" style="display:inline-flex;align-items:center;gap:.6rem;font-family:'DM Sans',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--blue);border:1.5px solid var(--blue);padding:.75rem 1.8rem;border-radius:2px;text-decoration:none;transition:background .2s,color .2s;" onmouseover="this.style.background='#0a3da3';this.style.color='#fff'" onmouseout="this.style.background='';this.style.color='#0a3da3'">View Full Portfolio ↗</a>
+    <a href="https://rileycatalano.com/" style="display:inline-flex;align-items:center;gap:.6rem;font-family:'DM Sans',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--blue);border:1.5px solid var(--blue);padding:.75rem 1.8rem;border-radius:2px;text-decoration:none;transition:background .2s,color .2s;" onmouseover="this.style.background='#0a3da3';this.style.color='#fff'" onmouseout="this.style.background='';this.style.color='#0a3da3'">View Full Portfolio ↗</a>
   </div>
 
 </div>
@@ -1118,8 +1149,55 @@ footer span{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:upp
 </div>
 
 <footer>
-  <span>© 2026 Riley Catalano</span>
-  <span>Northern Indiana and Michiana / Remote Worldwide</span>
+  <div class="footer-grid">
+    <div>
+      <a href="https://rileycatalano.com/" class="footer-brand">Riley Catalano</a>
+      <p class="footer-tag">AI-driven digital marketing strategist specializing in <a href="https://rileycatalano.com/search-visibility">SEO, AEO, GEO</a>, <a href="https://rileycatalano.com/email-marketing">email marketing</a>, <a href="https://rileycatalano.com/email-marketing">automation</a>, <a href="https://rileycatalano.com/copywriting">copywriting</a>, and <a href="https://rileycatalano.com/social-media-marketing">social media strategy</a> for local and regional businesses across Northern Indiana and Michiana, as well as national and international brands. Let's make your brand the favorite.</p>
+      <a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer" class="footer-linkedin">Connect on LinkedIn ↗</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Growth Capabilities</div>
+      <a href="https://rileycatalano.com/email-marketing">Email Marketing</a>
+      <a href="https://rileycatalano.com/email-marketing">Email Automation</a>
+      <a href="https://rileycatalano.com/social-media-marketing">Social Media Marketing</a>
+      <a href="https://rileycatalano.com/social-media-marketing">Social Media Management</a>
+      <a href="https://rileycatalano.com/copywriting">Copywriting</a>
+      <a href="https://rileycatalano.com/copywriting">Article Writing</a>
+      <a href="https://rileycatalano.com/search-visibility">Search Visibility</a>
+      <a href="https://rileycatalano.com/search-visibility">AI Search Optimization</a>
+      <span>CRM &amp; Marketing Automation</span>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Locations I Can Work For</div>
+      <span>Michiana</span>
+      <span>Northern Indiana</span>
+      <span>Elkhart</span>
+      <span>Mishawaka</span>
+      <span>Goshen</span>
+      <span>Bristol</span>
+      <span>Middlebury</span>
+      <span>Shipshewana</span>
+      <span>Nappanee</span>
+      <span>Remote Worldwide</span>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Quick Links</div>
+      <a href="#role">Experience</a>
+      <a href="#funnel">Funnel Strategy</a>
+      <a href="#platforms">Platforms</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Riley Catalano</span>
+    <div class="footer-legal">
+      <a href="https://rileycatalano.com/privacy-policy">Privacy Policy</a>
+      <a href="https://rileycatalano.com/terms-of-use">Terms of Use</a>
+    </div>
+  </div>
 </footer>
 
 <script>
