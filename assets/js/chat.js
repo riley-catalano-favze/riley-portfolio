@@ -47,7 +47,7 @@
       a: ['I founded Favze in October 2025, during my junior year of high school, and that junior year became my final year. 🎓',
           'I joined ABI Attachments as a Marketing Intern in January 2026, then earned two promotions in seven months, to Email Automation Specialist and then Digital Marketing Specialist.',
           'Now I am earning a bachelor’s and a master’s at WGU in about 18 months.'],
-      links: [['Scroll the full story', '/#story']],
+      links: [['See the timeline', '/#experience']],
       next: ['creds', 'what', 'book']
     },
     creds: {
