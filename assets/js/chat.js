@@ -82,8 +82,9 @@
     },
     books: {
       q: 'Favorite marketing book?',
-      k: ['book', 'read', 'purple cow', 'godin', 'podcast', 'youtube', 'inspir', 'marketer', 'neil', 'wes', 'mentor', 'favorite'],
+      k: ['book', 'read', 'purple cow', 'godin', 'storybrand', 'donald miller', 'liars', 'podcast', 'youtube', 'inspir', 'marketer', 'neil', 'wes', 'mentor', 'favorite'],
       a: ['Purple Cow by Seth Godin. 🐄 It introduced me to marketing and shaped how I think about standing out.',
+          'Also on my shelf: Building a StoryBrand 2.0 by Donald Miller, which structures everything I write, and All Marketers Are Liars by Seth Godin.',
           'On repeat: the Marketing School podcast, Grow My Ads on YouTube, and the work of Neil Patel and Wes McDowell.'],
       links: [['Browse my bookshelf', '/bookshelf']],
       next: ['learning', 'story']
@@ -107,7 +108,7 @@
       k: ['website design', 'web design', 'design a website', 'build a website', 'build my website', 'new website', 'redesign', 'landing page', 'webpage', 'web page', 'developer', 'wordpress', 'hubspot site'],
       a: ['Yes! 🖥️ I design and hand-code websites built to get found, earn trust fast, and turn visitors into leads.',
           'I have built this site, the Favze website, and the Belle Allure Aesthetics and Wellness website, plus a custom CRM and client portal.',
-          'Every site plugs into the rest of the system: search, CRM, email, and social.'],
+          'All three sites are hand-coded on GitHub, and every one plugs into the rest of the system: search, CRM, email, and social.'],
       links: [['See my website design work', '/website-design'], ['Book a free strategy call', BOOK]],
       next: ['site', 'results', 'book']
     },

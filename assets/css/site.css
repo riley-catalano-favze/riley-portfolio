@@ -1466,3 +1466,13 @@ html.rm .pt-stamp svg{animation:none}
 .float-1{top:34%!important;right:6%!important}
 .float-2{top:42%!important}
 .pt-text:has(.pt-more[open]){max-width:470px}
+/* Bookshelf: more books */
+.shelf-row{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,3vw,2rem)}
+.shelf-item{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(1.2rem,3vw,2.2rem);align-items:start;padding:clamp(1.3rem,3vw,2rem);border:2px solid var(--ink);border-radius:var(--r);background:#F4EFE3;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.shelf-item:hover{transform:translate(-3px,-3px);box-shadow:7px 7px 0 var(--sage)}
+.shelf-cover{perspective:1200px;padding:.6rem .6rem 1.4rem}
+.shelf-item:nth-child(1) .front{color:var(--ink)}
+.shelf-copy h3{font-family:var(--display);font-weight:900;font-stretch:58%;text-transform:uppercase;font-size:clamp(1.8rem,3vw,2.6rem);line-height:.88;margin:.7rem 0 1rem}
+.shelf-copy .lessons{gap:.2rem}
+@media (max-width:1000px){.shelf-row{grid-template-columns:1fr}}
+@media (max-width:560px){.shelf-item{grid-template-columns:1fr}.shelf-cover{justify-self:center}}
