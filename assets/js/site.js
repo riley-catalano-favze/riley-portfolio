@@ -375,7 +375,7 @@
 
   /* ---------- Confetti + easter egg ---------- */
   function burst(origin, n = 24, chars = ['✦', '●', '✦', '▲', '■']) {
-    const hues = ['#1F4FE0', '#FF5A1F', '#111111'];
+    const hues = ['#5A6B4F', '#A9B79A', '#111111'];
     if (reduce) return;
     const r = origin.getBoundingClientRect ? origin.getBoundingClientRect() : { left: innerWidth / 2, top: innerHeight / 2, width: 0, height: 0 };
     for (let i = 0; i < n; i++) {
@@ -406,7 +406,7 @@
     if (fine) { b.blur(); say('<span aria-hidden="true">⌨️</span> Go ahead: type <b>f a v z e</b> on your keyboard.'); }
     else { burst(b, 60); say('<span aria-hidden="true">✦</span> You found the secret. Let’s make your brand the favorite.'); }
   }));
-  console.log('%cHey, fellow curious mind. 👋', 'font:700 16px sans-serif;color:#3d6bff');
+  console.log('%cHey, fellow curious mind. 👋', 'font:700 16px sans-serif;color:#5A6B4F');
   console.log('%cHand-built by Riley Catalano. Type “favze” anywhere on the page for a surprise.', 'font:13px sans-serif;color:#626879');
 
   /* ---------- Opening book ---------- */

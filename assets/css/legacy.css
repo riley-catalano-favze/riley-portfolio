@@ -5,11 +5,11 @@
    ========================================================= */
 
 :root{
-  --blue2:#2b5fd4;
+  --blue2:#5A6B4F;
   --white:#ffffff;
   --off:#ebe8e0;
   --border:rgba(11,13,26,.12);
-  --tag-bg:#e3e6f2;
+  --tag-bg:#E4DCC8;
   --card-bg:#efece5;
 }
 
@@ -34,7 +34,7 @@ main{display:block}
 #hero.svc-hero .jump a:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
 #hero.svc-hero .hwm{color:rgba(245,243,238,.035);font-family:var(--display);font-stretch:58%;right:0;bottom:-2rem;z-index:-1}
 #hero.svc-hero .hero-title-row{gap:clamp(1rem,4vw,3rem)}
-#hero.svc-hero .hero-icon,#hero.svc-hero .mail-icon{filter:drop-shadow(0 30px 60px rgba(61,107,255,.45));border-radius:28px}
+#hero.svc-hero .hero-icon,#hero.svc-hero .mail-icon{filter:drop-shadow(0 30px 60px rgba(90,107,79,.45));border-radius:28px}
 #hero.svc-hero .page-summary{background:rgba(245,243,238,.06);border:1px solid rgba(245,243,238,.14);border-left:3px solid var(--electric);color:var(--paper);backdrop-filter:blur(8px)}
 #hero.svc-hero .page-summary li,#hero.svc-hero .ps-list li{color:rgba(245,243,238,.82)}
 #hero.svc-hero .ps-label{color:var(--sky)}
@@ -58,7 +58,7 @@ a.etool:hover{background:var(--electric)}
 /* Old buttons adopt the pill style */
 .cbtn,.cbtn-ghost,.fi-subscribe,.cert-cta{border-radius:999px!important;transition:transform .35s var(--ease),background .3s,color .3s,box-shadow .3s}
 .cbtn{background:var(--ink)!important;color:var(--paper)!important}
-.cbtn:hover,.fi-subscribe:hover,.cert-cta:hover{background:var(--electric)!important;color:#fff!important;box-shadow:0 18px 40px -14px rgba(61,107,255,.6)}
+.cbtn:hover,.fi-subscribe:hover,.cert-cta:hover{background:var(--electric)!important;color:#fff!important;box-shadow:0 18px 40px -14px rgba(90,107,79,.6)}
 
 /* Reveal: legacy observer adds .vis */
 .reveal{transition:opacity 1s var(--ease),transform 1.1s var(--ease)!important}
@@ -78,7 +78,7 @@ a.etool:hover{background:var(--electric)}
 
 /* ---------- Posting-window heatmap (social) ---------- */
 .sched-wrap{background:var(--night);color:var(--paper);padding:clamp(1.4rem,3vw,2.4rem);margin-top:2.4rem;position:relative;overflow:hidden;isolation:isolate}
-.sched-wrap::before{content:'';position:absolute;inset:-30%;z-index:-1;background:radial-gradient(circle at 80% 20%,rgba(31,79,224,.35),transparent 45%),radial-gradient(circle at 10% 90%,rgba(61,107,255,.3),transparent 50%)}
+.sched-wrap::before{content:'';position:absolute;inset:-30%;z-index:-1;background:radial-gradient(circle at 80% 20%,rgba(90,107,79,.35),transparent 45%),radial-gradient(circle at 10% 90%,rgba(90,107,79,.3),transparent 50%)}
 .sched-legend{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin-bottom:1.6rem;font-size:.8rem;color:rgba(245,243,238,.75)}
 .sched-key{display:inline-flex;align-items:center;gap:.5rem}
 .sched-grid{display:grid;gap:6px}
@@ -91,10 +91,10 @@ a.etool:hover{background:var(--electric)}
 .sched-cell .sdot{width:14px;height:14px;transition:transform .5s var(--spring)}
 .sdot.low{background:rgba(245,243,238,.18)}
 .sdot.mid{background:var(--sky);box-shadow:0 0 0 4px rgba(242,237,227,.15)}
-.sdot.peak{background:var(--blush);box-shadow:0 0 0 5px rgba(255,201,112,.18),0 0 24px rgba(255,178,62,.8);animation:peakPulse 2.4s ease-in-out infinite}
-.sched-cell:has(.peak){background:linear-gradient(135deg,rgba(255,201,112,.16),rgba(31,79,224,.16))}
+.sdot.peak{background:var(--blush);box-shadow:0 0 0 5px rgba(169,183,154,.18),0 0 24px rgba(169,183,154,.8);animation:peakPulse 2.4s ease-in-out infinite}
+.sched-cell:has(.peak){background:linear-gradient(135deg,rgba(169,183,154,.16),rgba(90,107,79,.16))}
 .sched-cell:hover .sdot{transform:scale(1.5)}
-@keyframes peakPulse{50%{box-shadow:0 0 0 9px rgba(255,201,112,.06),0 0 30px rgba(255,178,62,.9)}}
+@keyframes peakPulse{50%{box-shadow:0 0 0 9px rgba(169,183,154,.06),0 0 30px rgba(169,183,154,.9)}}
 .sched-note{margin-top:1.2rem;font-size:.8rem;color:rgba(245,243,238,.6)}
 @media (max-width:600px){.sched-row{grid-template-columns:44px repeat(7,1fr);gap:4px}.sched-grid{gap:4px}.sched-cell{min-height:38px;border-radius:9px}.sched-cell .sdot{width:10px;height:10px}}
 @media (prefers-reduced-motion:reduce){.sdot.peak{animation:none}}
@@ -109,3 +109,7 @@ a.etool:hover{background:var(--electric)}
 .stitle em{color:var(--electric)}
 .sched-cell .sdot.mid{background:var(--electric);box-shadow:none}
 #hero.svc-hero .heye{color:var(--paper)!important}
+/* Service hero illustrations: sage duotone */
+#hero.svc-hero .hero-icon,#hero.svc-hero .mail-icon{filter:grayscale(1) sepia(.35) hue-rotate(45deg) saturate(1.1) brightness(1.05) drop-shadow(8px 8px 0 #2E3829)!important}
+.case-title em{color:var(--sage-soft)!important}
+.abfill{background:var(--sage)!important}.abcol:not(.win) .abfill{background:var(--sage-soft)!important}
