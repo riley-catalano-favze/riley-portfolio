@@ -83,7 +83,7 @@ for page in PAGES:
             t = clean(sp.get_text())
             add('Skill', t, sp['data-cat'].split('|')[0], url(page, 'skills', q=t))
         # Selected work cards
-        for card in soup.select('.wcard'):
+        for card in soup.select('.wcard, .worklist .wl'):
             h = card.select_one('h3'); p = card.select_one('p')
             if h:
                 add('Work', clean(h.get_text()), 'Selected work', url(page, 'work'), p.get_text(' ') if p else '')
