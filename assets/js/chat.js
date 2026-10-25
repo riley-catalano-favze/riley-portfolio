@@ -19,10 +19,10 @@
       q: 'What do you do?',
       k: ['what do you do', 'full-stack', 'full stack', 'do you do', 'specialty', 'speciali', 'services', 'help', 'offer', 'who are you', 'about you'],
       a: ['I build complete lead generation systems, start to finish. 🔁',
-          'Search visibility and content get a business found, CRM and email automation move leads through the pipeline, and copywriting and social keep the brand consistent everywhere.',
+          'Search visibility gets a business found, a website built to convert earns the lead, CRM and email automation move it through the pipeline, and copywriting and social keep the brand consistent everywhere.',
           'One person, one connected system, from first search to closed lead.'],
-      links: [['Search Visibility', '/search-visibility'], ['Email Marketing', '/email-marketing'], ['Copywriting', '/copywriting'], ['Social Media', '/social-media-marketing']],
-      next: ['results', 'favze', 'book']
+      links: [['Search Visibility', '/search-visibility'], ['Email Marketing', '/email-marketing'], ['Copywriting', '/copywriting'], ['Social Media', '/social-media-marketing'], ['Website Design', '/website-design']],
+      next: ['web', 'results', 'book']
     },
     results: {
       q: 'What results have you driven?',
@@ -102,6 +102,15 @@
       links: [['See how it was built', '/how-its-built']],
       next: ['learning', 'book']
     },
+    web: {
+      q: 'Do you design websites?',
+      k: ['website design', 'web design', 'design a website', 'build a website', 'build my website', 'new website', 'redesign', 'landing page', 'webpage', 'web page', 'developer', 'wordpress', 'hubspot site'],
+      a: ['Yes! 🖥️ I design and hand-code websites built to get found, earn trust fast, and turn visitors into leads.',
+          'I have built this site, the Favze website, and the Belle Allure Aesthetics and Wellness website, plus a custom CRM and client portal.',
+          'Every site plugs into the rest of the system: search, CRM, email, and social.'],
+      links: [['See my website design work', '/website-design'], ['Book a free strategy call', BOOK]],
+      next: ['site', 'results', 'book']
+    },
     ai: {
       k: ['chatgpt', 'perplexity', 'gemini', 'claude', 'geo', 'aeo', 'seo', 'search', 'google', 'rank'],
       a: ['Search is my home turf. 🔎 I build visibility across traditional SEO, Answer Engine Optimization, Generative Engine Optimization, Local SEO, and AI Optimization.',
@@ -110,7 +119,7 @@
       next: ['results', 'book']
     }
   };
-  const START = ['what', 'results', 'favze', 'hire', 'books', 'book'];
+  const START = ['what', 'web', 'results', 'favze', 'hire', 'book'];
   const FALLBACK = {
     a: ['Great question! That one deserves a real conversation. ✨', 'Book a quick call or message me on LinkedIn and I will answer it personally.'],
     links: [['Book a free strategy call', BOOK], ['Message me on LinkedIn', LI]],

@@ -430,6 +430,22 @@
     }
   });
 
+  /* ---------- Website builder demo (wireframe -> design -> launch) ---------- */
+  $$('[data-builder]').forEach(el => {
+    const bw = $('.bw', el), btns = $$('[data-stage]', el), cap = $('.builder-cap', el);
+    const caps = ['Wireframe: map every page around one clear next step.', 'Design: your brand, your copy, mobile-first.', 'Launch: fast, found, and capturing leads.'];
+    let stage = 0, timer = 0, auto = !reduce;
+    const show = n => {
+      stage = n; bw.dataset.stage = n;
+      btns.forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.stage === n)));
+      cap.textContent = caps[n];
+    };
+    const loop = () => { clearTimeout(timer); if (!auto) return; timer = setTimeout(() => { show((stage + 1) % 3); loop(); }, stage === 2 ? 5200 : 3200); };
+    btns.forEach(b => b.addEventListener('click', () => { auto = false; clearTimeout(timer); show(+b.dataset.stage); }));
+    show(reduce ? 2 : 0);
+    new IntersectionObserver(([e]) => { if (e.isIntersecting && auto) loop(); else clearTimeout(timer); }).observe(el);
+  });
+
   /* ---------- Variable font playground ---------- */
   const pg = $('#pg-text');
   if (pg) {
