@@ -616,3 +616,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .grain{animation:none}
   .marquee-track{animation:none;flex-wrap:wrap;white-space:normal}
 }
+
+/* WGU Excellence Award */
+.step.award i{background:linear-gradient(135deg,#ffd66b,#ffb6d5 55%,#c9b8ff);border-color:transparent;color:var(--ink);box-shadow:0 0 0 5px rgba(255,214,107,.22);animation:awardGlow 3.2s ease-in-out infinite}
+.step.award b{background:linear-gradient(90deg,var(--ink),#b07d12 45%,var(--ink));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:awardShine 4s linear infinite}
+.award-chip{background:linear-gradient(135deg,#ffd66b,#ffb6d5);color:var(--ink)!important;border-color:transparent!important;font-weight:600}
+@keyframes awardGlow{50%{box-shadow:0 0 0 9px rgba(255,214,107,.08)}}
+@keyframes awardShine{to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){.step.award i,.step.award b{animation:none}}
