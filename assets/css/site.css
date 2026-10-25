@@ -1476,3 +1476,23 @@ html.rm .pt-stamp svg{animation:none}
 .shelf-copy .lessons{gap:.2rem}
 @media (max-width:1000px){.shelf-row{grid-template-columns:1fr}}
 @media (max-width:560px){.shelf-item{grid-template-columns:1fr}.shelf-cover{justify-self:center}}
+/* Homepage bookshelf teaser: fanned stack of three books */
+.mini-shelf.fan{position:absolute;top:clamp(1.4rem,3vw,2.4rem);right:clamp(1.2rem,3vw,2.4rem);width:300px;height:230px;perspective:1200px;pointer-events:none}
+.mini-shelf.fan .book{position:absolute;top:0;transition:transform .7s var(--ease)}
+.mini-shelf.fan .b1{right:150px;transform:rotateY(-22deg) rotateZ(-7deg) translateY(16px)}
+.mini-shelf.fan .b2{right:75px;transform:rotateY(-22deg) rotateZ(-1deg) translateY(4px)}
+.mini-shelf.fan .b3{right:0;transform:rotateY(-22deg) rotateZ(5deg)}
+.mini-shelf.fan .b1 .front{color:var(--ink)}
+.teaser-books:hover .fan .b1{transform:rotateY(-10deg) rotateZ(-11deg) translate(-14px,6px)}
+.teaser-books:hover .fan .b2{transform:rotateY(-10deg) rotateZ(-2deg) translateY(-10px)}
+.teaser-books:hover .fan .b3{transform:rotateY(-10deg) rotateZ(8deg) translate(10px,4px)}
+@media (max-width:600px){.mini-shelf.fan{transform:scale(.72);transform-origin:top right}}
+.mini-shelf.fan{position:relative!important;top:auto!important;right:auto!important;bottom:auto!important;z-index:0;align-self:flex-end;width:330px;height:220px;margin:0 0 1.6rem;transform:none}
+.mini-shelf.fan .b1{right:170px;transform:rotateY(-12deg) rotateZ(-7deg) translateY(14px)}
+.mini-shelf.fan .b2{right:85px;transform:rotateY(-12deg) rotateZ(-1deg) translateY(4px)}
+.mini-shelf.fan .b3{right:0;transform:rotateY(-12deg) rotateZ(5deg)}
+.mini-shelf.fan .front{overflow:hidden}
+@media (max-width:600px){.mini-shelf.fan{align-self:center;width:300px;height:200px;margin:0 0 1rem;transform:scale(.86);transform-origin:top center}.mini-shelf.fan .b1{right:150px}.mini-shelf.fan .b2{right:75px}}
+.mini-shelf.fan{width:400px}
+.mini-shelf.fan .b1{right:248px}.mini-shelf.fan .b2{right:124px}
+@media (max-width:600px){.mini-shelf.fan{width:400px;transform:scale(.72);margin:0 0 -2.6rem;align-self:center}.mini-shelf.fan .b1{right:248px}.mini-shelf.fan .b2{right:124px}}
