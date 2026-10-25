@@ -78,7 +78,7 @@ a.etool:hover{background:var(--electric)}
 
 /* ---------- Posting-window heatmap (social) ---------- */
 .sched-wrap{background:var(--night);color:var(--paper);padding:clamp(1.4rem,3vw,2.4rem);margin-top:2.4rem;position:relative;overflow:hidden;isolation:isolate}
-.sched-wrap::before{content:'';position:absolute;inset:-30%;z-index:-1;background:radial-gradient(circle at 80% 20%,rgba(30,54,200,.35),transparent 45%),radial-gradient(circle at 10% 90%,rgba(61,107,255,.3),transparent 50%)}
+.sched-wrap::before{content:'';position:absolute;inset:-30%;z-index:-1;background:radial-gradient(circle at 80% 20%,rgba(31,79,224,.35),transparent 45%),radial-gradient(circle at 10% 90%,rgba(61,107,255,.3),transparent 50%)}
 .sched-legend{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin-bottom:1.6rem;font-size:.8rem;color:rgba(245,243,238,.75)}
 .sched-key{display:inline-flex;align-items:center;gap:.5rem}
 .sched-grid{display:grid;gap:6px}
@@ -90,11 +90,22 @@ a.etool:hover{background:var(--electric)}
 .sched-legend .sdot{width:12px;height:12px}
 .sched-cell .sdot{width:14px;height:14px;transition:transform .5s var(--spring)}
 .sdot.low{background:rgba(245,243,238,.18)}
-.sdot.mid{background:var(--sky);box-shadow:0 0 0 4px rgba(169,188,255,.15)}
+.sdot.mid{background:var(--sky);box-shadow:0 0 0 4px rgba(242,237,227,.15)}
 .sdot.peak{background:var(--blush);box-shadow:0 0 0 5px rgba(255,201,112,.18),0 0 24px rgba(255,178,62,.8);animation:peakPulse 2.4s ease-in-out infinite}
-.sched-cell:has(.peak){background:linear-gradient(135deg,rgba(255,201,112,.16),rgba(30,54,200,.16))}
+.sched-cell:has(.peak){background:linear-gradient(135deg,rgba(255,201,112,.16),rgba(31,79,224,.16))}
 .sched-cell:hover .sdot{transform:scale(1.5)}
 @keyframes peakPulse{50%{box-shadow:0 0 0 9px rgba(255,201,112,.06),0 0 30px rgba(255,178,62,.9)}}
 .sched-note{margin-top:1.2rem;font-size:.8rem;color:rgba(245,243,238,.6)}
 @media (max-width:600px){.sched-row{grid-template-columns:44px repeat(7,1fr);gap:4px}.sched-grid{gap:4px}.sched-cell{min-height:38px;border-radius:9px}.sched-cell .sdot{width:10px;height:10px}}
 @media (prefers-reduced-motion:reduce){.sdot.peak{animation:none}}
+
+/* Poster theme: hero illustrations in brand orange, flat */
+#hero.svc-hero .hero-icon,#hero.svc-hero .mail-icon{filter:hue-rotate(160deg) saturate(2.2) drop-shadow(8px 8px 0 #111)!important;border-radius:0}
+#hero.svc-hero .htag{border-radius:3px;background:transparent;border-color:rgba(242,237,227,.5)}
+#hero.svc-hero .htag-b{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+#hero.svc-hero .snum{color:var(--paper)}
+#hero.svc-hero .jump a{border-radius:3px}
+
+.stitle em{color:var(--electric)}
+.sched-cell .sdot.mid{background:var(--electric);box-shadow:none}
+#hero.svc-hero .heye{color:var(--paper)!important}

@@ -375,7 +375,7 @@
 
   /* ---------- Confetti + easter egg ---------- */
   function burst(origin, n = 24, chars = ['✦', '●', '✦', '▲', '■']) {
-    const hues = ['#2F5BFF', '#FFB23E', '#AFC0FF', '#1E36C8'];
+    const hues = ['#1F4FE0', '#FF5A1F', '#111111'];
     if (reduce) return;
     const r = origin.getBoundingClientRect ? origin.getBoundingClientRect() : { left: innerWidth / 2, top: innerHeight / 2, width: 0, height: 0 };
     for (let i = 0; i < n; i++) {
