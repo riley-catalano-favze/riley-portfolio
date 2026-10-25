@@ -2,7 +2,7 @@
 (() => {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('rm');
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
   const lerp = (a, b, t) => a + (b - a) * t;
@@ -401,8 +401,100 @@
     }
   });
   $$('[data-burst]').forEach(b => b.addEventListener('click', () => burst(b, 26)));
+  $$('[data-egg]').forEach(b => b.addEventListener('click', () => {
+    if (fine) { b.blur(); say('<span aria-hidden="true">⌨️</span> Go ahead: type <b>f a v z e</b> on your keyboard.'); }
+    else { burst(b, 60); say('<span aria-hidden="true">💙</span> You found the secret. Let’s make your brand the favorite.'); }
+  }));
   console.log('%cHey, fellow curious mind. 👋', 'font:700 16px sans-serif;color:#3d6bff');
   console.log('%cHand-built by Riley Catalano. Type “favze” anywhere on the page for a surprise.', 'font:13px sans-serif;color:#626879');
+
+  /* ---------- Opening book ---------- */
+  $$('.book-btn').forEach(btn => {
+    const book = $('.book', btn);
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-pressed') !== 'true';
+      btn.setAttribute('aria-pressed', open);
+      btn.dataset.cursor = open ? 'Close' : 'Open';
+      btn.setAttribute('aria-label', open ? 'Close Purple Cow' : 'Open Purple Cow by Seth Godin to read my margin note');
+      book.style.setProperty('--tx', '0deg'); book.style.setProperty('--ty', '0deg');
+      if (open && !reduce) setTimeout(() => burst($('.note-sig', btn), 10), 1100);
+    });
+    if (!reduce && matchMedia('(pointer:fine)').matches) {
+      btn.addEventListener('pointermove', e => {
+        if (btn.getAttribute('aria-pressed') === 'true') return;
+        const r = btn.getBoundingClientRect();
+        book.style.setProperty('--ty', ((e.clientX - r.left) / r.width - .5) * 22 + 'deg');
+        book.style.setProperty('--tx', ((e.clientY - r.top) / r.height - .5) * -14 + 'deg');
+      });
+      btn.addEventListener('pointerleave', () => { book.style.setProperty('--tx', '0deg'); book.style.setProperty('--ty', '0deg'); });
+    }
+  });
+
+  /* ---------- Variable font playground ---------- */
+  const pg = $('#pg-text');
+  if (pg) {
+    const w = $('#pg-w'), s = $('#pg-s'), wv = $('#pg-wv'), sv = $('#pg-sv');
+    const set = (wt, st) => {
+      pg.style.setProperty('--w', Math.round(wt)); pg.style.setProperty('--s', Math.round(st));
+      w.value = wt; s.value = st; wv.textContent = Math.round(wt); sv.textContent = Math.round(st) + '%';
+    };
+    w.addEventListener('input', () => set(+w.value, +s.value));
+    s.addEventListener('input', () => set(+w.value, +s.value));
+    let dancing = 0;
+    $('#pg-dance').addEventListener('click', () => {
+      if (reduce) { set(900, s.value < 100 ? 140 : 62); return; }
+      cancelAnimationFrame(dancing);
+      const t0 = performance.now();
+      const step = t => {
+        const k = (t - t0) / 1000;
+        set(500 + 400 * Math.sin(k * 2.2), 100 + 50 * Math.sin(k * 1.6 + 1));
+        if (k < 4) dancing = requestAnimationFrame(step); else set(900, 62);
+      };
+      dancing = requestAnimationFrame(step);
+    });
+  }
+
+  /* ---------- Tabs (schema explorer) ---------- */
+  $$('[role="tablist"]').forEach(list => {
+    const tabs = $$('[role="tab"]', list);
+    const pick = tab => tabs.forEach(t => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => pick(t));
+      t.addEventListener('keydown', e => {
+        const d = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0;
+        if (!d) return; e.preventDefault();
+        const n = tabs[(i + d + tabs.length) % tabs.length]; pick(n); n.focus();
+      });
+    });
+  });
+
+  /* ---------- Legal contents rail ---------- */
+  const toc = $$('.legal-toc a');
+  if (toc.length) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) toc.forEach(a => a.classList.toggle('is-active', a.hash === '#' + e.target.id));
+    }), { rootMargin: '-20% 0px -70% 0px' });
+    $$('.legal-prose h2[id]').forEach(h => io.observe(h));
+  }
+
+  /* ---------- Motion toggle ---------- */
+  const legal = $('.footer-legal > span:last-child');
+  if (legal) {
+    const off = document.documentElement.classList.contains('rm');
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'motion-toggle';
+    b.setAttribute('aria-pressed', String(!off));
+    b.innerHTML = `<i aria-hidden="true"></i>Motion ${off ? 'off' : 'on'}`;
+    b.addEventListener('click', () => {
+      try { off ? localStorage.removeItem('rc-motion') : localStorage.setItem('rc-motion', 'off'); } catch (e) {}
+      location.reload();
+    });
+    legal.prepend(b);
+  }
 
   /* ---------- Year ---------- */
   $$('[data-year]').forEach(el => el.textContent = new Date().getFullYear());

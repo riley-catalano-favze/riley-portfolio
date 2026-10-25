@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#060918">
+<title>How This Site Was Built | Riley Catalano</title>
+<meta name="description" content="A look under the hood of rileycatalano.com: hand-coded HTML, CSS, and JavaScript on GitHub Pages, self-hosted variable fonts, structured data for search and AI answer engines, and motion that respects every visitor.">
+<meta name="author" content="Riley Catalano">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://rileycatalano.com/how-its-built">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How This Site Was Built | Riley Catalano">
+<meta property="og:description" content="A look under the hood of rileycatalano.com: hand-coded HTML, CSS, and JavaScript on GitHub Pages, self-hosted variable fonts, structured data for search and AI answer engines, and motion that respects every visitor.">
+<meta property="og:url" content="https://rileycatalano.com/how-its-built">
+<meta property="og:site_name" content="Riley Catalano Portfolio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How This Site Was Built | Riley Catalano">
+<meta name="twitter:description" content="A look under the hood of rileycatalano.com: hand-coded HTML, CSS, and JavaScript on GitHub Pages, self-hosted variable fonts, structured data for search and AI answer engines, and motion that respects every visitor.">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/anybody-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/dm-sans-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>try{if(localStorage.getItem("rc-motion")==="off")document.documentElement.classList.add("rm")}catch(e){}</script>
+<link rel="stylesheet" href="/assets/css/site.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "TechArticle",
+ "headline": "How This Site Was Built",
+ "description": "A look under the hood of rileycatalano.com: hand-coded HTML, CSS, and JavaScript on GitHub Pages, self-hosted variable fonts, structured data for search and AI answer engines, and motion that respects every visitor.",
+ "url": "https://rileycatalano.com/how-its-built",
+ "author": {"@type": "Person", "name": "Riley Catalano", "url": "https://rileycatalano.com/"},
+ "about": [{"@type": "Thing", "name": "Web design"}, {"@type": "Thing", "name": "Structured data"}, {"@type": "Thing", "name": "Generative Engine Optimization"}],
+ "isPartOf": {"@type": "WebSite", "name": "Riley Catalano", "url": "https://rileycatalano.com/"}
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {"@type": "ListItem", "position": 1, "name": "Riley Catalano", "item": "https://rileycatalano.com/"},
+  {"@type": "ListItem", "position": 2, "name": "How This Site Was Built", "item": "https://rileycatalano.com/how-its-built"}
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span></span></div>
+<div class="cursor" aria-hidden="true"></div>
+
+<header class="nav" role="banner">
+  <a href="/" class="nav-logo" aria-label="Riley Catalano, home"><i aria-hidden="true"></i>Riley Catalano</a>
+  <nav aria-label="Primary">
+    <ul class="nav-links">
+      <li><a href="/#story">Story</a></li>
+      <li><a href="/#expertise">Expertise</a>
+        <div class="nav-drop">
+          <a href="/search-visibility">Search Visibility <small>SEO · AEO · GEO</small></a>
+          <a href="/email-marketing">Email Marketing <small>Automation</small></a>
+          <a href="/copywriting">Copywriting <small>Brand + Articles</small></a>
+          <a href="/social-media-marketing">Social Media <small>9 platforms</small></a>
+        </div>
+      </li>
+      <li class="hide-md"><a href="/#proof">Proof</a></li>
+      <li><a href="/certifications">Credentials</a></li>
+      <li><a href="/bookshelf">Bookshelf</a></li>
+    </ul>
+  </nav>
+  <a href="/#book" class="btn btn-sm" data-magnetic=".25">Book a call <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/#story">Story</a>
+  <a href="/#expertise">Expertise</a>
+  <a href="/#proof">Proof</a>
+  <a href="/certifications">Credentials</a>
+  <a href="/bookshelf">Bookshelf</a>
+  <a href="/#book">Book a call</a>
+  <div class="mm-sub">
+    <a href="/search-visibility">Search Visibility</a><a href="/email-marketing">Email Marketing</a><a href="/copywriting">Copywriting</a><a href="/social-media-marketing">Social Media</a>
+  </div>
+</div>
+
+<main id="main">
+
+<section class="page-hero" data-theme="dark" aria-labelledby="ph-title">
+  <div class="aurora" aria-hidden="true"><b></b><b></b><b></b><b></b></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Riley Catalano</a><span aria-hidden="true">/</span><span aria-current="page">How It's Built</span></nav>
+    <h1 id="ph-title" data-split>Built by <em>hand.</em></h1>
+    <p class="lead" data-reveal>This portfolio is my favorite case study. Every page is hand-coded in HTML, CSS, and JavaScript, hosted on GitHub, and engineered so people, Google, and AI answer engines all understand exactly who I am.</p>
+    <div class="build-stats" data-reveal>
+      <div><b><span data-count="10">10</span></b><span>hand-coded pages</span></div>
+      <div><b>0</b><span>frameworks or build steps</span></div>
+      <div><b><span data-count="18">18</span>KB</b><span>total JavaScript, compressed</span></div>
+      <div><b><span data-count="138">138</span></b><span>credentials in structured data</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="stack-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow" data-reveal>The stack</span><h2 class="h2" id="stack-title" data-split>Small stack. <em>Big feel.</em></h2></div>
+      <p class="lead" data-reveal>Fast pages come from fewer moving parts. Everything here loads from the site itself, so it stays quick, private, and fully mine.</p>
+    </div>
+    <div class="stack">
+      <article class="stack-card big" data-reveal><span class="k">01 · Foundation</span><h3>Hand-coded HTML</h3><p>Semantic markup on every page: real headings, landmarks, breadcrumbs, and a skip link. All content lives in static HTML, so it reads perfectly with JavaScript on or off.</p><pre class="mini-code" aria-hidden="true"><span class="c">&lt;main</span> id=<span class="s">"main"</span><span class="c">&gt;</span>
+  <span class="c">&lt;section&gt;</span>
+    <span class="c">&lt;h2&gt;</span>Small stack.<span class="c">&lt;/h2&gt;</span></pre></article>
+      <article class="stack-card" data-reveal style="--d:.06s"><span class="k">02 · Design system</span><h3>One stylesheet of tokens</h3><p>Color, type, spacing, and easing live as CSS variables, so every page shares the same visual language.</p></article>
+      <article class="stack-card" data-reveal style="--d:.12s"><span class="k">03 · Interaction</span><h3>Vanilla JavaScript</h3><p>No framework. Kinetic type, the story timeline, filters, and the Text Riley chat are plain, readable JavaScript.</p></article>
+      <article class="stack-card" data-reveal style="--d:.18s"><span class="k">04 · Hosting</span><h3>GitHub Pages</h3><p>Version-controlled on GitHub and served on my own domain, with every change tracked.</p></article>
+      <article class="stack-card" data-reveal style="--d:.24s"><span class="k">05 · Type</span><h3>Self-hosted variable fonts</h3><p>Anybody, DM Sans, and Instrument Serif load straight from this site in compact WOFF2 files.</p></article>
+      <article class="stack-card" data-reveal style="--d:.30s"><span class="k">06 · Scroll</span><h3>Lenis smooth scroll</h3><p>Silky scrolling on desktop that runs on native scroll, so anchors, sticky elements, and keyboards keep working.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" data-theme="dark" aria-labelledby="type-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow" data-reveal>Play with it</span><h2 class="h2" id="type-title" data-split>Type that <em>moves.</em></h2></div>
+      <p class="lead" data-reveal>The headline font, Anybody, is a variable font with a width axis from 50% to 150%. That single file powers the kinetic name on the homepage. Drag the sliders and feel it stretch.</p>
+    </div>
+    <div class="playground" data-reveal>
+      <label class="sr-only" for="pg-text">Preview text</label>
+      <input id="pg-text" class="pg-text" type="text" value="The Favorite" maxlength="22" spellcheck="false" style="--w:900;--s:62">
+      <div class="pg-controls">
+        <label><span>Weight <output id="pg-wv">900</output></span><input type="range" id="pg-w" min="100" max="900" step="1" value="900"></label>
+        <label><span>Width <output id="pg-sv">62%</output></span><input type="range" id="pg-s" min="50" max="150" step="1" value="62"></label>
+        <button type="button" class="btn btn-light btn-sm" id="pg-dance">Make it dance <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="schema-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow" data-reveal>Search + AI visibility</span><h2 class="h2" id="schema-title" data-split>Speaking <em>machine.</em></h2></div>
+      <p class="lead" data-reveal>I learned SEO and AI optimization by building this site. Structured data tells Google, ChatGPT, Perplexity, and Gemini exactly who Riley Catalano is, which solved a real name-disambiguation challenge through clear entity signals.</p>
+    </div>
+    <div class="schema-ui" data-reveal>
+      <div class="schema-tabs" role="tablist" aria-label="Structured data examples">
+        <button role="tab" aria-selected="true" aria-controls="sx-person" id="st-person">Person</button>
+        <button role="tab" aria-selected="false" aria-controls="sx-cred" id="st-cred" tabindex="-1">Credential</button>
+        <button role="tab" aria-selected="false" aria-controls="sx-faq" id="st-faq" tabindex="-1">FAQPage</button>
+        <button role="tab" aria-selected="false" aria-controls="sx-crumb" id="st-crumb" tabindex="-1">Breadcrumbs</button>
+      </div>
+      <div class="schema-panels">
+        <div role="tabpanel" id="sx-person" aria-labelledby="st-person"><p>The hub of the graph. It connects me to Favze Digital Marketing, ABI Attachments, LinkedIn, and every topic I know.</p><pre class="code"><span class="p">{</span>
+  <span class="k">"@type"</span>: <span class="s">"Person"</span>,
+  <span class="k">"name"</span>: <span class="s">"Riley Catalano"</span>,
+  <span class="k">"jobTitle"</span>: <span class="s">"Full-Stack Lead Generation Digital Marketer"</span>,
+  <span class="k">"worksFor"</span>: [<span class="s">"Favze Digital Marketing"</span>, <span class="s">"ABI Attachments, Inc."</span>],
+  <span class="k">"award"</span>: <span class="s">"WGU Excellence Award: Critical Thinking: Reason and Evidence"</span>
+<span class="p">}</span></pre></div>
+        <div role="tabpanel" id="sx-cred" aria-labelledby="st-cred" hidden><p>All 138 certifications are marked up individually, each linked to the organization that issued it.</p><pre class="code"><span class="p">{</span>
+  <span class="k">"@type"</span>: <span class="s">"EducationalOccupationalCredential"</span>,
+  <span class="k">"name"</span>: <span class="s">"Google Ads Search Certification"</span>,
+  <span class="k">"credentialCategory"</span>: <span class="s">"certificate"</span>,
+  <span class="k">"recognizedBy"</span>: <span class="p">{</span> <span class="k">"@type"</span>: <span class="s">"Organization"</span>, <span class="k">"name"</span>: <span class="s">"Google"</span> <span class="p">}</span>
+<span class="p">}</span></pre></div>
+        <div role="tabpanel" id="sx-faq" aria-labelledby="st-faq" hidden><p>Question-and-answer markup gives AI answer engines clean, quotable answers in my own words.</p><pre class="code"><span class="p">{</span>
+  <span class="k">"@type"</span>: <span class="s">"Question"</span>,
+  <span class="k">"name"</span>: <span class="s">"What is your specialty?"</span>,
+  <span class="k">"acceptedAnswer"</span>: <span class="p">{</span> <span class="k">"@type"</span>: <span class="s">"Answer"</span>, <span class="k">"text"</span>: <span class="s">"Making businesses the obvious choice in their local market..."</span> <span class="p">}</span>
+<span class="p">}</span></pre></div>
+        <div role="tabpanel" id="sx-crumb" aria-labelledby="st-crumb" hidden><p>Breadcrumbs map how every page connects, so search engines see a clear, organized site.</p><pre class="code"><span class="p">{</span>
+  <span class="k">"@type"</span>: <span class="s">"BreadcrumbList"</span>,
+  <span class="k">"itemListElement"</span>: [
+    <span class="p">{</span> <span class="k">"position"</span>: 1, <span class="k">"name"</span>: <span class="s">"Riley Catalano"</span> <span class="p">}</span>,
+    <span class="p">{</span> <span class="k">"position"</span>: 2, <span class="k">"name"</span>: <span class="s">"How This Site Was Built"</span> <span class="p">}</span>
+  ]
+<span class="p">}</span></pre></div>
+      </div>
+    </div>
+    <div class="schema-chips" data-reveal><span>Person</span><span>ProfilePage</span><span>WebSite</span><span>FAQPage</span><span>BreadcrumbList</span><span>EducationalOccupationalCredential</span><span>Organization</span><span>Occupation</span><span>Service</span><span>CollectionPage</span><span>ItemList</span><span>Book</span><span>PodcastSeries</span><span>CollegeOrUniversity</span><span>TechArticle</span></div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="care-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow" data-reveal>Built for everyone</span><h2 class="h2" id="care-title" data-split>Motion with <em>manners.</em></h2></div>
+      <p class="lead" data-reveal>Big effects only matter when every visitor enjoys them. The site adapts to each person, device, and preference.</p>
+    </div>
+    <div class="care">
+      <div class="care-item" data-reveal><b>01</b><h3>Your motion, your choice</h3><p>The site honors your device’s reduced-motion setting, and the switch in the footer lets you turn animation on or off anytime.</p></div>
+      <div class="care-item" data-reveal style="--d:.06s"><b>02</b><h3>Keyboard friendly</h3><p>Search, filters, the opening book, and the chat all work with a keyboard, with clear focus outlines throughout.</p></div>
+      <div class="care-item" data-reveal style="--d:.12s"><b>03</b><h3>Smooth page changes</h3><p>Cross-document view transitions fade each page into the next in supporting browsers, and every other browser navigates instantly.</p></div>
+      <div class="care-item" data-reveal style="--d:.18s"><b>04</b><h3>Phone first</h3><p>The horizontal story becomes a vertical one, cursor effects step aside for touch, and the chat opens full screen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" data-theme="dark" aria-labelledby="egg-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow" data-reveal>For the curious</span><h2 class="h2" id="egg-title" data-split>Hidden <em>extras.</em></h2></div>
+      <p class="lead" data-reveal>A few surprises are tucked around the site for the people who explore. Here are your hints.</p>
+    </div>
+    <div class="eggs">
+      <div class="egg" data-reveal><span class="egg-k">⌨️</span><h3>Type “favze”</h3><p>Anywhere on any page. Then watch.</p><button type="button" class="btn btn-light btn-sm" data-egg>Try it here <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div>
+      <div class="egg" data-reveal style="--d:.08s"><span class="egg-k">💬</span><h3>Double-tap a text</h3><p>Open Text Riley and double-tap any of my messages to heart it.</p><a href="#text-riley" class="btn btn-light btn-sm">Open the chat <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+      <div class="egg" data-reveal style="--d:.16s"><span class="egg-k">🛠️</span><h3>Open the console</h3><p>Developers get their own hello in the browser console.</p></div>
+      <div class="egg" data-reveal style="--d:.24s"><span class="egg-k">📖</span><h3>Open the book</h3><p>Purple Cow on my bookshelf holds a margin note.</p><a href="/bookshelf" class="btn btn-light btn-sm">Visit the shelf <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="finale" id="book" data-theme="dark" aria-labelledby="book-title">
+  <div class="aurora" aria-hidden="true"><b></b><b></b><b></b><b></b></div>
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>Your chapter starts here</span>
+    <h2 class="finale-title" id="book-title" data-reveal style="--d:.1s">Let's make your brand <em>the favorite.</em></h2>
+    <p class="lead" data-reveal style="--d:.2s">Book a free strategy call through Favze Digital Marketing. We'll look at where your leads come from today and map the connected system that brings in more.</p>
+    <div class="hero-ctas" style="justify-content:center" data-reveal>
+      <a href="https://favze.com/free-consultation" class="btn btn-light big-cta" data-magnetic data-cursor="Book" data-burst>Book a free strategy call <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost big-cta" data-magnetic>Connect on LinkedIn</a>
+    </div>
+    <div class="book-cards">
+      <div class="book-card" data-reveal><b>01</b><h4>Book</h4><p>Pick a time that fits your week. The call is free and focused on your goals.</p></div>
+      <div class="book-card" data-reveal style="--d:.1s"><b>02</b><h4>Map</h4><p>We review your search visibility, pipeline, and content side by side.</p></div>
+      <div class="book-card" data-reveal style="--d:.2s"><b>03</b><h4>Build</h4><p>You leave with a clear plan for one connected lead generation system.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" data-theme="dark">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="footer-brand">Riley Catalano</a>
+        <p>Full-stack lead generation digital marketer building complete systems across <a href="/search-visibility">SEO, AEO, GEO</a>, CRM and automation, <a href="/email-marketing">email marketing</a>, <a href="/copywriting">copywriting</a>, and <a href="/social-media-marketing">social media strategy</a> for businesses across Northern Indiana, Michiana, and beyond.</p>
+        <a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-light">Connect on LinkedIn <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+      <div class="col">
+        <h4>Expertise</h4>
+        <a href="/search-visibility">Search Visibility</a>
+        <a href="/email-marketing">Email Marketing</a>
+        <a href="/copywriting">Copywriting</a>
+        <a href="/social-media-marketing">Social Media Marketing</a>
+        <a href="https://favze.com/favze-framework">The FAVZE Framework</a>
+        <a href="https://favze.com">Favze Digital Marketing</a>
+      </div>
+      <div class="col">
+        <h4>Explore</h4>
+        <a href="/#story">My Story</a>
+        <a href="/#proof">Client Proof</a>
+        <a href="/certifications">Credentials</a>
+        <a href="/bookshelf">Bookshelf</a>
+        <a href="/how-its-built">How This Site Was Built</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/#book">Book a Call</a>
+      </div>
+      <div class="col">
+        <h4>Serving</h4>
+        <a href="https://favze.com/areas-served">Michiana</a>
+        <a href="https://favze.com/areas-served">Northern Indiana</a>
+        <a href="https://favze.com/areas-served">Elkhart · Goshen · Middlebury</a>
+        <a href="https://favze.com/areas-served">Mishawaka · Bristol · Nappanee</a>
+        <a href="https://favze.com/areas-served">Shipshewana</a>
+        <a href="https://favze.com/areas-served">Remote Worldwide</a>
+      </div>
+    </div>
+    <div class="footer-word" aria-hidden="true">Riley Catalano</div>
+    <div class="footer-legal">
+      <span>© <span data-year>2026</span> Riley Catalano. Hand-built in Middlebury, Indiana.</span>
+      <span><a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-use">Terms of Use</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="/assets/js/lenis.min.js" defer></script>
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/chat.js" defer></script>
+</body>
+</html>

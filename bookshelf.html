@@ -20,6 +20,7 @@
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/anybody-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/dm-sans-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>try{if(localStorage.getItem("rc-motion")==="off")document.documentElement.classList.add("rm")}catch(e){}</script>
 <link rel="stylesheet" href="/assets/css/site.css">
 
 <script type="application/ld+json">
@@ -163,10 +164,13 @@
 
 <section class="section" aria-labelledby="pc-title">
   <div class="wrap shelf-feature">
-    <div class="book-wrap" data-reveal><div class="book" style="--c1:#6b2bd9;--c2:#2a0f63" role="img" aria-label="Purple Cow by Seth Godin">
-      <div class="shadow"></div><div class="back"></div><div class="spine"></div><div class="pages"></div>
-      <div class="front"><span class="a">Seth Godin</span><span class="t">Purple<br>Cow</span><span class="a">Marketing</span></div>
-    </div></div>
+    <div class="book-wrap" data-reveal><button type="button" class="book-btn" aria-pressed="false" aria-label="Open Purple Cow by Seth Godin to read my margin note" data-cursor="Open">
+      <span class="book" style="--c1:#6b2bd9;--c2:#2a0f63">
+        <span class="shadow"></span><span class="back"></span><span class="spine"></span><span class="pages"></span>
+        <span class="inside"><span class="note-k">My margin note</span><span class="note">Stand out instead of blending in.</span><span class="note-s">Remarkable gets remembered.<br>Remembered gets chosen.</span><span class="note-sig">Riley</span></span>
+        <span class="front"><span class="cover-in" aria-hidden="true"><i>Property of</i>Riley Catalano</span><span class="a">Seth Godin</span><span class="t">Purple<br>Cow</span><span class="a">Marketing</span></span>
+      </span>
+    </button><p class="book-hint" aria-hidden="true">Tap the book to open it</p></div>
     <div>
       <span class="eyebrow" data-reveal>The book that started it all</span>
       <h2 class="h2" id="pc-title" data-split>Purple <em>Cow.</em></h2>
@@ -248,6 +252,7 @@
         <a href="/#proof">Client Proof</a>
         <a href="/certifications">Credentials</a>
         <a href="/bookshelf">Bookshelf</a>
+        <a href="/how-its-built">How This Site Was Built</a>
         <a href="/#faq">FAQ</a>
         <a href="/#book">Book a Call</a>
       </div>
@@ -272,5 +277,6 @@
 <div class="toast" role="status" aria-live="polite"></div>
 <script src="/assets/js/lenis.min.js" defer></script>
 <script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/chat.js" defer></script>
 </body>
 </html>

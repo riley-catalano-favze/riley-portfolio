@@ -165,93 +165,61 @@
 }
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <script async src="https://tally.so/widgets/embed.js"></script>
+<meta name="theme-color" content="#060918">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/anybody-latin-standard-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/dm-sans-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>try{if(localStorage.getItem("rc-motion")==="off")document.documentElement.classList.add("rm")}catch(e){}</script>
+<link rel="stylesheet" href="/assets/css/site.css">
 <style>
-:root{--blue:#0a3da3;--blue2:#2b5fd4;--ink:#0a0a0a;--white:#ffffff;--off:#f5f7fc;--muted:#5e6472;--border:rgba(10,10,10,0.1);--tag-bg:#dde5f5;--card-bg:#eef1fa;}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{background:var(--white);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;cursor:none;}
-#cur{position:fixed;top:-100px;left:-100px;width:18px;height:18px;background:#0a3da3;border-radius:50%;pointer-events:none;z-index:99999;box-shadow:0 0 0 3px #fff,0 0 0 6px #0a3da3;}
-#ring{position:fixed;top:-100px;left:-100px;width:46px;height:46px;border:2px dashed #0a3da3;border-radius:50%;pointer-events:none;z-index:99998;opacity:.7;animation:curspin 2.5s linear infinite;}
 @keyframes curspin{0%{transform:translate(-50%,-50%) rotate(0deg);}100%{transform:translate(-50%,-50%) rotate(360deg);}}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:var(--white);border-bottom:1px solid var(--border);}
-.nav-logo{font-family:'DM Sans',sans-serif;font-weight:400;font-size:1rem;letter-spacing:.04em;color:var(--ink);text-decoration:none;}
-.nav-links{display:flex;gap:1.5rem;list-style:none;flex-wrap:nowrap;white-space:nowrap;}
-.nav-links a{font-family:'DM Sans',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);text-decoration:none;transition:color .2s;}
-.nav-links a:hover{color:var(--ink);}
-.nav-links a.current{color:var(--ink);border-bottom:1px solid var(--blue);padding-bottom:.15rem;}
-.nav-item-dd{position:relative;}
-.nav-dd-toggle{background:none;border:none;font-family:'DM Sans',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:.35rem;padding:0;transition:color .2s;}
-.nav-dd-toggle:hover{color:var(--ink);}
-.nav-dd-toggle svg{width:9px;height:9px;transition:transform .2s;}
-.nav-item-dd.open .nav-dd-toggle svg{transform:rotate(180deg);}
-.nav-dd-menu{position:absolute;top:calc(100% + 1.1rem);left:50%;transform:translateX(-50%);background:var(--white);border:1px solid var(--border);border-radius:4px;box-shadow:0 12px 28px rgba(10,10,10,.1);padding:.5rem;display:none;flex-direction:column;min-width:190px;z-index:110;}
-.nav-item-dd.open .nav-dd-menu{display:flex;}
-.nav-dd-menu a{font-family:'DM Sans',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-decoration:none;padding:.6rem .8rem;border-radius:3px;white-space:nowrap;transition:background .15s,color .15s;}
-.nav-dd-menu a:hover{background:var(--card-bg);color:var(--ink);}
-.nav-dd-menu a.current{color:var(--blue);background:var(--tag-bg);}
-.nav-cta{background:var(--blue)!important;color:#fff!important;padding:.45rem 1.1rem;border-radius:2px;}
-.nav-cta:hover{background:var(--ink)!important;}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
-.hamburger span{display:block;width:24px;height:2px;background:var(--ink);border-radius:2px;transition:all .3s;}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mobile-menu{display:none;position:fixed;top:57px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);z-index:99;flex-direction:column;padding:.5rem 0;max-height:calc(100vh - 57px);overflow-y:auto;}
-.mobile-menu.open{display:flex;}
-.mobile-menu a{font-family:'DM Sans',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);text-decoration:none;padding:.85rem 2rem;border-bottom:1px solid var(--border);transition:background .15s,color .15s;}
-.mobile-menu a:hover{background:var(--card-bg);color:var(--ink);}
-.mobile-menu a:last-child{border-bottom:none;}
-.mobile-cta{background:var(--blue)!important;color:#fff!important;margin:1rem 2rem;border-radius:2px;text-align:center;border-bottom:none!important;}
 .sw{padding:6rem 3rem;max-width:1200px;margin:0 auto;}
-.slabel{font-family:'DM Sans',sans-serif;font-size:.66rem;text-transform:uppercase;letter-spacing:.22em;color:var(--muted);margin-bottom:.7rem;display:flex;align-items:center;gap:.8rem;}
+.slabel{font-family:var(--body);font-size:.66rem;text-transform:uppercase;letter-spacing:.22em;color:var(--muted);margin-bottom:.7rem;display:flex;align-items:center;gap:.8rem;}
 .slabel::before{content:'';display:block;width:1.8rem;height:1px;background:var(--blue);}
-.stitle{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.4rem,5vw,4rem);letter-spacing:.02em;line-height:.92;margin-bottom:2.8rem;}
+.stitle{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(2.4rem,5vw,4rem);letter-spacing:.02em;line-height:.92;margin-bottom:2.8rem;}
 .divider{border:none;border-top:1px solid var(--border);margin:0 3rem;}
 /* Hero */
 #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:9rem 3rem 5rem;position:relative;overflow:hidden;}
-.heye{font-family:'DM Sans',sans-serif;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:1.4rem;opacity:0;animation:fu .8s .15s forwards;}
-.hname{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(4rem,11vw,11rem);line-height:.9;color:var(--ink);opacity:0;animation:fu .9s .3s forwards;}
+.heye{font-family:var(--body);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:1.4rem;opacity:0;animation:fu .8s .15s forwards;}
+.hname{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(4rem,11vw,11rem);line-height:.9;color:var(--ink);opacity:0;animation:fu .9s .3s forwards;}
 .hname span{color:var(--blue);display:block;}
 .hsub{max-width:580px;font-size:1.05rem;line-height:1.75;color:var(--muted);margin-top:2.2rem;opacity:0;animation:fu .9s .45s forwards;}
 .htags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem;opacity:0;animation:fu .9s .6s forwards;}
-.htag{font-family:'DM Sans',sans-serif;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;background:var(--tag-bg);color:var(--ink);padding:.32rem .85rem;border-radius:2px;}
+.htag{font-family:var(--body);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;background:var(--tag-bg);color:var(--ink);padding:.32rem .85rem;border-radius:2px;}
 .htag-b{background:var(--blue);color:#fff;}
 .hstats{display:flex;gap:3rem;margin-top:3.2rem;opacity:0;animation:fu .9s .75s forwards;flex-wrap:wrap;}
-.snum{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.6rem;color:var(--ink);line-height:1;}
-.slbl2{font-family:'DM Sans',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-top:.18rem;line-height:1.4;}
-.hwm{position:absolute;bottom:-1.5rem;right:-1rem;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:21vw;color:rgba(10,61,163,.05);pointer-events:none;line-height:1;white-space:nowrap;user-select:none;}
+.snum{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:2.6rem;color:var(--ink);line-height:1;}
+.slbl2{font-family:var(--body);font-size:.6rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-top:.18rem;line-height:1.4;}
+.hwm{position:absolute;bottom:-1.5rem;right:-1rem;font-family:var(--display);font-stretch:62%;font-weight:900;font-size:21vw;color:rgba(10,61,163,.05);pointer-events:none;line-height:1;white-space:nowrap;user-select:none;}
 .hero-title-row{display:flex;align-items:center;justify-content:space-between;gap:clamp(1rem,3vw,2.5rem);flex-wrap:wrap;}
 .mail-icon{width:clamp(8rem,26vw,26rem);height:auto;flex-shrink:0;margin-left:auto;margin-right:clamp(1rem,4vw,4rem);opacity:0;animation:fu .9s .3s forwards,wiggle 2.2s ease-in-out 1.2s infinite;}
 @keyframes wiggle{0%,100%{transform:rotate(-8deg) translateY(0);}20%{transform:rotate(8deg) translateY(-4px);}40%{transform:rotate(-7deg) translateY(0);}60%{transform:rotate(7deg) translateY(-4px);}80%{transform:rotate(-4deg) translateY(0);}}
 @media(max-width:600px){.mail-icon{width:6rem;}}
 @keyframes fu{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
-/* Jump links (in-page section nav, moved out of the top nav to match the site's cross-page nav pattern) */
+/* Jump links (in-page section nav,moved out of the top nav to match the site's cross-page nav pattern) */
 .jump{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2.4rem;opacity:0;animation:fu .9s .9s forwards;}
-.jump a{font-family:'DM Sans',sans-serif;font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-decoration:none;padding:.5rem 1rem;border:1px solid var(--border);border-radius:100px;transition:all .2s;}
+.jump a{font-family:var(--body);font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-decoration:none;padding:.5rem 1rem;border:1px solid var(--border);border-radius:100px;transition:all .2s;}
 .jump a:hover{color:#fff;background:var(--blue);border-color:var(--blue);}
 /* Breadcrumb */
-.breadcrumb{font-family:'DM Sans',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:1.4rem;display:flex;align-items:center;gap:.6rem;opacity:0;animation:fu .8s .05s forwards;}
-.breadcrumb a{color:var(--blue);text-decoration:none;}
-.breadcrumb span{color:var(--muted);}
+.breadcrumb{font-family:var(--body);font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:1.4rem;display:flex;align-items:center;gap:.6rem;opacity:0;animation:fu .8s .05s forwards;}
 /* Role card */
 .role-grid{display:flex;flex-direction:column;gap:1.4rem;margin-bottom:3rem;}
 .role-card{background:var(--card-bg);border-radius:4px;padding:2rem;border-left:3px solid var(--blue);transition:transform .2s;}
 .role-card:hover{transform:translateY(-3px);}
-.role-card-label{font-family:'DM Sans',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.14em;color:var(--blue);margin-bottom:.5rem;}
-.role-card-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.3rem;letter-spacing:.04em;color:var(--ink);margin-bottom:.3rem;line-height:.92;}
+.role-card-label{font-family:var(--body);font-size:.6rem;text-transform:uppercase;letter-spacing:.14em;color:var(--blue);margin-bottom:.5rem;}
+.role-card-title{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:1.3rem;letter-spacing:.04em;color:var(--ink);margin-bottom:.3rem;line-height:.92;}
 .role-card-company{font-size:.88rem;color:var(--muted);margin-bottom:.8rem;}
 .role-card-desc{font-size:.88rem;line-height:1.7;color:#3a3a3a;}
 /* Responsibilities */
 .resp-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
 .resp-item{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.4rem;display:flex;gap:.9rem;align-items:flex-start;transition:border-color .2s,box-shadow .2s;height:100%;}
 .resp-item:hover{border-color:var(--blue);box-shadow:0 4px 16px rgba(10,61,163,.08);}
-.resp-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.6rem;color:var(--blue);line-height:1;flex-shrink:0;opacity:.35;min-width:2rem;}
-.resp-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1rem;letter-spacing:.04em;color:var(--ink);margin-bottom:.3rem;line-height:.92;}
+.resp-num{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:1.6rem;color:var(--blue);line-height:1;flex-shrink:0;opacity:.35;min-width:2rem;}
+.resp-title{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:1rem;letter-spacing:.04em;color:var(--ink);margin-bottom:.3rem;line-height:.92;}
 .resp-desc{font-size:.83rem;line-height:1.65;color:var(--muted);}
 .resp-grid-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:stretch;}
-.funnel-track-label{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:.04em;line-height:.92;color:var(--blue);text-transform:uppercase;margin:2.4rem 0 1rem;padding-bottom:.6rem;border-bottom:2px solid var(--blue);}
+.funnel-track-label{font-family:var(--display);font-stretch:62%;font-weight:800;font-size:1.15rem;letter-spacing:.04em;line-height:.92;color:var(--blue);text-transform:uppercase;margin:2.4rem 0 1rem;padding-bottom:.6rem;border-bottom:2px solid var(--blue);}
 .resp-grid-wrap:first-of-type .funnel-track-label{margin-top:0;}
 .icon-fun{display:inline-block;vertical-align:middle;margin-left:.7rem;margin-right:clamp(.5rem,3vw,3rem);width:clamp(6rem,13vw,12rem);height:clamp(6rem,13vw,12rem);transform-origin:50% 50%;flex-shrink:0;}
 .section-title-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
@@ -263,127 +231,117 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .platform-grid{display:flex;flex-direction:column;gap:1rem;}
 .platform-card{background:var(--card-bg);border-radius:4px;padding:1.8rem 2.2rem;text-align:left;transition:transform .18s,background .18s;display:grid;grid-template-columns:200px 1fr;gap:2rem;align-items:center;border-left:3px solid var(--blue);}
 .platform-card:hover{transform:translateX(4px);background:#e3e9f8;}
-.platform-name{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.6rem;letter-spacing:.04em;color:var(--ink);margin-bottom:.3rem;line-height:.92;}
-.platform-type{font-family:'DM Sans',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);}
+.platform-name{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:1.6rem;letter-spacing:.04em;color:var(--ink);margin-bottom:.3rem;line-height:.92;}
+.platform-type{font-family:var(--body);font-size:.6rem;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);}
 .platform-desc{font-size:.84rem;line-height:1.65;color:var(--muted);margin-bottom:.7rem;}
 .platform-tags{display:flex;flex-wrap:wrap;gap:.35rem;justify-content:flex-start;}
-.ptag{font-family:'DM Sans',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.07em;background:var(--tag-bg);color:var(--ink);padding:.22rem .65rem;border-radius:2px;}
+.ptag{font-family:var(--body);font-size:.58rem;text-transform:uppercase;letter-spacing:.07em;background:var(--tag-bg);color:var(--ink);padding:.22rem .65rem;border-radius:2px;}
 /* Code block */
 .code-section{background:var(--ink);border-radius:4px;padding:2rem;margin:2rem 0;overflow-x:auto;}
-.code-label{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.4);margin-bottom:1rem;}
-.code-block{font-family:'DM Sans',sans-serif;font-size:.8rem;line-height:1.8;color:#e8e8e8;white-space:pre;overflow-x:auto;}
+.code-label{font-family:var(--body);font-size:.62rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.4);margin-bottom:1rem;}
+.code-block{font-family:var(--body);font-size:.8rem;line-height:1.8;color:#e8e8e8;white-space:pre;overflow-x:auto;}
 .code-block .cm{color:#6b7a8d;}
 .code-block .cv{color:#7ecfff;}
 .code-block .cs{color:#98c379;}
 .code-block .ck{color:#c678dd;}
 /* Skills */
 .skgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.2rem;}
-.sgt{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.05rem;letter-spacing:.06em;color:var(--ink);margin-bottom:.9rem;padding-bottom:.45rem;border-bottom:2px solid var(--blue);display:inline-block;line-height:.92;}
+.sgt{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:1.05rem;letter-spacing:.06em;color:var(--ink);margin-bottom:.9rem;padding-bottom:.45rem;border-bottom:2px solid var(--blue);display:inline-block;line-height:.92;}
 .sktags{display:flex;flex-wrap:wrap;gap:.38rem;}
-.sk{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;background:var(--tag-bg);color:var(--ink);padding:.28rem .75rem;border-radius:2px;transition:background .18s,color .18s;cursor:default;}
+.sk{font-family:var(--body);font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;background:var(--tag-bg);color:var(--ink);padding:.28rem .75rem;border-radius:2px;transition:background .18s,color .18s;cursor:default;}
 .sk:hover{background:var(--blue);color:#fff;}
 /* Certs */
 .clist{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:.55rem;}
 .ci{background:var(--card-bg);border-radius:3px;padding:.75rem 1rem;font-size:.84rem;color:var(--ink);line-height:1.45;display:flex;align-items:flex-start;gap:.55rem;}
-.ci::before{content:'✓';font-family:'DM Sans',sans-serif;font-size:.65rem;color:#fff;flex-shrink:0;background:var(--blue);width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:.05rem;}
+.ci::before{content:'✓';font-family:var(--body);font-size:.65rem;color:#fff;flex-shrink:0;background:var(--blue);width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:.05rem;}
 /* FAQ */
 .faq-grid{display:flex;flex-direction:column;gap:0;}
 .faq-item{border-bottom:1px solid var(--border);padding:0;}
 .faq-item:first-of-type{border-top:1px solid var(--border);}
-.faq-q{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.2rem;letter-spacing:.04em;color:var(--ink);padding:1.4rem 3rem 1.4rem 0;cursor:pointer;position:relative;line-height:.92;user-select:none;}
-.faq-q::after{content:'+';position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:'DM Sans',sans-serif;font-size:1.2rem;color:var(--blue);transition:transform .25s;}
+.faq-q{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:1.2rem;letter-spacing:.04em;color:var(--ink);padding:1.4rem 3rem 1.4rem 0;cursor:pointer;position:relative;line-height:.92;user-select:none;}
+.faq-q::after{content:'+';position:absolute;right:0;top:50%;transform:translateY(-50%);font-family:var(--body);font-size:1.2rem;color:var(--blue);transition:transform .25s;}
 .faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg);}
 .faq-a{font-size:.95rem;line-height:1.8;color:#3a3a3a;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;padding:0;}
 .faq-item.open .faq-a{max-height:500px;padding-bottom:1.4rem;}
 /* CTA */
 #cta{background:var(--blue);padding:7rem 3rem;text-align:center;}
-.ceye{font-family:'DM Sans',sans-serif;font-size:.66rem;text-transform:uppercase;letter-spacing:.22em;color:rgba(255,255,255,.5);margin-bottom:1.4rem;}
-.ctitle{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(3rem,7vw,7rem);color:#fff;line-height:.9;letter-spacing:.01em;margin-bottom:2.5rem;}
-.ctitle em{color:var(--ink);font-style:normal;}
-.cbtn{display:inline-block;background:var(--ink);color:#fff;font-family:'DM Sans',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;padding:.95rem 2.4rem;border-radius:2px;text-decoration:none;transition:background .2s,transform .2s;}
+.cbtn{display:inline-block;background:var(--ink);color:#fff;font-family:var(--body);font-size:.72rem;text-transform:uppercase;letter-spacing:.15em;padding:.95rem 2.4rem;border-radius:2px;text-decoration:none;transition:background .2s,transform .2s;}
 .cbtn:hover{background:#fff;color:var(--blue);transform:scale(1.03);}
 /* Reveal */
 .reveal{opacity:1;transform:none;transition:opacity .65s ease,transform .65s ease;}
-/* Footer (rich cross-page footer, matching the copywriting page) */
+/* Footer (rich cross-page footer,matching the copywriting page) */
 footer{background:var(--ink);padding:4rem 3rem 1.8rem;}
-.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:2.5rem;max-width:1200px;margin:0 auto;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.1);}
-.footer-brand{font-family:'DM Sans',sans-serif;font-weight:400;font-size:1rem;color:#fff;text-decoration:none;letter-spacing:.04em;}
-.footer-tag{font-size:.78rem;line-height:1.7;color:rgba(255,255,255,.45);margin-top:.9rem;max-width:320px;}
-.footer-tag a{color:rgba(255,255,255,.75);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);transition:color .15s,border-color .15s;}
-.footer-tag a:hover{color:#fff;border-color:#fff;}
-.footer-linkedin{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.3rem;font-family:'DM Sans',sans-serif;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:.55rem 1.1rem;border-radius:2px;transition:background .2s,border-color .2s;}
-.footer-linkedin:hover{background:var(--blue);border-color:var(--blue);}
-.footer-col-title{font-family:'DM Sans',sans-serif;font-size:.64rem;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.4);margin-bottom:1.1rem;}
-.footer-col a,.footer-col span{display:block;font-family:'DM Sans',sans-serif;font-size:.8rem;color:rgba(255,255,255,.65);text-decoration:none;margin-bottom:.65rem;line-height:1.4;transition:color .15s;}
-.footer-col a:hover{color:#fff;}
-.footer-bottom{max-width:1200px;margin:0 auto;padding-top:1.6rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;}
-.footer-bottom span,.footer-bottom a{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.3);text-decoration:none;}
-.footer-bottom a:hover{color:rgba(255,255,255,.6);}
-.footer-legal{display:flex;gap:1.4rem;}
 /* Back link */
-.back-link{display:inline-flex;align-items:center;gap:.5rem;font-family:'DM Sans',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);text-decoration:none;border:1.5px solid var(--blue);padding:.5rem 1rem;border-radius:2px;transition:background .2s,color .2s;margin-top:2rem;}
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--body);font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--blue);text-decoration:none;border:1.5px solid var(--blue);padding:.5rem 1rem;border-radius:2px;transition:background .2s,color .2s;margin-top:2rem;}
 .back-link:hover{background:var(--blue);color:#fff;}
 /* About grid */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
 .about-text p{font-size:1rem;line-height:1.85;color:#3a3a3a;margin-bottom:1.1rem;}
 .about-text strong{font-weight:500;color:var(--ink);}
 .aside-card{background:var(--card-bg);border-radius:4px;padding:1.6rem;margin-bottom:.9rem;}
-.albl{font-family:'DM Sans',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);margin-bottom:.5rem;}
+.albl{font-family:var(--body);font-size:.62rem;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);margin-bottom:.5rem;}
 .aval{font-size:.95rem;color:var(--ink);line-height:1.6;}
-.aval .dim{font-size:.85rem;color:var(--muted);}
-@media(max-width:1200px){
-  .nav-links{display:none;}
-  .hamburger{display:flex;}
-}
-@media(max-width:900px){
-  nav{padding:1.1rem 1.5rem;}
-  .sw{padding:4rem 1.5rem;}
-  #hero{padding:8rem 1.5rem 4rem;}
-  .about-grid{grid-template-columns:1fr;gap:2rem;}
-  .role-grid{gap:1rem;}
-  .resp-grid-wrap{grid-template-columns:1fr;}
-  .platform-card{grid-template-columns:1fr;gap:.6rem;text-align:left;}
-  .skgrid{grid-template-columns:1fr 1fr;}
-  footer{padding:3rem 1.5rem 1.5rem;}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}
-}
-@media(max-width:600px){
-  .skgrid{grid-template-columns:1fr;}
-  .hstats{gap:1.5rem;}
-  footer{padding:3rem 1.2rem 1.5rem;}
-  .footer-grid{grid-template-columns:1fr;gap:1.8rem;}
-  .footer-bottom{flex-direction:column;align-items:flex-start;}
-}
+.aval .is-dim{font-size:.85rem;color:var(--muted);}
+@media(max-width:900px){.sw{padding:4rem 1.5rem;}
+#hero{padding:8rem 1.5rem 4rem;}
+.about-grid{grid-template-columns:1fr;gap:2rem;}
+.role-grid{gap:1rem;}
+.resp-grid-wrap{grid-template-columns:1fr;}
+.platform-card{grid-template-columns:1fr;gap:.6rem;text-align:left;}
+.skgrid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.skgrid{grid-template-columns:1fr;}
+.hstats{gap:1.5rem;}}
 </style>
+<link rel="stylesheet" href="/assets/css/legacy.css">
 </head>
 <body>
-<div id="cur"></div>
-<div id="ring"></div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-ring" aria-hidden="true"><span></span></div>
+<div class="cursor" aria-hidden="true"></div>
 
-<nav>
-  <a href="https://rileycatalano.com/" class="nav-logo">Riley Catalano</a>
-  <ul class="nav-links">
-    <li><a href="https://rileycatalano.com/email-marketing" class="current">Email Marketing</a></li>
-    <li><a href="https://rileycatalano.com/social-media-marketing">Social Media</a></li>
-    <li><a href="https://rileycatalano.com/copywriting">Copywriting</a></li>
-    <li><a href="https://rileycatalano.com/search-visibility">Search Visibility</a></li>
-    <li><a href="#cta" class="nav-cta" data-tally-open="D4yBJb" data-tally-hide-title="1">Hire Me</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<header class="nav" role="banner">
+  <a href="/" class="nav-logo" aria-label="Riley Catalano, home"><i aria-hidden="true"></i>Riley Catalano</a>
+  <nav aria-label="Primary">
+    <ul class="nav-links">
+      <li><a href="/#story">Story</a></li>
+      <li><a href="/#expertise">Expertise</a>
+        <div class="nav-drop">
+          <a href="/search-visibility">Search Visibility <small>SEO · AEO · GEO</small></a>
+          <a href="/email-marketing">Email Marketing <small>Automation</small></a>
+          <a href="/copywriting">Copywriting <small>Brand + Articles</small></a>
+          <a href="/social-media-marketing">Social Media <small>9 platforms</small></a>
+        </div>
+      </li>
+      <li class="hide-md"><a href="/#proof">Proof</a></li>
+      <li><a href="/certifications">Credentials</a></li>
+      <li><a href="/bookshelf">Bookshelf</a></li>
+    </ul>
+  </nav>
+  <a href="/#book" class="btn btn-sm" data-magnetic=".25">Book a call <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span></button>
+</header>
+
 <div class="mobile-menu" id="mobile-menu">
-  <a href="https://rileycatalano.com/email-marketing" onclick="closeMenu()">Email Marketing</a>
-  <a href="https://rileycatalano.com/social-media-marketing" onclick="closeMenu()">Social Media</a>
-  <a href="https://rileycatalano.com/copywriting" onclick="closeMenu()">Copywriting</a>
-  <a href="https://rileycatalano.com/search-visibility" onclick="closeMenu()">Search Visibility</a>
-  <a href="#cta" onclick="closeMenu()" class="mobile-cta" data-tally-open="D4yBJb" data-tally-hide-title="1">Hire Me</a>
+  <a href="/#story">Story</a>
+  <a href="/#expertise">Expertise</a>
+  <a href="/#proof">Proof</a>
+  <a href="/certifications">Credentials</a>
+  <a href="/bookshelf">Bookshelf</a>
+  <a href="/#book">Book a call</a>
+  <div class="mm-sub">
+    <a href="/search-visibility">Search Visibility</a><a href="/email-marketing">Email Marketing</a><a href="/copywriting">Copywriting</a><a href="/social-media-marketing">Social Media</a>
+  </div>
 </div>
 
+<main id="main">
 <!-- HERO -->
-<section id="hero">
-  <p class="breadcrumb"><a href="https://rileycatalano.com/">rileycatalano.com</a> <span>/</span> Email Marketing</p>
+<section id="hero" class="svc-hero" data-theme="dark">
+  <div class="aurora" aria-hidden="true"><b></b><b></b><b></b><b></b></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Riley Catalano</a><span aria-hidden="true">/</span><a href="/#expertise">Expertise</a><span aria-hidden="true">/</span><span aria-current="page">Email Marketing</span></nav>
   <p class="heye">Email marketer who specialized in lead generation and sales pipeline growth</p>
   <div class="hero-title-row">
     <h1 class="hname">Email<span>Marketing</span></h1>
@@ -430,6 +388,7 @@ footer{background:var(--ink);padding:4rem 3rem 1.8rem;}
     <a href="#faq">FAQ</a>
   </div>
   <div class="hwm">EMAIL</div>
+</div>
 </section>
 
 <hr class="divider">
@@ -456,7 +415,7 @@ footer{background:var(--ink);padding:4rem 3rem 1.8rem;}
     </div>
   </div>
   <div style="text-align:center;margin-top:2rem;">
-    <a href="https://rileycatalano.com/" style="display:inline-flex;align-items:center;gap:.6rem;font-family:'DM Sans',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--blue);border:1.5px solid var(--blue);padding:.75rem 1.8rem;border-radius:2px;text-decoration:none;transition:background .2s,color .2s;" onmouseover="this.style.background='#0a3da3';this.style.color='#fff'" onmouseout="this.style.background='';this.style.color='#0a3da3'">View Full Portfolio ↗</a>
+    <a href="/" style="display:inline-flex;align-items:center;gap:.6rem;font-family:'DM Sans',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.15em;color:var(--blue);border:1.5px solid var(--blue);padding:.75rem 1.8rem;border-radius:2px;text-decoration:none;transition:background .2s,color .2s;" onmouseover="this.style.background='#0a3da3';this.style.color='#fff'" onmouseout="this.style.background='';this.style.color='#0a3da3'">View Full Portfolio ↗</a>
   </div>
 
 </div>
@@ -600,7 +559,7 @@ footer{background:var(--ink);padding:4rem 3rem 1.8rem;}
       </div>
       <div class="aside-card" style="margin-top:1rem;">
         <div class="albl">What This Enables</div>
-        <div class="aval dim">One template produces small-package tracking emails, LTL freight and BOL notices, hot shot delivery windows, flatbed unloading instructions, and rep-assigned follow-ups automatically based on NetSuite data at send time. Zero manual work per send.</div>
+        <div class="aval is-dim">One template produces small-package tracking emails, LTL freight and BOL notices, hot shot delivery windows, flatbed unloading instructions, and rep-assigned follow-ups automatically based on NetSuite data at send time. Zero manual work per send.</div>
       </div>
     </div>
   </div>
@@ -648,7 +607,7 @@ footer{background:var(--ink);padding:4rem 3rem 1.8rem;}
       </div>
       <div class="aside-card" style="margin-top:1rem;">
         <div class="albl">What This Enables</div>
-        <div class="aval dim">Confirmation, nurture, and follow-up emails fire the moment a lead status or deal stage actually changes, not on a schedule and not waiting on someone to remember to send them. Zoho Campaigns handles the longer nurture layer, enrolled and removed automatically based on live CRM stage.</div>
+        <div class="aval is-dim">Confirmation, nurture, and follow-up emails fire the moment a lead status or deal stage actually changes, not on a schedule and not waiting on someone to remember to send them. Zoho Campaigns handles the longer nurture layer, enrolled and removed automatically based on live CRM stage.</div>
       </div>
     </div>
   </div>
@@ -874,7 +833,7 @@ footer{background:var(--ink);padding:4rem 3rem 1.8rem;}
       </div>
       <div class="aside-card">
         <div class="albl">Regulations I Build Around</div>
-        <div class="aval dim">CAN-SPAM Act / GDPR / CASL / Zoho CRM Terms / Zoho Campaigns Terms / HubSpot Terms / NetSuite Email Policy / Klaviyo Terms / Mailchimp Terms / Platform-Specific Sender Requirements</div>
+        <div class="aval is-dim">CAN-SPAM Act / GDPR / CASL / Zoho CRM Terms / Zoho Campaigns Terms / HubSpot Terms / NetSuite Email Policy / Klaviyo Terms / Mailchimp Terms / Platform-Specific Sender Requirements</div>
       </div>
       <div class="aside-card" style="background:var(--blue);">
         <div class="albl" style="color:rgba(255,255,255,.6);">Fun Fact</div>
@@ -1223,84 +1182,67 @@ footer{background:var(--ink);padding:4rem 3rem 1.8rem;}
 </div>
 
 <!-- CTA -->
-<div id="cta">
-  <p class="ceye">Let's build something together</p>
-  <h2 class="ctitle">Ready to Automate<br>Your <em>Email Pipeline</em></h2>
-  <a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer" class="cbtn">Connect on LinkedIn ↗</a>
-</div>
-
-<footer>
-  <div class="footer-grid">
-    <div>
-      <a href="https://rileycatalano.com/" class="footer-brand">Riley Catalano</a>
-      <p class="footer-tag">AI-driven digital marketing strategist specializing in <a href="https://rileycatalano.com/search-visibility">SEO, AEO, GEO</a>, <a href="https://rileycatalano.com/email-marketing">email marketing</a>, <a href="https://rileycatalano.com/email-marketing">automation</a>, <a href="https://rileycatalano.com/copywriting">copywriting</a>, and <a href="https://rileycatalano.com/social-media-marketing">social media strategy</a> for local and regional businesses across Northern Indiana and Michiana, as well as national and international brands. Let's make your brand the favorite.</p>
-      <a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer" class="footer-linkedin">Connect on LinkedIn ↗</a>
-    </div>
-    <div class="footer-col">
-      <div class="footer-col-title">Ways You Can Grow with Riley</div>
-      <a href="https://rileycatalano.com/email-marketing">Email Marketing</a>
-      <a href="https://rileycatalano.com/email-marketing">Email Automation</a>
-      <a href="https://rileycatalano.com/social-media-marketing">Social Media Marketing</a>
-      <a href="https://rileycatalano.com/social-media-marketing">Social Media Management</a>
-      <a href="https://rileycatalano.com/copywriting">Copywriting</a>
-      <a href="https://rileycatalano.com/copywriting">Article Writing</a>
-      <a href="https://rileycatalano.com/search-visibility">Search Visibility</a>
-      <a href="https://rileycatalano.com/search-visibility">AI Search Optimization</a>
-      <a href="https://rileycatalano.com/email-marketing">CRM &amp; Marketing Automation</a>
-    </div>
-    <div class="footer-col">
-      <div class="footer-col-title">Locations I Can Work For</div>
-      <a href="https://favze.com/areas-served">Michiana</a>
-      <a href="https://favze.com/areas-served">Northern Indiana</a>
-      <a href="https://favze.com/areas-served">Elkhart</a>
-      <a href="https://favze.com/areas-served">Mishawaka</a>
-      <a href="https://favze.com/areas-served">Goshen</a>
-      <a href="https://favze.com/areas-served">Bristol</a>
-      <a href="https://favze.com/areas-served">Middlebury</a>
-      <a href="https://favze.com/areas-served">Shipshewana</a>
-      <a href="https://favze.com/areas-served">Nappanee</a>
-      <a href="https://favze.com/free-consultation">Remote Worldwide</a>
-    </div>
-    <div class="footer-col">
-      <div class="footer-col-title">Quick Links</div>
-      <a href="https://rileycatalano.com/email-marketing#role">Experience</a>
-      <a href="https://rileycatalano.com/email-marketing#funnel">Funnel Strategy</a>
-      <a href="https://rileycatalano.com/email-marketing#crm">CRM Automation</a>
-      <a href="https://rileycatalano.com/email-marketing#platforms">Platforms</a>
-      <a href="https://rileycatalano.com/email-marketing#skills">Skills</a>
-      <a href="https://rileycatalano.com/email-marketing#certifications">Certifications</a>
-      <a href="https://rileycatalano.com/email-marketing#faq">FAQ</a>
-      <a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<section class="finale" id="book" data-theme="dark" aria-labelledby="book-title">
+  <div class="aurora" aria-hidden="true"><b></b><b></b><b></b><b></b></div>
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>Let's build something together</span>
+    <h2 class="finale-title" id="book-title" data-reveal style="--d:.1s">Ready to Automate Your <em>Email Pipeline</em></h2>
+    <p class="lead" data-reveal style="--d:.2s">Book a free strategy call through Favze Digital Marketing. We'll look at where your leads come from today and map the connected system that brings in more.</p>
+    <div class="hero-ctas" style="justify-content:center" data-reveal>
+      <a href="https://favze.com/free-consultation" class="btn btn-light big-cta" data-magnetic data-cursor="Book" data-burst>Book a free strategy call <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost big-cta" data-magnetic>Connect on LinkedIn</a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>© 2026 Riley Catalano</span>
+</section>
+
+</main>
+<footer class="footer" data-theme="dark">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="footer-brand">Riley Catalano</a>
+        <p>Full-stack lead generation digital marketer building complete systems across <a href="/search-visibility">SEO, AEO, GEO</a>, CRM and automation, <a href="/email-marketing">email marketing</a>, <a href="/copywriting">copywriting</a>, and <a href="/social-media-marketing">social media strategy</a> for businesses across Northern Indiana, Michiana, and beyond.</p>
+        <a href="https://www.linkedin.com/in/rileycatalano/" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-light">Connect on LinkedIn <span class="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+      <div class="col">
+        <h4>Expertise</h4>
+        <a href="/search-visibility">Search Visibility</a>
+        <a href="/email-marketing">Email Marketing</a>
+        <a href="/copywriting">Copywriting</a>
+        <a href="/social-media-marketing">Social Media Marketing</a>
+        <a href="https://favze.com/favze-framework">The FAVZE Framework</a>
+        <a href="https://favze.com">Favze Digital Marketing</a>
+      </div>
+      <div class="col">
+        <h4>Explore</h4>
+        <a href="/#story">My Story</a>
+        <a href="/#proof">Client Proof</a>
+        <a href="/certifications">Credentials</a>
+        <a href="/bookshelf">Bookshelf</a>
+        <a href="/how-its-built">How This Site Was Built</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/#book">Book a Call</a>
+      </div>
+      <div class="col">
+        <h4>Serving</h4>
+        <a href="https://favze.com/areas-served">Michiana</a>
+        <a href="https://favze.com/areas-served">Northern Indiana</a>
+        <a href="https://favze.com/areas-served">Elkhart · Goshen · Middlebury</a>
+        <a href="https://favze.com/areas-served">Mishawaka · Bristol · Nappanee</a>
+        <a href="https://favze.com/areas-served">Shipshewana</a>
+        <a href="https://favze.com/areas-served">Remote Worldwide</a>
+      </div>
+    </div>
+    <div class="footer-word" aria-hidden="true">Riley Catalano</div>
     <div class="footer-legal">
-      <a href="https://rileycatalano.com/privacy-policy">Privacy Policy</a>
-      <a href="https://rileycatalano.com/terms-of-use">Terms of Use</a>
+      <span>© <span data-year>2026</span> Riley Catalano. Hand-built in Middlebury, Indiana.</span>
+      <span><a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-use">Terms of Use</a></span>
     </div>
   </div>
 </footer>
 
 <script>
-const cur=document.getElementById('cur'),ring=document.getElementById('ring');
-document.addEventListener('mousemove',e=>{
-  cur.style.left=e.clientX+'px';
-  cur.style.top=e.clientY+'px';
-  cur.style.transform='translate(-50%,-50%)';
-  ring.style.left=e.clientX+'px';
-  ring.style.top=e.clientY+'px';
-});
-function toggleMenu(){
-  const h=document.getElementById('hamburger');
-  const m=document.getElementById('mobile-menu');
-  h.classList.toggle('open');
-  m.classList.toggle('open');
-}
-function closeMenu(){
-  document.getElementById('hamburger').classList.remove('open');
-  document.getElementById('mobile-menu').classList.remove('open');
-}
+
 document.querySelectorAll('.faq-q').forEach(q=>{
   q.addEventListener('click',()=>{
     const item=q.parentElement;
@@ -1310,5 +1252,9 @@ document.querySelectorAll('.faq-q').forEach(q=>{
   });
 });
 </script>
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="/assets/js/lenis.min.js" defer></script>
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/chat.js" defer></script>
 </body>
 </html>
