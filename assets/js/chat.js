@@ -143,7 +143,7 @@
   root.className = 'tr';
   root.innerHTML = `
     <button class="tr-fab" type="button" aria-expanded="false" aria-controls="tr-panel" data-cursor="Text">
-      <span class="tr-av" aria-hidden="true"><svg class="rc-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect width="48" height="48" rx="13" fill="#3971B8"/><g fill="none" stroke="#F6E6A5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 35.5V12.5h6.2a6.3 6.3 0 0 1 0 12.6h-6.2M16.4 25.1l6.6 10.4"/><path d="M37.92 16.87A9.6 9.6 0 1 0 37.92 31.13"/></g><circle cx="40.2" cy="35.6" r="2.7" fill="#E4683A"/></svg><i></i></span>
+      <span class="tr-av" aria-hidden="true"><svg class="rc-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect width="48" height="48" rx="13" fill="#3971B8"/><g fill="none" stroke="#F6E6A5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 35.5V12.5h6.2a6.3 6.3 0 0 1 0 12.6h-6.2M16.4 25.1l6.6 10.4"/><path d="M37.92 16.87A9.6 9.6 0 1 0 37.92 31.13"/></g><circle cx="40.2" cy="35.6" r="2.7" fill="#C8D69B"/></svg><i></i></span>
       <span class="tr-label">Text Riley</span>
       <span class="tr-badge" aria-hidden="true">1</span>
     </button>
@@ -151,7 +151,7 @@
     <section class="tr-panel" id="tr-panel" role="dialog" aria-modal="false" aria-labelledby="tr-name" hidden>
       <header class="tr-head">
         <button class="tr-close" type="button" aria-label="Close chat"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-        <span class="tr-av big" aria-hidden="true"><svg class="rc-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect width="48" height="48" rx="13" fill="#3971B8"/><g fill="none" stroke="#F6E6A5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 35.5V12.5h6.2a6.3 6.3 0 0 1 0 12.6h-6.2M16.4 25.1l6.6 10.4"/><path d="M37.92 16.87A9.6 9.6 0 1 0 37.92 31.13"/></g><circle cx="40.2" cy="35.6" r="2.7" fill="#E4683A"/></svg><i></i></span>
+        <span class="tr-av big" aria-hidden="true"><svg class="rc-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect width="48" height="48" rx="13" fill="#3971B8"/><g fill="none" stroke="#F6E6A5" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 35.5V12.5h6.2a6.3 6.3 0 0 1 0 12.6h-6.2M16.4 25.1l6.6 10.4"/><path d="M37.92 16.87A9.6 9.6 0 1 0 37.92 31.13"/></g><circle cx="40.2" cy="35.6" r="2.7" fill="#C8D69B"/></svg><i></i></span>
         <b id="tr-name">Riley Catalano</b>
         <small>Instant answers from my FAQ</small>
       </header>

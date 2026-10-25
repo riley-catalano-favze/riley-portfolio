@@ -110,6 +110,6 @@ a.etool:hover{background:var(--electric)}
 .sched-cell .sdot.mid{background:var(--electric);box-shadow:none}
 #hero.svc-hero .heye{color:var(--paper)!important}
 /* Service hero illustrations: sage duotone */
-#hero.svc-hero .hero-icon,#hero.svc-hero .mail-icon{filter:grayscale(1) sepia(.35) hue-rotate(45deg) saturate(1.1) brightness(1.05) drop-shadow(8px 8px 0 #343B1B)!important}
+#hero.svc-hero .hero-icon,#hero.svc-hero .mail-icon{filter:grayscale(1) sepia(.4) hue-rotate(175deg) saturate(1.6) brightness(1.05) drop-shadow(8px 8px 0 #1B2A44)!important}
 .case-title em{color:var(--sage-soft)!important}
 .abfill{background:var(--sage)!important}.abcol:not(.win) .abfill{background:var(--sage-soft)!important}
