@@ -78,7 +78,7 @@ a.etool:hover{background:var(--electric)}
 
 /* ---------- Posting-window heatmap (social) ---------- */
 .sched-wrap{background:var(--night);color:var(--paper);padding:clamp(1.4rem,3vw,2.4rem);margin-top:2.4rem;position:relative;overflow:hidden;isolation:isolate}
-.sched-wrap::before{content:'';position:absolute;inset:-30%;z-index:-1;background:radial-gradient(circle at 80% 20%,rgba(122,92,255,.35),transparent 45%),radial-gradient(circle at 10% 90%,rgba(61,107,255,.3),transparent 50%)}
+.sched-wrap::before{content:'';position:absolute;inset:-30%;z-index:-1;background:radial-gradient(circle at 80% 20%,rgba(30,54,200,.35),transparent 45%),radial-gradient(circle at 10% 90%,rgba(61,107,255,.3),transparent 50%)}
 .sched-legend{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;margin-bottom:1.6rem;font-size:.8rem;color:rgba(245,243,238,.75)}
 .sched-key{display:inline-flex;align-items:center;gap:.5rem}
 .sched-grid{display:grid;gap:6px}
@@ -91,10 +91,10 @@ a.etool:hover{background:var(--electric)}
 .sched-cell .sdot{width:14px;height:14px;transition:transform .5s var(--spring)}
 .sdot.low{background:rgba(245,243,238,.18)}
 .sdot.mid{background:var(--sky);box-shadow:0 0 0 4px rgba(169,188,255,.15)}
-.sdot.peak{background:var(--blush);box-shadow:0 0 0 5px rgba(255,182,213,.18),0 0 24px rgba(255,143,191,.8);animation:peakPulse 2.4s ease-in-out infinite}
-.sched-cell:has(.peak){background:linear-gradient(135deg,rgba(255,182,213,.16),rgba(122,92,255,.16))}
+.sdot.peak{background:var(--blush);box-shadow:0 0 0 5px rgba(255,201,112,.18),0 0 24px rgba(255,178,62,.8);animation:peakPulse 2.4s ease-in-out infinite}
+.sched-cell:has(.peak){background:linear-gradient(135deg,rgba(255,201,112,.16),rgba(30,54,200,.16))}
 .sched-cell:hover .sdot{transform:scale(1.5)}
-@keyframes peakPulse{50%{box-shadow:0 0 0 9px rgba(255,182,213,.06),0 0 30px rgba(255,143,191,.9)}}
+@keyframes peakPulse{50%{box-shadow:0 0 0 9px rgba(255,201,112,.06),0 0 30px rgba(255,178,62,.9)}}
 .sched-note{margin-top:1.2rem;font-size:.8rem;color:rgba(245,243,238,.6)}
 @media (max-width:600px){.sched-row{grid-template-columns:44px repeat(7,1fr);gap:4px}.sched-grid{gap:4px}.sched-cell{min-height:38px;border-radius:9px}.sched-cell .sdot{width:10px;height:10px}}
 @media (prefers-reduced-motion:reduce){.sdot.peak{animation:none}}

@@ -374,11 +374,12 @@
   });
 
   /* ---------- Confetti + easter egg ---------- */
-  function burst(origin, n = 24, chars = ['💙', '🩷', '✦', '💜']) {
+  function burst(origin, n = 24, chars = ['✦', '●', '✦', '▲', '■']) {
+    const hues = ['#2F5BFF', '#FFB23E', '#AFC0FF', '#1E36C8'];
     if (reduce) return;
     const r = origin.getBoundingClientRect ? origin.getBoundingClientRect() : { left: innerWidth / 2, top: innerHeight / 2, width: 0, height: 0 };
     for (let i = 0; i < n; i++) {
-      const s = document.createElement('span'); s.className = 'confetti'; s.textContent = chars[i % chars.length];
+      const s = document.createElement('span'); s.className = 'confetti'; s.textContent = chars[i % chars.length]; s.style.color = hues[i % hues.length];
       s.setAttribute('aria-hidden', 'true');
       document.body.append(s);
       const x0 = r.left + r.width / 2, y0 = r.top + r.height / 2, ang = Math.random() * Math.PI * 2, v = 120 + Math.random() * 260;
@@ -397,13 +398,13 @@
     buf = (buf + e.key.toLowerCase()).slice(-5);
     if (buf === 'favze') {
       burst({ getBoundingClientRect: () => ({ left: innerWidth / 2, top: innerHeight / 2, width: 0, height: 0 }) }, 60);
-      say('<span aria-hidden="true">💙</span> You found the secret. Let’s make your brand the favorite.');
+      say('<span aria-hidden="true">✦</span> You found the secret. Let’s make your brand the favorite.');
     }
   });
   $$('[data-burst]').forEach(b => b.addEventListener('click', () => burst(b, 26)));
   $$('[data-egg]').forEach(b => b.addEventListener('click', () => {
     if (fine) { b.blur(); say('<span aria-hidden="true">⌨️</span> Go ahead: type <b>f a v z e</b> on your keyboard.'); }
-    else { burst(b, 60); say('<span aria-hidden="true">💙</span> You found the secret. Let’s make your brand the favorite.'); }
+    else { burst(b, 60); say('<span aria-hidden="true">✦</span> You found the secret. Let’s make your brand the favorite.'); }
   }));
   console.log('%cHey, fellow curious mind. 👋', 'font:700 16px sans-serif;color:#3d6bff');
   console.log('%cHand-built by Riley Catalano. Type “favze” anywhere on the page for a surprise.', 'font:13px sans-serif;color:#626879');
@@ -429,6 +430,19 @@
       btn.addEventListener('pointerleave', () => { book.style.setProperty('--tx', '0deg'); book.style.setProperty('--ty', '0deg'); });
     }
   });
+
+  /* ---------- Experience timeline: scroll-drawn spine + lit nodes ---------- */
+  const tl = $('[data-xp]');
+  if (tl) {
+    const items = $$('.xp-item', tl);
+    const tick = () => {
+      const r = tl.getBoundingClientRect(), mid = innerHeight * .55;
+      tl.style.setProperty('--p', clamp((mid - r.top) / r.height, 0, 1).toFixed(3));
+      items.forEach(it => it.classList.toggle('is-lit', it.getBoundingClientRect().top + 20 < mid));
+    };
+    if (reduce) items.forEach(it => it.classList.add('is-lit'));
+    else { addEventListener('scroll', tick, { passive: true }); addEventListener('resize', tick); tick(); }
+  }
 
   /* ---------- Website builder demo (wireframe -> design -> launch) ---------- */
   $$('[data-builder]').forEach(el => {
