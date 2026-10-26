@@ -113,3 +113,5 @@ a.etool:hover{background:var(--electric)}
 #hero.svc-hero .hero-icon,#hero.svc-hero .mail-icon{filter:grayscale(1) sepia(.4) hue-rotate(175deg) saturate(1.6) brightness(1.05) drop-shadow(8px 8px 0 #3971B8)!important}
 .case-title em{color:var(--sage-soft)!important}
 .abfill{background:var(--sage)!important}.abcol:not(.win) .abfill{background:var(--sage-soft)!important}
+#hero.svc-hero .hsub,#hero.svc-hero .hsub strong,#hero.svc-hero .hsub b{color:var(--ivory)!important}
+#hero.svc-hero .htag-b{background:var(--ivory)!important;color:var(--celtic)!important;border-color:var(--ivory)!important}

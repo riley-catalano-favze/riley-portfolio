@@ -49,8 +49,23 @@
       menuBtn.setAttribute('aria-expanded', open);
       lenis && (open ? lenis.stop() : lenis.start());
     });
-    $$('.mobile-menu a').forEach(a => a.addEventListener('click', closeMenu));
+    $$('.mobile-menu a, .sidebar a').forEach(a => a.addEventListener('click', closeMenu));
+    const scrim = $('.sb-scrim'); scrim && scrim.addEventListener('click', closeMenu);
     addEventListener('keydown', e => e.key === 'Escape' && closeMenu());
+  }
+
+  /* ---------- Sidebar: On this page ---------- */
+  const tocBox = $('.sb-toc'), tocSecs = $$('[data-toc]');
+  if (tocBox && tocSecs.length) {
+    const ul = $('ul', tocBox);
+    tocSecs.forEach(sec => { if (!sec.id) return; const li = document.createElement('li'); li.innerHTML = `<a href="#${sec.id}">${sec.dataset.toc}</a>`; ul.append(li); });
+    tocBox.hidden = false;
+    const links = $$('a', ul);
+    $$('a', ul).forEach(a => a.addEventListener('click', closeMenu));
+    const tio = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) links.forEach(a => a.classList.toggle('is-active', a.hash === '#' + e.target.id));
+    }), { rootMargin: '-35% 0px -60% 0px' });
+    tocSecs.forEach(sec => tio.observe(sec));
   }
 
   /* ---------- Cursor ---------- */

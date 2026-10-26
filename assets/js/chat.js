@@ -47,7 +47,7 @@
       a: ['I founded Favze in October 2025, during my junior year of high school, and that junior year became my final year.',
           'I joined ABI Attachments as a Marketing Intern in January 2026, then earned two promotions in seven months, to Email Automation Specialist and then Digital Marketing Specialist.',
           'Now I am earning a bachelor’s and a master’s at WGU in about 18 months.'],
-      links: [['See the timeline', '/#experience']],
+      links: [['See the timeline', '/experience']],
       next: ['creds', 'what', 'book']
     },
     creds: {
@@ -63,7 +63,7 @@
       k: ['hire', 'why you', 'choose', 'different', 'better', 'work with', 'job', 'employ', 'resume', 'recruit'],
       a: ['You get one person who builds the strategy and executes it, focused on real visibility and measurable growth.',
           'My clients notice the speed too. Katherine Clark, RN, told me I do it “so fast and with perfection.”'],
-      links: [['Read her messages', '/#proof']],
+      links: [['Read her messages', '/experience#proof']],
       next: ['book', 'results', 'what']
     },
     book: {

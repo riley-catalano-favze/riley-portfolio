@@ -17,8 +17,8 @@
   btn.type = 'button'; btn.className = 'sx-btn';
   btn.setAttribute('aria-label', 'Search the site'); btn.setAttribute('aria-haspopup', 'dialog');
   btn.innerHTML = `<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span>Search</span><kbd>${isMac ? '⌘' : 'Ctrl'} K</kbd>`;
-  const navBook = document.querySelector('.nav > .btn');
-  if (navBook) navBook.before(btn); else document.body.append(btn);
+  const slot = document.querySelector('[data-search-slot]');
+  if (slot) slot.append(btn); else document.body.append(btn);
 
   const box = document.createElement('div');
   box.className = 'sx'; box.hidden = true;

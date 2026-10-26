@@ -7,7 +7,7 @@ from urllib.parse import quote
 from bs4 import BeautifulSoup
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-PAGES = ['index', 'website-design', 'search-visibility', 'email-marketing', 'copywriting',
+PAGES = ['index', 'experience', 'website-design', 'search-visibility', 'email-marketing', 'copywriting',
          'social-media-marketing', 'certifications', 'bookshelf', 'how-its-built',
          'privacy-policy', 'terms-of-use']
 
@@ -58,7 +58,7 @@ for page in PAGES:
         if q:
             add('FAQ', clean(q.get_text(' ')), ptitle if page != 'index' else 'Home', url(page, 'faq' if soup.find(id='faq') else ''), a.get_text(' ') if a else '')
 
-    if page == 'index':
+    if page == 'experience':
         # Experience timeline + grouped responsibilities
         for row in soup.select('.pt-row[id]'):
             h3 = row.select_one('h3'); co = row.select_one('.pt-co'); it = row.select_one('.pt-it'); meta = row.select_one('.pt-meta')
