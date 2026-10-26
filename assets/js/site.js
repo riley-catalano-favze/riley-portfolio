@@ -377,7 +377,7 @@
 
   /* ---------- Confetti + easter egg ---------- */
   function burst(origin, n = 24, chars = ['✦', '●', '✦', '▲', '■']) {
-    const hues = ['#3971B8', '#C8D69B', '#111111'];
+    const hues = ['#3971B8', '#C8D69B', '#3971B8'];
     if (reduce) return;
     const r = origin.getBoundingClientRect ? origin.getBoundingClientRect() : { left: innerWidth / 2, top: innerHeight / 2, width: 0, height: 0 };
     for (let i = 0; i < n; i++) {
@@ -400,16 +400,16 @@
     buf = (buf + e.key.toLowerCase()).slice(-5);
     if (buf === 'favze') {
       burst({ getBoundingClientRect: () => ({ left: innerWidth / 2, top: innerHeight / 2, width: 0, height: 0 }) }, 60);
-      say('<span aria-hidden="true">✦</span> You found the secret. Let’s make your brand the favorite.');
+      say('You found the secret. Let’s make your brand the favorite.');
     }
   });
   $$('[data-burst]').forEach(b => b.addEventListener('click', () => burst(b, 26)));
   $$('[data-egg]').forEach(b => b.addEventListener('click', () => {
     if (fine) { b.blur(); say('<span aria-hidden="true">⌨️</span> Go ahead: type <b>f a v z e</b> on your keyboard.'); }
-    else { burst(b, 60); say('<span aria-hidden="true">✦</span> You found the secret. Let’s make your brand the favorite.'); }
+    else { burst(b, 60); say('You found the secret. Let’s make your brand the favorite.'); }
   }));
   console.log('%cHey, fellow curious mind. 👋', 'font:700 16px sans-serif;color:#3971B8');
-  console.log('%cHand-built by Riley Catalano. Type “favze” anywhere on the page for a surprise.', 'font:13px sans-serif;color:#626879');
+  console.log('%cHand-built by Riley Catalano. Type “favze” anywhere on the page for a surprise.', 'font:13px sans-serif;color:#3971B8');
 
   /* ---------- Opening book ---------- */
   $$('.book-btn').forEach(btn => {
