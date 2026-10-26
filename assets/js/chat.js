@@ -28,7 +28,8 @@
       q: 'What results have you driven?',
       k: ['result', 'proof', 'numbers', 'review', 'rating', 'stars', 'impact', 'roi', 'win', 'case stud'],
       a: ['My favorite one: ABI Attachments had lost the emails behind years of reviews, so I tracked customers down and asked them to post on the new platform.',
-          'Two weeks and a couple hours of work later, reviews grew from 52 to 71 and the rating climbed from 3.6 to 3.9 stars.',
+          'Two weeks and a couple hours of work later, reviews grew from 52 to 71 and the rating climbed from 3.6 to 3.9 stars. They have since grown to 101.',
+          'I also built 150 automation emails for ABI Attachments.',
           'I also rewrote a Google Business Profile description that hit first-page rankings for its branded term within one hour, and wrote alt text for 2,300 images.'],
       next: ['groundbreakers', 'hire', 'book']
     },
